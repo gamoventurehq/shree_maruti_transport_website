@@ -2181,21 +2181,8 @@ p {
   height: 100%;
   object-fit: contain;
 }
-.client-banner[data-paused='true'] .client-banner-track,
 .client-banner-window:hover .client-banner-track {
   animation-play-state: paused;
-}
-.client-banner-controls {
-  display: flex;
-  justify-content: flex-end;
-  padding: 14px 22px;
-}
-.client-banner-controls button {
-  background: none;
-  border: 0;
-  font-size: 12px;
-  min-height: 44px;
-  color: var(--muted);
 }
 @keyframes client-scroll {
   to {
@@ -2216,8 +2203,7 @@ p {
   .client-banner-track {
     animation: none;
   }
-  .client-banner-group[aria-hidden='true'],
-  .client-banner-controls {
+  .client-banner-group[aria-hidden='true'] {
     display: none;
   }
 }

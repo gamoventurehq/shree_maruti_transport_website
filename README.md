@@ -21,7 +21,7 @@ npm run dev
 - Clients: supplied customer logos.
 - Contact: office map, directions, and enquiry draft form.
 
-The form validates required fields and prepares a copyable draft. It does not send, store, or upload enquiries. Clipboard failure falls back to selecting the draft for manual copying. The mobile menu supports Escape. Hero motion and the scrolling client-logo banners can be paused. The Clients page also retains a static logo grid. Reduced-motion preferences are respected.
+The form validates required fields and prepares a copyable draft. It does not send, store, or upload enquiries. Clipboard failure falls back to selecting the draft for manual copying. The mobile menu supports Escape. Hero motion can be paused. Client-logo banners pause on hover and have no visible playback controls. The Clients page also retains a static logo grid. Reduced-motion preferences are respected.
 
 ## Brand and content
 
