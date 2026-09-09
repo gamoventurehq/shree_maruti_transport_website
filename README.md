@@ -29,7 +29,7 @@ The form validates required fields and prepares a copyable draft. It does not se
 
 Original material remains in `client_content/`. Selected assets are copied to `public/brand`, `public/fleet`, `public/clients`, and `public/partners`. Customer logos, fleet technology partners, and certification imagery appear in separate sections.
 
-The site uses the user-confirmed name Shree Maruti Transport Services, founding year 2001, 150 owned trucks, pan-India operations, and Nicer Globe certification. Some supplied promotional graphics mention smaller fleet counts; these do not override the confirmed 150-truck figure. The tanker imagery is supplied illustrative material, not verified fleet photography.
+The site uses the user-confirmed name Shree Maruti Transport Services, founding year 2001, 50+ owned trucks, pan-India operations, and Nicer Globe certification. The fleet count follows the user’s latest confirmed figure of 50+ trucks. The tanker imagery is supplied illustrative material, not verified fleet photography.
 
 The office map uses the location from the supplied Google Maps link. Regional city pins on the India map remain examples, not confirmed branches or live vehicle positions. The map outline is derived from [Natural Earth via world.geo.json](https://github.com/johan/world.geo.json/blob/master/countries/IND.geo.json) and should be reviewed for public use.
 

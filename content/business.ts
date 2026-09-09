@@ -4,7 +4,7 @@ export const business = {
   location: 'Bhiwandi, Maharashtra',
   mapsUrl: 'https://maps.app.goo.gl/3vC8XKiXLMS5d9A86',
   coordinates: { lat: 19.2516926, lon: 73.1062199 },
-  fleetSize: 150,
+  fleetSize: '50+',
   // Keep indexing off during client review.
   isPreview: true,
   creatorCredit: false,

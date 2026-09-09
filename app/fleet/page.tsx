@@ -8,7 +8,7 @@ import { fleetPartners } from '@/content/assets';
 export const metadata: Metadata = {
   title: 'Our fleet',
   description:
-    'Explore Shree Maruti Transport Services’ owned fleet of 150 trucks, tanker transport focus, and fleet-management partners.',
+    'Explore Shree Maruti Transport Services’ owned fleet of 50+ trucks, tanker transport focus, and fleet-management partners.',
 };
 
 export default function FleetPage() {
@@ -17,7 +17,7 @@ export default function FleetPage() {
       <PageIntro
         eyebrow="OUR FLEET"
         title="The strength behind every mile."
-        description="150 owned trucks. A tanker-focused transport operation serving businesses across India."
+        description="50+ owned trucks. A tanker-focused transport operation serving businesses across India."
       />
       <section className="section">
         <div className="container">
@@ -47,7 +47,7 @@ export default function FleetPage() {
               {
                 icon: Truck,
                 title: 'Owned fleet',
-                copy: '150 trucks support our road transport operations.',
+                copy: '50+ trucks support our road transport operations.',
               },
               {
                 icon: ShieldCheck,

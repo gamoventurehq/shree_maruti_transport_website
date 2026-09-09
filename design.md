@@ -70,7 +70,7 @@ pages:
 
 ## Overview
 
-An Indian chemical and liquid transport business, established in 2001, with an owned fleet of 150 trucks and pan-India operations. The website should help an industrial buyer understand its services, fleet, safety approach, clients, and office location before making an enquiry.
+An Indian chemical and liquid transport business, established in 2001, with an owned fleet of 50+ trucks and pan-India operations. The website should help an industrial buyer understand its services, fleet, safety approach, clients, and office location before making an enquiry.
 
 The supplied SMTS mark is the primary identity. Its red oval and white lettering determine the colour direction. The full business name is **Shree Maruti Transport Services**, including “Services” in page titles, navigation branding, enquiry drafts, and metadata.
 
@@ -78,14 +78,14 @@ This file adapts the structure and automotive presentation principles of the sup
 
 ## Sources and precedence
 
-1. The user’s direct instructions: business name, established in 2001, 150 owned trucks, pan-India operations, Nicerglobe certification, fleet-management tie-ups.
+1. The user’s direct instructions: business name, established in 2001, 50+ owned trucks, pan-India operations, Nicerglobe certification, fleet-management tie-ups.
 2. Original assets under `client_content/`: the SMTS logo, client logos, Nicerglobe mark, Tata Motors Fleet Edge and BlackBox marks, and fleet/sample graphics.
 3. The supplied Google Maps link: the office location at 19.2516926, 73.1062199. Link directly to the supplied listing for directions.
 4. `~/Downloads/acura.design.md`: the format and visual principles for this document.
 5. https://satyabizcon.com/index.html: subject structure for chemical tanker services, fleet, safety, technology, and clients. Do not reuse its figures, capacities, contact information, or claims.
 6. Earlier Oris Maritime and Rollers references: photography-led presentation, geographic coverage, and industrial grid structure.
 
-The supplied AI-made posters disagree on fleet totals (30+ and 50+). Do not copy those figures into website copy. Use the directly supplied 150 trucks. Vehicle capacity, fleet breakdown, branch counts, customer volumes, and on-time percentages remain unspecified.
+The user’s latest confirmed fleet count is 50+ trucks. Use this figure throughout the website; older figures in supplied promotional imagery do not override it. Vehicle capacity, fleet breakdown, branch counts, customer volumes, and on-time percentages remain unspecified.
 
 ## Brand and colour
 
@@ -124,7 +124,7 @@ Chemical transportation, solvent movement, industrial liquids, and planned tanke
 
 ### Fleet
 
-150 owned trucks, supplied tanker images, stainless-steel tanker focus, GPS/fleet-management context, and sample imagery gallery. Do not expose inconsistent poster counts as fleet specifications. Asset captions distinguish supplied illustrative graphics from documentary photography.
+50+ owned trucks, supplied tanker images, stainless-steel tanker focus, GPS/fleet-management context, and sample imagery gallery. Do not expose inconsistent poster counts as fleet specifications. Asset captions distinguish supplied illustrative graphics from documentary photography.
 
 ### Safety & technology
 
@@ -145,7 +145,7 @@ Office location map, external Google Maps directions link, and the existing enqu
 - **Page masthead:** breadcrumb, concise uppercase H1, short introduction, slim red rule.
 - **Primary button:** action red, white text, square corners, at least 48px tall, visible focus ring.
 - **Secondary link:** text plus a consistent arrow from the installed Lucide family; underline or border on hover.
-- **Fact strip:** 150 owned trucks; established 2001; pan-India operations. No animated fake counters.
+- **Fact strip:** 50+ owned trucks; established 2001; pan-India operations. No animated fake counters.
 - **Service rows:** descriptive headings, concise paragraphs, real fleet visuals where useful.
 - **Client grid:** uniform white logo tiles, contain sizing, original colours, company names as accessible text.
 - **Certification panel:** original Nicerglobe mark on white with accompanying text; distinct from fleet-provider panels.

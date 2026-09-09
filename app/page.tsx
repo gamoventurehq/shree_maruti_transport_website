@@ -63,7 +63,7 @@ export default function Home() {
             <p>
               Since 2001, Shree Maruti Transport Services has worked in road
               transportation, with a focus on chemicals and liquid cargo. Today,
-              our 150 owned trucks serve businesses across India.
+              our 50+ owned trucks serve businesses across India.
             </p>
             <TextLink href="/about">Get to know Shree Maruti</TextLink>
           </div>
@@ -133,7 +133,7 @@ export default function Home() {
           <div>
             <p className="eyebrow">THE FLEET BEHIND THE JOURNEY</p>
             <h2>
-              150 trucks.
+              50+ trucks.
               <br />
               One commitment.
             </h2>

@@ -11,7 +11,7 @@ import { business } from '@/content/business';
 export const metadata: Metadata = {
   title: 'About us',
   description:
-    'Meet Shree Maruti Transport Services: established in 2001, with 150 owned trucks and chemical and liquid transport operations across India.',
+    'Meet Shree Maruti Transport Services: established in 2001, with 50+ owned trucks and chemical and liquid transport operations across India.',
 };
 
 export default function AboutPage() {
@@ -42,7 +42,7 @@ export default function AboutPage() {
             </p>
             <p>
               Our work centres on road transportation for chemicals, solvents,
-              and industrial liquids. An owned fleet of 150 trucks supports
+              and industrial liquids. An owned fleet of 50+ trucks supports
               those movements, with a focus on the product, the people handling
               it, and the destination.
             </p>
@@ -141,7 +141,7 @@ export default function AboutPage() {
           <p className="eyebrow">SHREE MARUTI TODAY</p>
           <div className="about-proof-grid">
             <div>
-              <strong>150</strong>
+              <strong>50+</strong>
               <span>OWNED TRUCKS</span>
             </div>
             <div>

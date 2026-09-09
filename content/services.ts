@@ -40,7 +40,7 @@ export const services = [
     number: '04',
     title: 'Pan-India road transport',
     summary:
-      'An owned fleet of 150 trucks, connecting businesses across India.',
+      'An owned fleet of 50+ trucks, connecting businesses across India.',
     detail:
       'Our operations extend across India. Discuss your origin and destination with us so the route, vehicle requirement, and delivery arrangements can be confirmed for your shipment.',
     requirements:
