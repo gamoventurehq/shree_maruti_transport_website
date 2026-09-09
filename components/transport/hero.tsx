@@ -1,60 +1,55 @@
 'use client';
 
 import { useState } from 'react';
-import Image from 'next/image';
-import { ArrowDownRight, ArrowUpRight, Pause, Play } from 'lucide-react';
+import Link from 'next/link';
+import { ArrowUpRight, Pause, Play } from 'lucide-react';
+import { FleetVisual } from './site';
 
 export function Hero() {
   const [paused, setPaused] = useState(false);
   return (
-    <section className="hero" aria-labelledby="hero-title">
-      <Image
-        unoptimized
-        className="hero-image"
-        style={{
-          animationPlayState: paused ? 'paused' : 'running',
-        }}
-        src="/transport-hero.webp"
-        alt="Illustrative orange cargo truck on an Indian highway at sunset"
-        width={1672}
-        height={941}
-        fetchPriority="high"
-        loading="eager"
-      />
+    <section
+      className={`hero dark-section ${paused ? 'motion-paused' : ''}`}
+      aria-labelledby="hero-title"
+    >
+      <FleetVisual panel="single" className="hero-fleet" priority />
       <div className="hero-shade" />
-      <div className="hero-content">
-        <p className="eyebrow">INDIAN ROADS. NATIONAL REACH.</p>
+      <div className="container hero-content">
+        <p className="eyebrow">CHEMICAL & LIQUID TRANSPORTATION</p>
         <h1 id="hero-title">
-          Every mile.
+          Moving industry.
           <br />
-          For your business.
+          Since 2001<span>.</span>
         </h1>
-        <p className="hero-description">
-          150 trucks. Pan-India operations. Road transport that connects your
-          business to its next destination.
+        <p>
+          Shree Maruti Transport Services. An owned fleet of 150 trucks,
+          carrying your business across India.
         </p>
-        <a className="button button-light" href="#coverage">
-          Explore our reach <ArrowUpRight size={19} />
-        </a>
+        <div className="hero-actions">
+          <Link href="/services" className="button button-primary">
+            Explore our services
+            <ArrowUpRight size={19} />
+          </Link>
+          <Link href="/fleet" className="hero-secondary">
+            Meet the fleet
+            <ArrowUpRight size={18} />
+          </Link>
+        </div>
       </div>
-      {
-        <button
-          type="button"
-          className="motion-toggle"
-          aria-label={
-            paused ? 'Play background motion' : 'Pause background motion'
-          }
-          onClick={() => setPaused(!paused)}
-        >
-          {paused ? <Play size={15} /> : <Pause size={15} />}
-        </button>
-      }
-      <div className="hero-bottom">
-        <span>SHREE MARUTI TRANSPORT</span>
-        <span>
-          BUILT FOR THE ROAD AHEAD <ArrowDownRight size={17} />
-        </span>
+      <div className="hero-caption">
+        <span>SHREE MARUTI TRANSPORT SERVICES</span>
+        <span>PAN-INDIA OPERATIONS</span>
       </div>
+      <button
+        type="button"
+        className="motion-toggle"
+        onClick={() => setPaused(!paused)}
+        aria-label={
+          paused ? 'Play background motion' : 'Pause background motion'
+        }
+      >
+        {paused ? <Play size={14} /> : <Pause size={14} />}
+      </button>
     </section>
   );
 }

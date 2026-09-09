@@ -13,7 +13,7 @@ await test('creates a copyable enquiry preserving route, contact details, and mu
   });
   assert.equal(
     result,
-    'Transport enquiry | Shree Maruti Transport\n\nName: Asha Shah\nCompany: Example Manufacturing\nEmail: asha@example.com\nPickup: Ahmedabad\nDelivery: Chennai\n\nCargo and requirements:\nMachine parts, 8 tonnes\nDispatch: 14 September',
+    'Transport enquiry | Shree Maruti Transport Services\n\nName: Asha Shah\nCompany: Example Manufacturing\nEmail: asha@example.com\nPickup: Ahmedabad\nDelivery: Chennai\n\nCargo and requirements:\nMachine parts, 8 tonnes\nDispatch: 14 September',
   );
 });
 

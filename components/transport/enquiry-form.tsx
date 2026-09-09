@@ -127,9 +127,10 @@ export function EnquiryForm() {
         />
       </label>
       <p className="form-note">
-        Preview only. Prepare a draft to copy; enquiries are not sent or stored.
+        This form prepares a draft to copy. It does not send or store your
+        enquiry.
       </p>
-      <button className="button button-accent" type="submit">
+      <button className="button button-primary" type="submit">
         Prepare enquiry <ArrowUpRight size={19} />
       </button>
       {draft && (

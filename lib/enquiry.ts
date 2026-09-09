@@ -9,7 +9,7 @@ export type Enquiry = {
 
 export function formatEnquiry(enquiry: Enquiry): string {
   return [
-    'Transport enquiry | Shree Maruti Transport',
+    'Transport enquiry | Shree Maruti Transport Services',
     '',
     `Name: ${enquiry.name.trim()}`,
     `Company: ${enquiry.company.trim() || 'Not provided'}`,

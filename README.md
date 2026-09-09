@@ -1,8 +1,8 @@
-# Shree Maruti Transport
+# Shree Maruti Transport Services
 
-A first website concept for a transport business with 150 owned trucks and pan-India operations. The Next.js application lives at the repository root so Vercel can detect it during import.
+A seven-page transport website built with Next.js, React, and TypeScript. The visual system in `design.md` uses the supplied SMTS logo, red accents, charcoal backgrounds, and condensed headings.
 
-## Run locally
+## Local development
 
 Requires Node.js 22.13 or newer.
 
@@ -11,9 +11,41 @@ npm ci
 npm run dev
 ```
 
-Open the local address printed by the development server. The project uses React, TypeScript, Next.js, and Tailwind CSS.
+## Pages and interactions
 
-## Checks
+- Home: fleet introduction, services, interactive India coverage map, and clients.
+- About: company history, working principles, and Vision and Mission boards.
+- Services: chemical, solvent, industrial liquid, and planned tanker transportation.
+- Fleet: selectable fleet gallery and fleet-management partners.
+- Safety & technology: Nicer Globe certification and operational practices.
+- Clients: supplied customer logos.
+- Contact: office map, directions, and enquiry draft form.
+
+The form validates required fields and prepares a copyable draft. It does not send, store, or upload enquiries. Clipboard failure falls back to selecting the draft for manual copying. The mobile menu supports Escape, and hero motion can be paused. Reduced-motion preferences are respected.
+
+## Brand and content
+
+`design.md` is the brand and interface specification, structured using the supplied Acura design document. `content/business.ts` holds business details and preview settings; `content/assets.ts` holds image metadata; `content/asset-manifest.json` records the original file for each published asset.
+
+Original material remains in `client_content/`. Selected assets are copied to `public/brand`, `public/fleet`, `public/clients`, and `public/partners`. Customer logos, fleet technology partners, and certification imagery appear in separate sections.
+
+The site uses the user-confirmed name Shree Maruti Transport Services, founding year 2001, 150 owned trucks, pan-India operations, and Nicer Globe certification. Some supplied promotional graphics mention smaller fleet counts; these do not override the confirmed 150-truck figure. The tanker imagery is supplied illustrative material, not verified fleet photography.
+
+The office map uses the location from the supplied Google Maps link. Regional city pins on the India map remain examples, not confirmed branches or live vehicle positions. The map outline is derived from [Natural Earth via world.geo.json](https://github.com/johan/world.geo.json/blob/master/countries/IND.geo.json) and should be reviewed for public use.
+
+### Still needed for launch
+
+- Official phone, WhatsApp, email, full postal address, and enquiry recipient.
+- Client approval of page copy, including the drafted Vision and Mission statements and safety practices.
+- Vehicle specifications, actual service routes, and original fleet photography.
+- The Jai Ambey Road Line logo and its relationship to Shree Maruti; no separate file was found in the supplied folder.
+- Identification of the two withheld client logos listed in the asset manifest.
+
+No separate written-content document was found in `client_content/` during this build. The site copy was drafted around the supplied imagery and user-confirmed facts.
+
+`business.isPreview` remains `true`, which prevents search indexing. Set it to `false` after content review. `creatorCredit` defaults to `false`; enable it with client agreement to show the Gamoventure footer credit.
+
+## Verification
 
 ```bash
 npm run format
@@ -21,75 +53,25 @@ npm run lint
 npm run typecheck
 npm test
 npm run build
-```
-
-## What works
-
-The site includes responsive navigation, an animated hero with a pause control, fleet information, a selectable India coverage map, shipment-planning accordions, and an enquiry form. The form validates required fields and creates a copyable draft. It does not send, store, or upload enquiries. If clipboard access is unavailable, it selects the draft for manual copying.
-
-The layout respects reduced-motion preferences. Preview metadata prevents search indexing while `business.isPreview` is true. No analytics or third-party tracking has been added.
-
-## Client content needed
-
-- Confirm the business name, legal entity, logo, colours, and preferred languages. The working name comes from the repository name.
-- Supply original fleet photography and licensed highway footage for a video hero.
-- Confirm vehicle types, capacities, cargo specialties, services, and any restricted goods.
-- Supply actual routes, branch locations, addresses, and hours. Current map pins are illustrative examples, not branch or tracking data.
-- Supply official phone, WhatsApp, email, and an enquiry recipient or CRM integration.
-- Confirm any founding date, safety credentials, certifications, customer logos, testimonials, or performance claims before adding them.
-- Approve the site copy and privacy information before activating a live enquiry service.
-
-The only business facts used as established facts are the 150 owned trucks and pan-India operations. The name, wordmark, palette, imagery, and regional examples are provisional. Do not publish this as a finished client website without replacing or approving them.
-
-## Key files
-
-- `app/page.tsx`: page structure and business copy.
-- `app/globals.css`: responsive layout, colours, and motion.
-- `content/business.ts`: fleet count, preview indexing flag, sample regions, and optional creator credit.
-- `components/transport/`: navigation, hero, coverage interaction, and enquiry form.
-- `lib/enquiry.ts`: formatting for the local enquiry draft.
-
-`creatorCredit` defaults to `false`. With client agreement, set it to `true` to show a small “Website by Gamoventure” footer link. Agree on this credit in the project scope or contract.
-
-## Visual references and assets
-
-The direction draws on the client’s [Surabhi Transport reference](https://www.surabhitransport.com/contact.html), the fleet and geographic presentation of [Oris Maritime](https://www.orismaritime.com/), [Truck’N Roll](https://trucknroll.com/), and the industrial storytelling requested from [Rollers Australia](https://rollers.com.au/). No reference-site copy, logos, or media were reused.
-
-The hero image is AI-generated concept photography, not a photograph of the client’s fleet. The same image is cropped in the fleet section. Replace it with client-approved photography before launch. The current motion is a subtle image pan and zoom, not truck video.
-
-The illustrative map outline comes from [johan/world.geo.json](https://github.com/johan/world.geo.json/blob/master/countries/IND.geo.json), derived from Natural Earth. It is simplified and is not an authoritative boundary map. Replace it with an approved India boundary dataset before public release. City coordinates and dotted connections demonstrate the coverage interaction, not operational routes.
-
-## Deployment on Vercel
-
-The repository includes `vercel.json` to select Next.js, run `npm ci` and `npm run build`, and publish `.next` through Vercel’s Next.js integration.
-
-For an existing Vercel project, use these settings:
-
-- Root Directory: repository root (leave empty or use `.`), not `site`.
-- Framework Preset: Next.js.
-- Node.js Version: 22.x.
-- Build Command: `npm run build`.
-- Output Directory: `.next`.
-
-Redeploy the latest commit after saving any project-setting changes. The earlier Cloudflare/Vinext build was incompatible with this Vercel setup and could leave a successful deployment with no homepage route.
-
-To check a deployment serves the actual page and hero asset:
-
-```bash
-npm run check:deployment -- https://shree-maruti-transport-website.vercel.app/
-```
-
-The same check works against a local production server:
-
-```bash
-npm run build
 npm start -- --port 3001
 # In another terminal:
 npm run check:deployment -- http://localhost:3001
 ```
 
-The source repository is [gamoventurehq/shree_maruti_transport_website](https://github.com/gamoventurehq/shree_maruti_transport_website). The enquiry form remains a local draft tool even when the site is publicly hosted.
+The deployment check requests all seven routes and verifies key headings, Vision and Mission boards, the enquiry form, office link, and brand assets.
+
+## Vercel deployment
+
+The application lives at the repository root. `vercel.json` selects Next.js, installs with `npm ci`, builds with `npm run build`, and uses `.next`.
+
+Use the repository root as Root Directory, the Next.js framework preset, and Node.js 22.x. The previous Cloudflare/Vinext scaffold was incompatible with this deployment setup and has been replaced.
+
+The source repository is [gamoventurehq/shree_maruti_transport_website](https://github.com/gamoventurehq/shree_maruti_transport_website).
+
+## References
+
+The direction combines the client's [Surabhi Transport](https://www.surabhitransport.com/contact.html) and [Satya Bizcon](https://satyabizcon.com/index.html) references with the photographic scale of [Oris Maritime](https://www.orismaritime.com/), the transport presentation of [Truck’N Roll](https://trucknroll.com/), and the grid-based storytelling of [Rollers](https://rollers.com.au/). Reference-site text and media were not copied. Nicer Globe context is linked to the [Indian Chemical Council](https://www.indianchemicalcouncil.com/nicer-globe).
 
 ## Dependency maintenance
 
-A `sharp` override pins version `0.35.4` to avoid affected earlier versions of its image-processing dependencies. Recheck the override when upgrading Next.js.
+A `sharp` override pins version `0.35.4` to avoid affected earlier image-processing dependencies. Recheck the override when upgrading Next.js.
