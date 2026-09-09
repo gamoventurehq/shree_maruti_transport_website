@@ -1,3 +1,4 @@
+import { ClientBanner } from '@/components/transport/client-banner';
 import Image from 'next/image';
 import Link from 'next/link';
 import {
@@ -9,7 +10,6 @@ import {
 import { Hero } from '@/components/transport/hero';
 import { Coverage } from '@/components/transport/coverage';
 import {
-  ClientGrid,
   ContactBand,
   FleetVisual,
   TextLink,
@@ -187,7 +187,7 @@ export default function Home() {
             </div>
             <TextLink href="/clients">Meet our clients</TextLink>
           </div>
-          <ClientGrid limit={6} />
+          <ClientBanner />
         </div>
       </section>
       <ContactBand />

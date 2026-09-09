@@ -147,6 +147,7 @@ Office location map, external Google Maps directions link, and the existing enqu
 - **Secondary link:** text plus a consistent arrow from the installed Lucide family; underline or border on hover.
 - **Fact strip:** 50+ owned trucks; established 2001; pan-India operations. No animated fake counters.
 - **Service rows:** descriptive headings, concise paragraphs, real fleet visuals where useful.
+- **Client banner:** A continuous horizontal logo strip on Home and Clients. Pause on hover or with the visible control; use a static scrollable strip for reduced motion. Hide the repeated logo set from assistive technology.
 - **Client grid:** uniform white logo tiles, contain sizing, original colours, company names as accessible text.
 - **Certification panel:** original Nicerglobe mark on white with accompanying text; distinct from fleet-provider panels.
 - **Coverage map:** existing geographic outline and keyboard-selectable region buttons. Mark regional cities as illustrative; show the supplied office location accurately and link to directions.

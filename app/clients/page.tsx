@@ -1,3 +1,4 @@
+import { ClientBanner } from '@/components/transport/client-banner';
 import type { Metadata } from 'next';
 import {
   ClientGrid,
@@ -20,6 +21,7 @@ export default function ClientsPage() {
         title="Their industry. Our commitment."
         description="Working with businesses across chemicals, pharmaceuticals, manufacturing, and industrial supply."
       />
+      <ClientBanner />
       <section className="section">
         <div className="container">
           <div className="section-heading">

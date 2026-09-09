@@ -2149,3 +2149,75 @@ p {
 .mission-board .board-label {
   color: #60656a;
 }
+
+.client-banner {
+  min-width: 0;
+}
+.client-banner-window {
+  overflow: hidden;
+  border-block: 1px solid var(--line);
+  background: white;
+}
+.client-banner-track {
+  display: flex;
+  width: max-content;
+  animation: client-scroll 90s linear infinite;
+}
+.client-banner-group {
+  display: flex;
+  flex-shrink: 0;
+}
+.client-banner-logo {
+  width: 220px;
+  height: 140px;
+  padding: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-right: 1px solid var(--line);
+}
+.client-banner-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.client-banner[data-paused='true'] .client-banner-track,
+.client-banner-window:hover .client-banner-track {
+  animation-play-state: paused;
+}
+.client-banner-controls {
+  display: flex;
+  justify-content: flex-end;
+  padding: 14px 22px;
+}
+.client-banner-controls button {
+  background: none;
+  border: 0;
+  font-size: 12px;
+  min-height: 44px;
+  color: var(--muted);
+}
+@keyframes client-scroll {
+  to {
+    transform: translateX(-50%);
+  }
+}
+@media (max-width: 767px) {
+  .client-banner-logo {
+    width: 180px;
+    height: 120px;
+    padding: 24px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .client-banner-window {
+    overflow-x: auto;
+  }
+  .client-banner-track {
+    animation: none;
+  }
+  .client-banner-group[aria-hidden='true'],
+  .client-banner-controls {
+    display: none;
+  }
+}
