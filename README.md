@@ -1,23 +1,21 @@
 # Shree Maruti Transport
 
-A first website concept for a transport business with 150 owned trucks and pan-India operations. The application is in `site/` because the repository root contains protected workspace configuration.
+A first website concept for a transport business with 150 owned trucks and pan-India operations. The Next.js application lives at the repository root so Vercel can detect it during import.
 
 ## Run locally
 
 Requires Node.js 22.13 or newer.
 
 ```bash
-cd site
 npm ci
 npm run dev
 ```
 
-Open the local address printed by the development server. The project uses React, TypeScript, Vinext, and the generated Sites/Cloudflare runtime.
+Open the local address printed by the development server. The project uses React, TypeScript, Next.js, and Tailwind CSS.
 
 ## Checks
 
 ```bash
-cd site
 npm run format
 npm run lint
 npm run typecheck
@@ -45,11 +43,11 @@ The only business facts used as established facts are the 150 owned trucks and p
 
 ## Key files
 
-- `site/app/page.tsx`: page structure and business copy.
-- `site/app/globals.css`: responsive layout, colours, and motion.
-- `site/content/business.ts`: fleet count, preview indexing flag, sample regions, and optional creator credit.
-- `site/components/transport/`: navigation, hero, coverage interaction, and enquiry form.
-- `site/lib/enquiry.ts`: formatting for the local enquiry draft.
+- `app/page.tsx`: page structure and business copy.
+- `app/globals.css`: responsive layout, colours, and motion.
+- `content/business.ts`: fleet count, preview indexing flag, sample regions, and optional creator credit.
+- `components/transport/`: navigation, hero, coverage interaction, and enquiry form.
+- `lib/enquiry.ts`: formatting for the local enquiry draft.
 
 `creatorCredit` defaults to `false`. With client agreement, set it to `true` to show a small “Website by Gamoventure” footer link. Agree on this credit in the project scope or contract.
 
@@ -61,10 +59,37 @@ The hero image is AI-generated concept photography, not a photograph of the clie
 
 The illustrative map outline comes from [johan/world.geo.json](https://github.com/johan/world.geo.json/blob/master/countries/IND.geo.json), derived from Natural Earth. It is simplified and is not an authoritative boundary map. Replace it with an approved India boundary dataset before public release. City coordinates and dotted connections demonstrate the coverage interaction, not operational routes.
 
-## Deployment
+## Deployment on Vercel
 
-The scaffold produces a Cloudflare-compatible build with `npm run build`. The source repository is https://github.com/gamoventurehq/shree_maruti_transport_website. Pushing the source to GitHub does not deploy the website. No production site has been published.
+The repository includes `vercel.json` to select Next.js, run `npm ci` and `npm run build`, and publish `.next` through Vercel’s Next.js integration.
+
+For an existing Vercel project, use these settings:
+
+- Root Directory: repository root (leave empty or use `.`), not `site`.
+- Framework Preset: Next.js.
+- Node.js Version: 22.x.
+- Build Command: `npm run build`.
+- Output Directory: `.next`.
+
+Redeploy the latest commit after saving any project-setting changes. The earlier Cloudflare/Vinext build was incompatible with this Vercel setup and could leave a successful deployment with no homepage route.
+
+To check a deployment serves the actual page and hero asset:
+
+```bash
+npm run check:deployment -- https://shree-maruti-transport-website.vercel.app/
+```
+
+The same check works against a local production server:
+
+```bash
+npm run build
+npm start -- --port 3001
+# In another terminal:
+npm run check:deployment -- http://localhost:3001
+```
+
+The source repository is [gamoventurehq/shree_maruti_transport_website](https://github.com/gamoventurehq/shree_maruti_transport_website). The enquiry form remains a local draft tool even when the site is publicly hosted.
 
 ## Dependency maintenance
 
-The generated framework and build tools were updated to compatible patched versions. A `sharp` override pins version `0.35.4` because Miniflare pins an affected earlier patch. Remove the override when Miniflare includes the patched version itself.
+A `sharp` override pins version `0.35.4` to avoid affected earlier versions of its image-processing dependencies. Recheck the override when upgrading Next.js.

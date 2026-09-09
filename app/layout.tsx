@@ -14,6 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  icons: { icon: '/favicon.svg' },
   title: 'Shree Maruti Transport | Pan-India Road Transport',
   description:
     'An owned fleet of 150 trucks. Discover Shree Maruti Transport and its pan-India road transport operations.',

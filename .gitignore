@@ -38,3 +38,6 @@ next-env.d.ts
 /work/
 
 *.tsbuildinfo
+
+# Obsolete local scaffold build caches
+/site/
