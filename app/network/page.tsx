@@ -1,9 +1,9 @@
 import { ElitePage } from '@/components/elite/pages';
 import { editionPages } from '@/content/edition-pages';
 export const metadata = {
-  title: editionPages.fleet.title,
-  description: editionPages.fleet.intro,
+  title: editionPages.network.title,
+  description: editionPages.network.intro,
 };
 export default function Page() {
-  return <ElitePage page="fleet" />;
+  return <ElitePage page="network" />;
 }

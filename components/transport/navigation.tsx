@@ -29,7 +29,11 @@ export function Navigation() {
           {pageLinks.slice(1, -1).map((link) => (
             <Link
               key={link.href}
-              className={pathname === link.href ? 'active' : ''}
+              className={
+                pathname === link.href || pathname.startsWith(`${link.href}/`)
+                  ? 'active'
+                  : ''
+              }
               aria-current={pathname === link.href ? 'page' : undefined}
               href={link.href}
             >

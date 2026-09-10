@@ -4,12 +4,18 @@ import { useState } from 'react';
 import { ArrowUpRight, MapPin } from 'lucide-react';
 import Link from 'next/link';
 import { regions } from '@/content/business';
+import { coverageCities } from '@/content/coverage-cities';
 import { indiaOutline } from '@/content/india-map';
 
 export function Coverage() {
   const [selected, setSelected] = useState<(typeof regions)[number]>(
     regions[0],
   );
+  const [selectedCity, setSelectedCity] = useState<string>('Ahmedabad');
+  function selectRegion(region: (typeof regions)[number]) {
+    setSelected(region);
+    setSelectedCity(region.city);
+  }
   return (
     <section
       className="coverage dark-section"
@@ -57,34 +63,38 @@ export function Coverage() {
                   strokeWidth=".8"
                 />
                 <path d={indiaOutline} fill="url(#map-dots)" />
-                {regions
-                  .filter((region) => region.id !== selected.id)
-                  .map((region) => (
-                    <line
-                      className="map-route"
-                      key={region.id}
-                      x1={(selected.lon - 66) * 16}
-                      y1={(37 - selected.lat) * 16}
-                      x2={(region.lon - 66) * 16}
-                      y2={(37 - region.lat) * 16}
-                    />
-                  ))}
+                {coverageCities.map((city) => (
+                  <line
+                    className={`map-route ${city.region === selected.id ? 'route-active' : ''}`}
+                    key={city.name}
+                    x1={(72.88 - 66) * 16}
+                    y1={(37 - 19.08) * 16}
+                    x2={(city.lon - 66) * 16}
+                    y2={(37 - city.lat) * 16}
+                  />
+                ))}
               </svg>
-              {regions.map((region) => (
+              {coverageCities.map((city) => (
                 <button
                   type="button"
-                  className={`map-pin ${region.id === selected.id ? 'selected' : ''}`}
-                  key={region.id}
+                  key={city.name}
+                  className={`map-pin city-pin ${city.name === selectedCity ? 'selected' : ''} ${city.label ? 'city-labelled' : ''} ${city.lon < 78 ? 'label-west' : ''}`}
                   style={{
-                    left: `${(((region.lon - 66) * 16) / 520) * 100}%`,
-                    top: `${(((37 - region.lat) * 16) / 490) * 100}%`,
+                    left: `${(((city.lon - 66) * 16) / 520) * 100}%`,
+                    top: `${(((37 - city.lat) * 16) / 490) * 100}%`,
                   }}
-                  aria-label={`Explore ${region.name}, example city ${region.city}`}
-                  aria-pressed={selected.id === region.id}
-                  onClick={() => setSelected(region)}
+                  aria-label={`Explore ${city.name}`}
+                  aria-pressed={city.name === selectedCity}
+                  onClick={() => {
+                    const region = regions.find(
+                      (item) => item.id === city.region,
+                    );
+                    if (region) setSelected(region);
+                    setSelectedCity(city.name);
+                  }}
                 >
                   <span className="pin-dot" />
-                  <span className="pin-label">{region.city}</span>
+                  <span className="pin-label">{city.name}</span>
                 </button>
               ))}
               <span className="map-water-label">
@@ -99,8 +109,8 @@ export function Coverage() {
               </span>
             </div>
             <p className="map-disclaimer">
-              Illustrative coverage map. City pins are examples, not confirmed
-              branches or live vehicle locations.
+              Explore major cities across India. Route availability is confirmed
+              for each consignment.
             </p>
           </div>
           <div className="region-panel">
@@ -112,7 +122,7 @@ export function Coverage() {
                   type="button"
                   aria-pressed={selected.id === region.id}
                   className={selected.id === region.id ? 'active' : ''}
-                  onClick={() => setSelected(region)}
+                  onClick={() => selectRegion(region)}
                 >
                   <span className="region-index">0{index + 1}</span>
                   {region.name}
@@ -127,7 +137,24 @@ export function Coverage() {
             >
               <MapPin size={20} />
               <h3>{selected.name}</h3>
-              <p className="region-cities">{selected.cities}</p>
+              <p className="region-cities">{selectedCity}</p>
+              <div
+                className="coverage-city-list"
+                aria-label={`Cities in ${selected.name}`}
+              >
+                {coverageCities
+                  .filter((city) => city.region === selected.id)
+                  .map((city) => (
+                    <button
+                      key={city.name}
+                      type="button"
+                      aria-pressed={city.name === selectedCity}
+                      onClick={() => setSelectedCity(city.name)}
+                    >
+                      {city.name}
+                    </button>
+                  ))}
+              </div>
               <p>{selected.description}</p>
               <Link className="text-link" href="/contact">
                 Discuss your route <ArrowUpRight size={17} />

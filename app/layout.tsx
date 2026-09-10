@@ -1,45 +1,40 @@
 import type { Metadata } from 'next';
-import { Barlow_Condensed, Geist } from 'next/font/google';
+import { Outfit } from 'next/font/google';
 import './globals.css';
-import { business } from '@/content/business';
-import { Navigation } from '@/components/transport/navigation';
-import { Footer } from '@/components/transport/site';
-
-const geist = Geist({
-  variable: '--font-body',
+import { EliteNav, MotionCanvas } from '@/components/elite/interactions';
+import { EliteFooter } from '@/components/elite/pages';
+const outfit = Outfit({
   subsets: ['latin'],
+  variable: '--font-outfit',
   display: 'swap',
 });
-const barlow = Barlow_Condensed({
-  variable: '--font-display',
-  subsets: ['latin'],
-  weight: ['500', '600', '700'],
-  display: 'swap',
-});
-
 export const metadata: Metadata = {
-  icons: { icon: '/brand/smts-logo.png' },
   title: {
-    default: 'Shree Maruti Transport Services | Chemical & Liquid Transport',
+    default: 'Shree Maruti | A country in motion',
     template: '%s | Shree Maruti Transport Services',
   },
   description:
-    'Established in 2001. Shree Maruti Transport Services operates 50+ owned tankers for chemical, liquid, and pan-India road transportation.',
-  robots: { index: !business.isPreview, follow: !business.isPreview },
+    'Chemical and liquid tanker transport across India. 50+ owned tankers, established in 2001.',
+  robots: { index: false, follow: false },
 };
-
 export default function RootLayout({
   children,
-}: Readonly<{ children: React.ReactNode }>) {
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html lang="en">
-      <body className={`${geist.variable} ${barlow.variable}`}>
-        <a className="skip-link" href="#main">
+      <body className={outfit.variable}>
+        <a href="#main" className="skip-link">
           Skip to content
         </a>
-        <Navigation />
-        <main id="main">{children}</main>
-        <Footer />
+        <EliteNav />
+        <MotionCanvas>
+          <main id="main" className="overflow-x-hidden w-full max-w-full">
+            {children}
+          </main>
+        </MotionCanvas>
+        <EliteFooter />
       </body>
     </html>
   );
