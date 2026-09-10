@@ -192,3 +192,11 @@ export const trackingGraphic = {
   source:
     'client_content/shree maruti fleet sample/ChatGPT Image Sep 9, 2026, 06_14_02 PM.png',
 } as const;
+
+export const staffSafetyIllustration = {
+  name: 'Staff safety kit diagram',
+  src: '/safety/staff-ppe-diagram.png',
+  width: 1122,
+  height: 1402,
+  source: 'Original AI-generated PPE illustration, 2026-09-10',
+} as const;

@@ -22,7 +22,7 @@ export function Hero() {
           Since 2001<span>.</span>
         </h1>
         <p>
-          Shree Maruti Transport Services. An owned fleet of 50+ trucks,
+          Shree Maruti Transport Services. An owned fleet of 50+ tankers,
           carrying your business across India.
         </p>
         <div className="hero-actions">

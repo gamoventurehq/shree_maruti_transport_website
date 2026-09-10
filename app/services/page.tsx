@@ -1,3 +1,4 @@
+import { TransportFaq } from '@/components/transport/transport-faq';
 import type { Metadata } from 'next';
 import { Droplets, FlaskConical, Route, Truck } from 'lucide-react';
 import { ContactBand, PageIntro, TextLink } from '@/components/transport/site';
@@ -6,7 +7,7 @@ import { services } from '@/content/services';
 export const metadata: Metadata = {
   title: 'Transport services',
   description:
-    'Chemical transportation, solvents, industrial liquids, and planned tanker movements from Shree Maruti Transport Services.',
+    'Chemical transportation, solvents, industrial and food-grade liquids, and planned tanker movements from Shree Maruti Transport Services.',
 };
 const icons = {
   flask: FlaskConical,
@@ -87,6 +88,7 @@ export default function ServicesPage() {
           </div>
         </div>
       </section>
+      <TransportFaq />
       <ContactBand />
     </>
   );

@@ -25,6 +25,30 @@ for (const [path, heading] of Object.entries(pages)) {
     html.includes('Shree Maruti Transport Services'),
     `${path} is missing the company name`,
   );
+  const visibleText = html
+    .replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, '')
+    .replace(/<[^>]*>/g, ' ');
+  assert.doesNotMatch(
+    visibleText,
+    /\btrucks?\b/i,
+    `${path} still uses the old fleet terminology`,
+  );
+  if (path === '/fleet') {
+    for (const expected of [
+      '16 / 21 / 25 / 30 / 35 MT',
+      'SS 304',
+      'SS 316L',
+      'food-grade',
+    ]) {
+      assert.ok(html.includes(expected), `Fleet page is missing ${expected}`);
+    }
+  }
+  if (path === '/safety') {
+    assert.ok(
+      html.includes('hazardous-materials') && html.includes('staff-safety-kit'),
+      'Safety page is missing its new sections',
+    );
+  }
   if (path === '/about') {
     assert.ok(
       html.includes('Our vision') && html.includes('Our mission'),
@@ -42,6 +66,7 @@ for (const path of [
   '/brand/smts-logo.png',
   '/fleet/tanker-fleet.png',
   '/partners/nicerglobe.jpg',
+  '/safety/staff-ppe-diagram.png',
 ]) {
   const response = await fetch(new URL(path, base), {
     signal: AbortSignal.timeout(20000),

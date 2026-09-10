@@ -24,8 +24,20 @@ export const services = [
     icon: 'droplet',
   },
   {
-    id: 'tanker-movements',
+    id: 'food-grade',
     number: '03',
+    title: 'Food-grade liquid transport',
+    summary:
+      'Tanker transportation for food-grade liquids, with the product and hygiene requirements considered from the outset.',
+    detail:
+      'Food-grade liquid movements require attention to tanker suitability, cleanliness, prior-cargo restrictions, and receiving-site procedures. Share the product specification and your quality requirements so preparation and transport arrangements can be confirmed.',
+    requirements:
+      'Product specification, quantity, hygiene requirements, prior-cargo restrictions, and loading arrangements.',
+    icon: 'droplet',
+  },
+  {
+    id: 'tanker-movements',
+    number: '04',
     title: 'Planned tanker movements',
     summary:
       'Transport planning for individual consignments and recurring business requirements.',
@@ -37,10 +49,10 @@ export const services = [
   },
   {
     id: 'pan-india',
-    number: '04',
+    number: '05',
     title: 'Pan-India road transport',
     summary:
-      'An owned fleet of 50+ trucks, connecting businesses across India.',
+      'An owned fleet of 50+ tankers, connecting businesses across India.',
     detail:
       'Our operations extend across India. Discuss your origin and destination with us so the route, vehicle requirement, and delivery arrangements can be confirmed for your shipment.',
     requirements:

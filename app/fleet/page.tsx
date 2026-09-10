@@ -1,3 +1,4 @@
+import { FleetSpecifications } from '@/components/transport/fleet-specifications';
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import { MapPinned, ShieldCheck, Truck } from 'lucide-react';
@@ -8,7 +9,7 @@ import { fleetPartners } from '@/content/assets';
 export const metadata: Metadata = {
   title: 'Our fleet',
   description:
-    'Explore Shree Maruti Transport Services’ owned fleet of 50+ trucks, tanker transport focus, and fleet-management partners.',
+    'Explore Shree Maruti Transport Services’ owned fleet of 50+ tankers, 16–35 MT capacities, SS 304/316/316L grades, and chemical and food-grade liquid transport.',
 };
 
 export default function FleetPage() {
@@ -17,13 +18,14 @@ export default function FleetPage() {
       <PageIntro
         eyebrow="OUR FLEET"
         title="The strength behind every mile."
-        description="50+ owned trucks. A tanker-focused transport operation serving businesses across India."
+        description="50+ owned tankers. A tanker-focused transport operation serving businesses across India."
       />
       <section className="section">
         <div className="container">
           <FleetGallery />
         </div>
       </section>
+      <FleetSpecifications />
       <section className="section fleet-details">
         <div className="container editorial-grid">
           <div>
@@ -47,7 +49,7 @@ export default function FleetPage() {
               {
                 icon: Truck,
                 title: 'Owned fleet',
-                copy: '50+ trucks support our road transport operations.',
+                copy: '50+ tankers support our road transport operations.',
               },
               {
                 icon: ShieldCheck,
@@ -100,6 +102,58 @@ export default function FleetPage() {
                 <p>Fleet-management technology partner</p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+      <section className="section dark-section">
+        <div className="container editorial-grid">
+          <div>
+            <p className="eyebrow">TANKER SELECTION</p>
+            <h2>
+              Capacity is only
+              <br />
+              part of the decision.
+            </h2>
+            <p>
+              Bulk liquid logistics depend on the product as much as the
+              payload. A clear cargo brief helps establish which tanker can meet
+              the requirement.
+            </p>
+          </div>
+          <div className="process-list">
+            <div>
+              <span>01</span>
+              <div>
+                <h3>Product compatibility</h3>
+                <p>
+                  Share the product specification and safety data sheet. Tank
+                  material, fittings, and any restrictions on previous cargo
+                  need to be considered together.
+                </p>
+              </div>
+            </div>
+            <div>
+              <span>02</span>
+              <div>
+                <h3>Loading and receiving conditions</h3>
+                <p>
+                  Confirm site access, connection requirements, loading method,
+                  and unloading arrangements. Food-grade cargo also needs a
+                  clear hygiene and preparation brief.
+                </p>
+              </div>
+            </div>
+            <div>
+              <span>03</span>
+              <div>
+                <h3>Payload and route</h3>
+                <p>
+                  Quantity, density, permitted loading, and destination access
+                  help determine the appropriate capacity. Availability and
+                  dispatch timing are confirmed before the movement is agreed.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>

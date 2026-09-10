@@ -32,7 +32,7 @@ export function Coverage() {
           <div className="map-panel">
             <div className="map-topline">
               <span>INDIA / ROAD NETWORK</span>
-              <span>50+ TRUCKS</span>
+              <span>50+ TANKERS</span>
             </div>
             <div className="india-map">
               <svg

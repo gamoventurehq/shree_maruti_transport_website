@@ -61,6 +61,56 @@ export default function ClientsPage() {
           </div>
         </div>
       </section>
+      <section className="section client-industries">
+        <div className="container">
+          <div className="section-heading">
+            <div>
+              <p className="eyebrow">INDUSTRIAL SUPPLY CHAINS</p>
+              <h2>
+                Different products.
+                <br />
+                Specific requirements.
+              </h2>
+            </div>
+            <p className="section-description">
+              A tanker movement connects suppliers, production teams, and
+              receiving facilities. The useful details differ with every product
+              and site.
+            </p>
+          </div>
+          <div className="industry-grid">
+            <article>
+              <span>01 / CHEMICALS & SOLVENTS</span>
+              <h3>Know the product.</h3>
+              <p>
+                Product specifications, safety data, and tanker compatibility
+                form the basis of chemical and solvent transport planning. Share
+                handling instructions and site requirements at the enquiry
+                stage.
+              </p>
+            </article>
+            <article>
+              <span>02 / PHARMACEUTICAL SUPPLY</span>
+              <h3>Coordinate the handover.</h3>
+              <p>
+                Raw-material movements need clear product identification and
+                receiving instructions. Loading schedules, delivery windows, and
+                site contacts help coordinate transport with plant operations.
+              </p>
+            </article>
+            <article>
+              <span>03 / MANUFACTURING</span>
+              <h3>Plan around production.</h3>
+              <p>
+                For recurring industrial liquid requirements, discuss dispatch
+                frequency and expected volumes. A shared schedule helps identify
+                the tanker capacity and route arrangements needed for each
+                movement.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
       <ContactBand />
     </>
   );

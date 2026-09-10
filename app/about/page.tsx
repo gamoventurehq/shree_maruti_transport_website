@@ -11,7 +11,7 @@ import { business } from '@/content/business';
 export const metadata: Metadata = {
   title: 'About us',
   description:
-    'Meet Shree Maruti Transport Services: established in 2001, with 50+ owned trucks and chemical and liquid transport operations across India.',
+    'Meet Shree Maruti Transport Services: established in 2001, with 50+ owned tankers and chemical and liquid transport operations across India.',
 };
 
 export default function AboutPage() {
@@ -42,7 +42,7 @@ export default function AboutPage() {
             </p>
             <p>
               Our work centres on road transportation for chemicals, solvents,
-              and industrial liquids. An owned fleet of 50+ trucks supports
+              and industrial liquids. An owned fleet of 50+ tankers supports
               those movements, with a focus on the product, the people handling
               it, and the destination.
             </p>
@@ -80,7 +80,7 @@ export default function AboutPage() {
               [
                 '02',
                 'Prepare the journey',
-                'The right vehicle, the route, and loading arrangements all belong in the plan before a truck leaves.',
+                'The right vehicle, the route, and loading arrangements all belong in the plan before a tanker leaves.',
               ],
               [
                 '03',
@@ -142,7 +142,7 @@ export default function AboutPage() {
           <div className="about-proof-grid">
             <div>
               <strong>50+</strong>
-              <span>OWNED TRUCKS</span>
+              <span>OWNED TANKERS</span>
             </div>
             <div>
               <strong>PAN-INDIA</strong>
@@ -157,6 +157,40 @@ export default function AboutPage() {
             Safety and technology at Shree Maruti
             <ArrowUpRight size={18} />
           </Link>
+        </div>
+      </section>
+      <section className="section">
+        <div className="container editorial-grid">
+          <div>
+            <p className="eyebrow">A SPECIALIST TRANSPORT BUSINESS</p>
+            <h2>
+              Built around
+              <br />
+              liquid cargo.
+            </h2>
+          </div>
+          <div className="editorial-copy">
+            <p className="lead">
+              From our Bhiwandi base, Shree Maruti brings together an owned
+              tanker fleet, cargo planning, and site coordination for movements
+              across India.
+            </p>
+            <p>
+              Our fleet includes 16 to 35 MT payload options and SS 304, SS 316,
+              and SS 316L material grades. We handle chemical, solvent,
+              industrial liquid, and food-grade liquid requirements, with tanker
+              selection guided by the product and the journey.
+            </p>
+            <p>
+              For an individual consignment, that starts with the loading point
+              and destination. For recurring dispatches, it also includes
+              expected volumes, delivery windows, and coordination between the
+              teams preparing and receiving the cargo.
+            </p>
+            <Link href="/fleet#specifications" className="text-link">
+              Explore the tanker specifications <ArrowUpRight size={18} />
+            </Link>
+          </div>
         </div>
       </section>
       <ContactBand />

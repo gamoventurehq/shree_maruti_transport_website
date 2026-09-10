@@ -1,3 +1,6 @@
+import { HazardousMaterials } from '@/components/transport/hazardous-materials';
+import { StaffSafetyKit } from '@/components/transport/staff-safety-kit';
+import { SafetyRegulations } from '@/components/transport/safety-regulations';
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import { ShieldCheck } from 'lucide-react';
@@ -10,16 +13,16 @@ import {
 import { safetyPractices } from '@/content/services';
 
 export const metadata: Metadata = {
-  title: 'Safety & technology',
+  title: 'Safety & regulations',
   description:
-    'Nicer Globe certification, transport safety practices, and fleet-management tie-ups with Tata Motors Fleet Edge and BlackBox.',
+    'Tanker transport safety, staff protective equipment, hazardous-materials awareness, Nicer Globe certification, and fleet-management technology.',
 };
 
 export default function SafetyPage() {
   return (
     <>
       <PageIntro
-        eyebrow="SAFETY & TECHNOLOGY"
+        eyebrow="SAFETY & REGULATIONS"
         title="Responsibility, on every road."
         description="People, vehicle care, and journey visibility. A considered approach to chemical and liquid transportation."
       />
@@ -62,6 +65,9 @@ export default function SafetyPage() {
           </div>
         </div>
       </section>
+      <StaffSafetyKit />
+      <SafetyRegulations />
+      <HazardousMaterials />
       <section className="section safety-practices">
         <div className="container">
           <div className="section-heading">

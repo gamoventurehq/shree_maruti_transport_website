@@ -9,7 +9,7 @@ export const pageLinks = [
   { label: 'About us', href: '/about' },
   { label: 'Services', href: '/services' },
   { label: 'Our fleet', href: '/fleet' },
-  { label: 'Safety & technology', href: '/safety' },
+  { label: 'Safety & regulations', href: '/safety' },
   { label: 'Our clients', href: '/clients' },
   { label: 'Contact', href: '/contact' },
 ];
@@ -61,7 +61,7 @@ export function FleetVisual({
           alt={
             panel === 'single' || panel === 'road' || panel === 'side'
               ? 'Client-supplied illustration of a stainless-steel chemical tanker'
-              : 'Client-supplied illustration of a row of tanker trucks'
+              : 'Client-supplied illustration of a row of tankers'
           }
           width={fleetMontage.width}
           height={fleetMontage.height}

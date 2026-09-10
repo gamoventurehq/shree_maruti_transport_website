@@ -70,7 +70,7 @@ pages:
 
 ## Overview
 
-An Indian chemical and liquid transport business, established in 2001, with an owned fleet of 50+ trucks and pan-India operations. The website should help an industrial buyer understand its services, fleet, safety approach, clients, and office location before making an enquiry.
+An Indian chemical and liquid transport business, established in 2001, with an owned fleet of 50+ tankers and pan-India operations. The website should help an industrial buyer understand its services, fleet, safety approach, clients, and office location before making an enquiry.
 
 The supplied SMTS mark is the primary identity. Its red oval and white lettering determine the colour direction. The full business name is **Shree Maruti Transport Services**, including “Services” in page titles, navigation branding, enquiry drafts, and metadata.
 
@@ -78,14 +78,14 @@ This file adapts the structure and automotive presentation principles of the sup
 
 ## Sources and precedence
 
-1. The user’s direct instructions: business name, established in 2001, 50+ owned trucks, pan-India operations, Nicerglobe certification, fleet-management tie-ups.
+1. The user’s direct instructions: business name, established in 2001, 50+ owned tankers, pan-India operations, Nicerglobe certification, fleet-management tie-ups.
 2. Original assets under `client_content/`: the SMTS logo, client logos, Nicerglobe mark, Tata Motors Fleet Edge and BlackBox marks, and fleet/sample graphics.
 3. The supplied Google Maps link: the office location at 19.2516926, 73.1062199. Link directly to the supplied listing for directions.
 4. `~/Downloads/acura.design.md`: the format and visual principles for this document.
 5. https://satyabizcon.com/index.html: subject structure for chemical tanker services, fleet, safety, technology, and clients. Do not reuse its figures, capacities, contact information, or claims.
 6. Earlier Oris Maritime and Rollers references: photography-led presentation, geographic coverage, and industrial grid structure.
 
-The user’s latest confirmed fleet count is 50+ trucks. Use this figure throughout the website; older figures in supplied promotional imagery do not override it. Vehicle capacity, fleet breakdown, branch counts, customer volumes, and on-time percentages remain unspecified.
+The user’s latest confirmed fleet count is 50+ tankers. Use this figure throughout the website; older figures in supplied promotional imagery do not override it. The user confirmed 16/21/25/30/35 MT capacities, SS 304/SS 316/SS 316L grades, and food-grade liquid transport on 10 September 2026. Vehicle-level configurations, fleet breakdown, branch counts, customer volumes, and on-time percentages remain unspecified.
 
 ## Brand and colour
 
@@ -124,7 +124,7 @@ Chemical transportation, solvent movement, industrial liquids, and planned tanke
 
 ### Fleet
 
-50+ owned trucks, supplied tanker images, stainless-steel tanker focus, GPS/fleet-management context, and sample imagery gallery. Do not expose inconsistent poster counts as fleet specifications. Asset captions distinguish supplied illustrative graphics from documentary photography.
+50+ owned tankers, supplied tanker images, stainless-steel tanker focus, GPS/fleet-management context, and sample imagery gallery. Do not expose inconsistent poster counts as fleet specifications. Asset captions distinguish supplied illustrative graphics from documentary photography.
 
 ### Safety & technology
 
@@ -145,7 +145,7 @@ Office location map, external Google Maps directions link, and the existing enqu
 - **Page masthead:** breadcrumb, concise uppercase H1, short introduction, slim red rule.
 - **Primary button:** action red, white text, square corners, at least 48px tall, visible focus ring.
 - **Secondary link:** text plus a consistent arrow from the installed Lucide family; underline or border on hover.
-- **Fact strip:** 50+ owned trucks; established 2001; pan-India operations. No animated fake counters.
+- **Fact strip:** 50+ owned tankers; established 2001; pan-India operations. No animated fake counters.
 - **Service rows:** descriptive headings, concise paragraphs, real fleet visuals where useful.
 - **Client banner:** A continuous horizontal logo strip on Home and Clients. Pause on hover without a visible playback control; use a static scrollable strip for reduced motion. Hide the repeated logo set from assistive technology.
 - **Client grid:** uniform white logo tiles, contain sizing, original colours, company names as accessible text.
@@ -185,3 +185,15 @@ Keep the root-level Next.js setup and `vercel.json`. The prior Cloudflare scaffo
 ## Vision and mission boards
 
 Place two equally prominent panels on the About page. Vision uses charcoal with white text; Mission uses white with dark text and a red edge. Use a small intent label, a clear heading, a readable paragraph, and subtle oversized background lettering. Stack the panels on mobile. Both statements are new draft copy for client review, not quotations from the client or the reference business.
+
+## Safety and regulations section
+
+Use a two-column editorial grid on `/safety#regulations`, stacking on mobile. Four panels cover PPE, cargo information, vehicle checks, and documentation. Use red line icons, white panels, and an off-white background. Link to the section from Home and label the navigation entry “Safety & regulations”. Keep the technology content on the same page. Client-supplied competitor screenshots are archived in `docs/references/safety-and-regulations/`; do not present their branding, certificates, or service claims as Shree Maruti material.
+
+## Staff safety kit
+
+On `/safety#staff-safety-kit`, pair an original illustrated worker diagram with handling-precaution copy. The worker wears six items of PPE, identified by red leader lines and labels on a light background: helmet, eye protection, hearing protection, gloves, reflective workwear, and safety boots. Describe equipment as task- and site-dependent. Keep the board and copy side by side on wide screens and stack them below 1000px. This is an AI-generated visual guide inspired by the supplied PPE reference, not a staff photograph or a specification of issued equipment. Frame the diagram with a red top rule and a charcoal caption band, numbered “01 / PEOPLE & PROTECTION”. Provide descriptive alt text. The diagram is displayed inline without a full-size link.
+
+## Expanded tanker content
+
+Use “tanker” for fleet references in public copy and metadata. Fleet specifications use a six-panel grid with owned fleet size, payload options, material grades, coverage, cargo focus, and the confirmed Nicer Globe credential. Hazard awareness uses nine numbered diamond illustrations with class descriptions; these are not official placards. The visible introduction must distinguish hazard awareness from accepted cargo. Expand each route with relevant information: company focus on About, service FAQs, tanker selection on Fleet, industry context on Clients, and enquiry preparation on Contact.

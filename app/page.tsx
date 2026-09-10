@@ -26,7 +26,7 @@ export default function Home() {
           <div>
             <strong>
               {business.fleetSize}
-              <span>TRUCKS</span>
+              <span>TANKERS</span>
             </strong>
             <p>An owned fleet. A shared responsibility.</p>
           </div>
@@ -63,7 +63,7 @@ export default function Home() {
             <p>
               Since 2001, Shree Maruti Transport Services has worked in road
               transportation, with a focus on chemicals and liquid cargo. Today,
-              our 50+ owned trucks serve businesses across India.
+              our 50+ owned tankers serve businesses across India.
             </p>
             <TextLink href="/about">Get to know Shree Maruti</TextLink>
           </div>
@@ -133,7 +133,7 @@ export default function Home() {
           <div>
             <p className="eyebrow">THE FLEET BEHIND THE JOURNEY</p>
             <h2>
-              50+ trucks.
+              50+ tankers.
               <br />
               One commitment.
             </h2>
@@ -159,7 +159,7 @@ export default function Home() {
             />
           </div>
           <div>
-            <p className="eyebrow">SAFETY & TECHNOLOGY</p>
+            <p className="eyebrow">SAFETY & REGULATIONS</p>
             <h2>
               Care travels with
               <br />
@@ -170,10 +170,56 @@ export default function Home() {
               Motors Fleet Edge and BlackBox. Our approach brings together
               people, vehicle care, and journey visibility.
             </p>
-            <TextLink href="/safety">
-              Our safety approach
+            <TextLink href="/safety#regulations">
+              Explore safety & regulations
               <ShieldCheck size={18} />
             </TextLink>
+          </div>
+        </div>
+      </section>
+      <section className="section home-planning">
+        <div className="container">
+          <div className="section-heading">
+            <div>
+              <p className="eyebrow">TANKER LOGISTICS</p>
+              <h2>
+                From product details
+                <br />
+                to a planned movement.
+              </h2>
+            </div>
+            <TextLink href="/fleet#specifications">
+              View fleet specifications
+            </TextLink>
+          </div>
+          <div className="industry-grid">
+            <article>
+              <span>01 / THE CARGO</span>
+              <h3>Chemical to food-grade.</h3>
+              <p>
+                Our tanker services cover chemicals, solvents, industrial
+                liquids, and food-grade liquids. Each movement starts with the
+                product specification and its handling requirements.
+              </p>
+            </article>
+            <article>
+              <span>02 / THE TANKER</span>
+              <h3>16 to 35 MT options.</h3>
+              <p>
+                With SS 304, SS 316, and SS 316L grades in the fleet, tanker
+                selection considers material compatibility, quantity, and the
+                loading and receiving arrangements.
+              </p>
+            </article>
+            <article>
+              <span>03 / THE JOURNEY</span>
+              <h3>Across India.</h3>
+              <p>
+                From individual consignments to regular dispatches, share your
+                origin, destination, and schedule. Route availability and tanker
+                suitability are confirmed for each requirement.
+              </p>
+            </article>
           </div>
         </div>
       </section>
