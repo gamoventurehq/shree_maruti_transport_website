@@ -41,6 +41,25 @@ export function StaffSafetyKit() {
             the consignment as well as the cargo itself. Protective clothing and
             equipment are part of that preparation.
           </p>
+          <div className="ppe-equipment-list">
+            <h3>Equipment shown in the guide</h3>
+            <ul>
+              {[
+                'Safety helmet',
+                'Protective eyewear',
+                'Hearing protection',
+                'Protective gloves',
+                'Reflective workwear',
+                'Safety boots',
+              ].map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
+            <p>
+              Illustrated equipment only. Selection depends on the task, product
+              and site requirements.
+            </p>
+          </div>
           <ol className="staff-precautions">
             <li>
               <strong>Understand the task.</strong>

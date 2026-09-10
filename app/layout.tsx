@@ -1,45 +1,43 @@
 import type { Metadata } from 'next';
-import { Barlow_Condensed, Geist } from 'next/font/google';
+import { Geist, Instrument_Serif } from 'next/font/google';
 import './globals.css';
-import { business } from '@/content/business';
-import { Navigation } from '@/components/transport/navigation';
-import { Footer } from '@/components/transport/site';
-
+import {
+  EditorialNav,
+  GentleReveal,
+} from '@/components/editorial/interactions';
+import { PaperFooter } from '@/components/editorial/pages';
 const geist = Geist({
+  subsets: ['latin'],
   variable: '--font-body',
-  subsets: ['latin'],
   display: 'swap',
 });
-const barlow = Barlow_Condensed({
-  variable: '--font-display',
+const serif = Instrument_Serif({
   subsets: ['latin'],
-  weight: ['500', '600', '700'],
+  weight: '400',
+  variable: '--font-serif',
   display: 'swap',
 });
-
 export const metadata: Metadata = {
-  icons: { icon: '/brand/smts-logo.png' },
   title: {
-    default: 'Shree Maruti Transport Services | Chemical & Liquid Transport',
+    default: 'Shree Maruti Transport Services | Liquid Cargo, Clearly Planned',
     template: '%s | Shree Maruti Transport Services',
   },
   description:
-    'Established in 2001. Shree Maruti Transport Services operates 50+ owned tankers for chemical, liquid, and pan-India road transportation.',
-  robots: { index: !business.isPreview, follow: !business.isPreview },
+    'Chemical, industrial and food-grade tanker transport across India. Established in 2001 with 50+ owned tankers.',
+  robots: { index: false, follow: false },
 };
-
-export default function RootLayout({
-  children,
-}: Readonly<{ children: React.ReactNode }>) {
+export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className={`${geist.variable} ${barlow.variable}`}>
+      <body className={`${geist.variable} ${serif.variable}`}>
         <a className="skip-link" href="#main">
           Skip to content
         </a>
-        <Navigation />
-        <main id="main">{children}</main>
-        <Footer />
+        <EditorialNav />
+        <GentleReveal>
+          <main id="main">{children}</main>
+        </GentleReveal>
+        <PaperFooter />
       </body>
     </html>
   );

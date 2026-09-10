@@ -4,7 +4,10 @@ import { useRef, useState, type SubmitEvent } from 'react';
 import { ArrowUpRight, Check, Copy } from 'lucide-react';
 import { formatEnquiry } from '@/lib/enquiry';
 
-export function EnquiryForm() {
+export function EnquiryForm({
+  initialCargo = '',
+  initialDelivery = '',
+}: { initialCargo?: string; initialDelivery?: string } = {}) {
   const [draft, setDraft] = useState('');
   const [copyState, setCopyState] = useState<'idle' | 'copied' | 'failed'>(
     'idle',
@@ -110,6 +113,7 @@ export function EnquiryForm() {
           Delivery location <span>*</span>
           <input
             name="delivery"
+            defaultValue={initialDelivery}
             placeholder="City or town"
             required
             maxLength={150}
@@ -120,6 +124,7 @@ export function EnquiryForm() {
         What are you moving? <span>*</span>
         <textarea
           name="cargo"
+          defaultValue={initialCargo}
           placeholder="Cargo, approximate weight, preferred date, and anything else we should know."
           rows={3}
           required

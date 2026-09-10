@@ -1,9 +1,9 @@
 import { PaperPage } from '@/components/editorial/pages';
 import { editionPages } from '@/content/edition-pages';
 export const metadata = {
-  title: editionPages.about.title,
-  description: editionPages.about.intro,
+  title: editionPages.network.title,
+  description: editionPages.network.intro,
 };
 export default function Page() {
-  return <PaperPage page="about" />;
+  return <PaperPage page="network" />;
 }

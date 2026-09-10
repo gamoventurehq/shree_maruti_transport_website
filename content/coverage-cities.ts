@@ -1,0 +1,21 @@
+// Coordinates position city markers on the schematic map; they are not branch addresses.
+export const coverageCities = [
+  { name: 'Ahmedabad', region: 'west', lat: 23.02, lon: 72.57, label: true },
+  { name: 'Mumbai', region: 'west', lat: 19.08, lon: 72.88, label: true },
+  { name: 'Pune', region: 'west', lat: 18.52, lon: 73.86, label: false },
+  { name: 'Surat', region: 'west', lat: 21.17, lon: 72.83, label: false },
+  { name: 'Delhi', region: 'north', lat: 28.61, lon: 77.21, label: true },
+  { name: 'Jaipur', region: 'north', lat: 26.91, lon: 75.79, label: false },
+  { name: 'Chandigarh', region: 'north', lat: 30.73, lon: 76.78, label: true },
+  { name: 'Lucknow', region: 'north', lat: 26.85, lon: 80.95, label: true },
+  { name: 'Nagpur', region: 'central', lat: 21.15, lon: 79.09, label: true },
+  { name: 'Indore', region: 'central', lat: 22.72, lon: 75.86, label: false },
+  { name: 'Raipur', region: 'central', lat: 21.25, lon: 81.63, label: false },
+  { name: 'Hyderabad', region: 'south', lat: 17.39, lon: 78.49, label: true },
+  { name: 'Bengaluru', region: 'south', lat: 12.97, lon: 77.59, label: true },
+  { name: 'Chennai', region: 'south', lat: 13.08, lon: 80.27, label: true },
+  { name: 'Kochi', region: 'south', lat: 9.93, lon: 76.27, label: true },
+  { name: 'Kolkata', region: 'east', lat: 22.57, lon: 88.36, label: true },
+  { name: 'Bhubaneswar', region: 'east', lat: 20.3, lon: 85.82, label: false },
+  { name: 'Guwahati', region: 'east', lat: 26.14, lon: 91.74, label: true },
+] as const;

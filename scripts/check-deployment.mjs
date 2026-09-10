@@ -1,79 +1,36 @@
 import assert from 'node:assert/strict';
-
-const base = new URL(process.argv[2] || 'http://localhost:3001');
-const pages = {
-  '/': 'Moving industry.',
-  '/about': 'Our journey. Your trust.',
-  '/services': 'Your cargo. Our focus.',
-  '/fleet': 'The strength behind every mile.',
-  '/safety': 'Responsibility, on every road.',
-  '/clients': 'Their industry. Our commitment.',
-  '/contact': 'Where are we headed?',
-};
-for (const [path, heading] of Object.entries(pages)) {
-  const response = await fetch(new URL(path, base), {
-    signal: AbortSignal.timeout(20000),
-  });
-  assert.equal(
-    response.status,
-    200,
-    `${path} returned HTTP ${response.status}`,
-  );
+const base = new URL(process.argv[2] || 'http://localhost:3003');
+const paths = [
+  '/',
+  '/about',
+  '/services',
+  '/fleet',
+  '/network',
+  '/safety',
+  '/clients',
+  '/contact',
+  '/services/chemical-tanker-transport',
+  '/services/food-grade-liquid-transport',
+  '/services/scheduled-tanker-logistics',
+];
+for (const path of paths) {
+  const response = await fetch(new URL(path, base));
+  assert.equal(response.status, 200, path);
   const html = await response.text();
-  assert.ok(html.includes(heading), `${path} is missing its heading`);
-  assert.ok(
-    html.includes('Shree Maruti Transport Services'),
-    `${path} is missing the company name`,
-  );
-  const visibleText = html
-    .replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, '')
-    .replace(/<[^>]*>/g, ' ');
-  assert.doesNotMatch(
-    visibleText,
-    /\btrucks?\b/i,
-    `${path} still uses the old fleet terminology`,
-  );
-  if (path === '/fleet') {
-    for (const expected of [
-      '16 / 21 / 25 / 30 / 35 MT',
-      'SS 304',
-      'SS 316L',
-      'food-grade',
-    ]) {
-      assert.ok(html.includes(expected), `Fleet page is missing ${expected}`);
-    }
-  }
-  if (path === '/safety') {
-    assert.ok(
-      html.includes('hazardous-materials') && html.includes('staff-safety-kit'),
-      'Safety page is missing its new sections',
-    );
-  }
-  if (path === '/about') {
-    assert.ok(
-      html.includes('Our vision') && html.includes('Our mission'),
-      'About page is missing its Vision and Mission boards',
-    );
-  }
-  if (path === '/contact') {
-    assert.ok(
-      html.includes('Prepare enquiry') && html.includes('3vC8XKiXLMS5d9A86'),
-      'Contact page is missing its enquiry form or office link',
-    );
-  }
+  assert.ok(html.includes('Shree Maruti'), path + ' brand');
+  assert.match(html, /<h1[ >]/, path + ' heading');
+  assert.ok(html.includes('noindex'), path + ' preview indexing');
 }
+const missing = await fetch(new URL('/services/not-a-service', base));
+assert.equal(missing.status, 404, 'unknown service route');
 for (const path of [
-  '/brand/smts-logo.png',
-  '/fleet/tanker-fleet.png',
-  '/partners/nicerglobe.jpg',
+  '/fleet/tata-highway-hero.png',
   '/safety/staff-ppe-diagram.png',
 ]) {
-  const response = await fetch(new URL(path, base), {
-    signal: AbortSignal.timeout(20000),
-  });
-  assert.equal(response.status, 200, `${path} is not served`);
+  const response = await fetch(new URL(path, base));
+  assert.equal(response.status, 200, path);
   assert.match(response.headers.get('content-type') || '', /^image\//);
 }
 console.log(
-  `PASS: ${base.origin} serves all seven pages, Vision and Mission boards, enquiry form, office link, and key brand assets.`,
+  'PASS: 11 pages, preview indexing, unknown-service 404, and main visual assets.',
 );

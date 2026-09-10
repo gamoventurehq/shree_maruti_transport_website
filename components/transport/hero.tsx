@@ -1,29 +1,31 @@
-'use client';
-
-import { useState } from 'react';
 import Link from 'next/link';
-import { ArrowUpRight, Pause, Play } from 'lucide-react';
-import { FleetVisual } from './site';
+import { ArrowUpRight } from 'lucide-react';
+import Image from 'next/image';
 
 export function Hero() {
-  const [paused, setPaused] = useState(false);
   return (
-    <section
-      className={`hero dark-section ${paused ? 'motion-paused' : ''}`}
-      aria-labelledby="hero-title"
-    >
-      <FleetVisual panel="single" className="hero-fleet" priority />
+    <section className="hero dark-section" aria-labelledby="hero-title">
+      <div className="hero-road-scene">
+        <Image
+          src="/fleet/tata-highway-hero.png"
+          alt="Blue-and-white Tata stainless-steel tanker on an Indian highway"
+          fill
+          sizes="100vw"
+          loading="eager"
+        />
+      </div>
       <div className="hero-shade" />
       <div className="container hero-content">
         <p className="eyebrow">CHEMICAL & LIQUID TRANSPORTATION</p>
         <h1 id="hero-title">
-          Moving industry.
+          Chemical &amp; liquid
           <br />
-          Since 2001<span>.</span>
+          tanker transport<span>.</span>
         </h1>
         <p>
           Shree Maruti Transport Services. An owned fleet of 50+ tankers,
-          carrying your business across India.
+          serving India since 2001. Chemical and food-grade liquid movements,
+          with 16–35 MT payload options.
         </p>
         <div className="hero-actions">
           <Link href="/services" className="button button-primary">
@@ -40,16 +42,6 @@ export function Hero() {
         <span>SHREE MARUTI TRANSPORT SERVICES</span>
         <span>PAN-INDIA OPERATIONS</span>
       </div>
-      <button
-        type="button"
-        className="motion-toggle"
-        onClick={() => setPaused(!paused)}
-        aria-label={
-          paused ? 'Play background motion' : 'Pause background motion'
-        }
-      >
-        {paused ? <Play size={14} /> : <Pause size={14} />}
-      </button>
     </section>
   );
 }

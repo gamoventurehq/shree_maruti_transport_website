@@ -4,7 +4,13 @@ import { clientLogos } from '@/content/assets';
 export function ClientBanner() {
   return (
     <div className="client-banner">
-      <div className="client-banner-window" aria-label="Our clients">
+      <section
+        className="client-banner-window"
+        // A scrollable region must be focusable for keyboard scrolling.
+        // oxlint-disable-next-line jsx-a11y/no-noninteractive-tabindex
+        tabIndex={0}
+        aria-label="Our clients. Scroll horizontally to view all logos."
+      >
         <div className="client-banner-track">
           {[false, true].map((duplicate) => (
             <div
@@ -26,7 +32,7 @@ export function ClientBanner() {
             </div>
           ))}
         </div>
-      </div>
+      </section>
     </div>
   );
 }
