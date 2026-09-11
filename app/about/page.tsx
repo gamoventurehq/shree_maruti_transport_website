@@ -1,3 +1,4 @@
+import { OperationsPreview } from '@/components/transport/operations-preview';
 import type { Metadata } from 'next';
 import { ArrowUpRight } from 'lucide-react';
 import Link from 'next/link';
@@ -193,6 +194,7 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
+      <OperationsPreview />
       <ContactBand />
     </>
   );

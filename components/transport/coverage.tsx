@@ -1,15 +1,11 @@
 'use client';
 
 import { useState } from 'react';
-import { ArrowUpRight, MapPin } from 'lucide-react';
 import Link from 'next/link';
-import { regions } from '@/content/business';
+import { coverageCities } from '@/content/coverage-cities';
 import { indiaOutline } from '@/content/india-map';
 
 export function Coverage() {
-  const [selected, setSelected] = useState<(typeof regions)[number]>(
-    regions[0],
-  );
   return (
     <section
       className="coverage dark-section"
@@ -18,124 +14,119 @@ export function Coverage() {
     >
       <div className="container">
         <div className="coverage-heading">
-          <p className="section-label">OUR REACH</p>
           <h2 id="coverage-title">
             One fleet.
-            <br />A country of possibilities.
+            <br />
+            Connected across India.
           </h2>
           <p className="body-copy">
-            Across cities, state lines, and the roads in between. Explore our
-            pan-India transport footprint.
+            From Maharashtra’s industrial centres to destinations across
+            northern, southern and eastern India. Explore the places we serve
+            from Bhiwandi.
           </p>
         </div>
-        <div className="coverage-layout">
-          <div className="map-panel">
-            <div className="map-topline">
-              <span>INDIA / ROAD NETWORK</span>
-              <span>50+ TANKERS</span>
-            </div>
-            <div className="india-map">
-              <svg
-                viewBox="0 0 520 490"
-                aria-label="Illustrative map of India with selectable regional city markers"
-              >
-                <title>Illustrative India transport coverage</title>
-                <defs>
-                  <pattern
-                    id="map-dots"
-                    width="7"
-                    height="7"
-                    patternUnits="userSpaceOnUse"
-                  >
-                    <circle cx="3.5" cy="3.5" r="1.3" fill="#62666a" />
-                  </pattern>
-                </defs>
-                <path
-                  d={indiaOutline}
-                  fill="#1c1f22"
-                  stroke="#484d52"
-                  strokeWidth=".8"
-                />
-                <path d={indiaOutline} fill="url(#map-dots)" />
-                {regions
-                  .filter((region) => region.id !== selected.id)
-                  .map((region) => (
-                    <line
-                      className="map-route"
-                      key={region.id}
-                      x1={(selected.lon - 66) * 16}
-                      y1={(37 - selected.lat) * 16}
-                      x2={(region.lon - 66) * 16}
-                      y2={(37 - region.lat) * 16}
-                    />
-                  ))}
-              </svg>
-              {regions.map((region) => (
-                <button
-                  type="button"
-                  className={`map-pin ${region.id === selected.id ? 'selected' : ''}`}
-                  key={region.id}
-                  style={{
-                    left: `${(((region.lon - 66) * 16) / 520) * 100}%`,
-                    top: `${(((37 - region.lat) * 16) / 490) * 100}%`,
-                  }}
-                  aria-label={`Explore ${region.name}, example city ${region.city}`}
-                  aria-pressed={selected.id === region.id}
-                  onClick={() => setSelected(region)}
-                >
-                  <span className="pin-dot" />
-                  <span className="pin-label">{region.city}</span>
-                </button>
-              ))}
-              <span className="map-water-label">
-                ARABIAN
-                <br />
-                SEA
-              </span>
-              <span className="map-water-label bay">
-                BAY OF
-                <br />
-                BENGAL
-              </span>
-            </div>
-            <p className="map-disclaimer">
-              Illustrative coverage map. City pins are examples, not confirmed
-              branches or live vehicle locations.
-            </p>
-          </div>
-          <div className="region-panel">
-            <p className="region-prompt">Explore by region</p>
-            <fieldset className="region-buttons" aria-label="Select a region">
-              {regions.map((region, index) => (
-                <button
-                  key={region.id}
-                  type="button"
-                  aria-pressed={selected.id === region.id}
-                  className={selected.id === region.id ? 'active' : ''}
-                  onClick={() => setSelected(region)}
-                >
-                  <span className="region-index">0{index + 1}</span>
-                  {region.name}
-                  <ArrowUpRight size={18} />
-                </button>
-              ))}
-            </fieldset>
-            <div
-              className="region-detail"
-              aria-live="polite"
-              aria-atomic="true"
-            >
-              <MapPin size={20} />
-              <h3>{selected.name}</h3>
-              <p className="region-cities">{selected.cities}</p>
-              <p>{selected.description}</p>
-              <Link className="text-link" href="/contact">
-                Discuss your route <ArrowUpRight size={17} />
-              </Link>
-            </div>
-          </div>
-        </div>
+        <RouteExplorer />
       </div>
     </section>
+  );
+}
+
+function RouteExplorer() {
+  const [selected, setSelected] = useState<string>('Hyderabad');
+  const city =
+    coverageCities.find((item) => item.name === selected) ?? coverageCities[0];
+  const project = (lon: number, lat: number) => [
+    (lon - 66) * 16,
+    (37 - lat) * 16,
+  ];
+  const hub = project(73.106, 19.252);
+  return (
+    <div className="route-explorer">
+      <div className="route-map">
+        <div className="map-orbit orbit-one" />
+        <div className="map-orbit orbit-two" />
+        <svg
+          viewBox="0 0 520 490"
+          aria-label="India route explorer from Bhiwandi"
+        >
+          <defs>
+            <pattern
+              id="coverage-dots"
+              width="6"
+              height="6"
+              patternUnits="userSpaceOnUse"
+            >
+              <circle cx="2" cy="2" r=".75" fill="#868b90" />
+            </pattern>
+          </defs>
+          <path
+            d={indiaOutline}
+            fill="#24272b"
+            stroke="#70777d"
+            strokeWidth="1"
+          />
+          <path d={indiaOutline} fill="url(#coverage-dots)" />
+          {coverageCities.map((point) => {
+            const [x, y] = project(point.lon, point.lat);
+            return (
+              <g key={point.name}>
+                <path
+                  className={`route-arc ${point.name === selected ? 'is-selected' : ''}`}
+                  d={`M${hub[0]},${hub[1]} Q${(hub[0] + x) / 2 - 35},${Math.min(y, hub[1]) - 55} ${x},${y}`}
+                />
+                <circle
+                  cx={x}
+                  cy={y}
+                  r={point.name === selected ? 5 : 2.8}
+                  fill={point.name === selected ? '#ff5157' : '#9ea4aa'}
+                />
+              </g>
+            );
+          })}
+          <circle cx={hub[0]} cy={hub[1]} r="6" fill="#ff5157" />
+          <text x={hub[0] - 15} y={hub[1] + 20} textAnchor="end">
+            Bhiwandi
+          </text>
+          <text
+            x={project(city.lon, city.lat)[0] + 10}
+            y={project(city.lon, city.lat)[1] - 10}
+          >
+            {city.name}
+          </text>
+        </svg>
+        <span className="map-caption">
+          Service destinations · Routes shown schematically
+        </span>
+      </div>
+      <div className="route-console">
+        <h3 aria-live="polite" aria-atomic="true">
+          Bhiwandi <span>→</span>
+          <br />
+          {city.name}
+        </h3>
+        <p>
+          Explore a tanker movement between our operating base and {city.name}.
+          Product suitability, site access and dispatch timing shape the route
+          brief.
+        </p>
+        <p className="coverage-service-area">
+          Also serving destinations across Kerala, including Kochi (Cochin).
+        </p>
+        <div className="city-selector" aria-label="Choose a destination">
+          {coverageCities.map((point) => (
+            <button
+              key={point.name}
+              aria-pressed={selected === point.name}
+              onClick={() => setSelected(point.name)}
+            >
+              {point.name}
+            </button>
+          ))}
+        </div>
+        <Link className="button button-primary" href="/contact">
+          Discuss this corridor ↗
+        </Link>
+      </div>
+    </div>
   );
 }

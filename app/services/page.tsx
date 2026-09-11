@@ -1,3 +1,4 @@
+import { serviceGuides } from '@/content/service-guides';
 import { TransportFaq } from '@/components/transport/transport-faq';
 import type { Metadata } from 'next';
 import { Droplets, FlaskConical, Route, Truck } from 'lucide-react';
@@ -21,13 +22,16 @@ export default function ServicesPage() {
     <>
       <PageIntro
         eyebrow="OUR SERVICES"
-        title="Your cargo. Our focus."
+        title="Tanker transport for chemical and liquid cargo."
         description="Chemical and liquid transportation, planned around the product and the journey it needs to make."
       />
       <section className="section">
         <div className="container services-list">
           {services.map((service) => {
             const Icon = icons[service.icon];
+            const guide = serviceGuides.find(
+              (item) => item.serviceId === service.id,
+            );
             return (
               <article
                 className="service-detail"
@@ -46,7 +50,11 @@ export default function ServicesPage() {
                     <span>WHAT TO SHARE WITH US</span>
                     <p>{service.requirements}</p>
                   </div>
-                  <TextLink href="/contact">Discuss this service</TextLink>
+                  <TextLink
+                    href={guide ? `/services/${guide.slug}` : '/contact'}
+                  >
+                    {guide ? 'Explore this service' : 'Discuss this service'}
+                  </TextLink>
                 </div>
               </article>
             );

@@ -1,55 +1,41 @@
-'use client';
-
-import { useState } from 'react';
+import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowUpRight, Pause, Play } from 'lucide-react';
-import { FleetVisual } from './site';
 
 export function Hero() {
-  const [paused, setPaused] = useState(false);
   return (
-    <section
-      className={`hero dark-section ${paused ? 'motion-paused' : ''}`}
-      aria-labelledby="hero-title"
-    >
-      <FleetVisual panel="single" className="hero-fleet" priority />
-      <div className="hero-shade" />
-      <div className="container hero-content">
-        <p className="eyebrow">CHEMICAL & LIQUID TRANSPORTATION</p>
+    <section className="paper-hero" aria-labelledby="hero-title">
+      <Image
+        src="/fleet/tata-highway-hero.png"
+        alt="Blue-and-white Tata tanker on an Indian highway"
+        fill
+        sizes="96vw"
+        loading="eager"
+      />
+      <div className="paper-hero-wash" />
+      <div className="paper-hero-copy">
         <h1 id="hero-title">
-          Moving industry.
+          Careful with your cargo.
           <br />
-          Since 2001<span>.</span>
+          Clear about the journey.
         </h1>
         <p>
-          Shree Maruti Transport Services. An owned fleet of 50+ tankers,
-          carrying your business across India.
+          Chemical and liquid tanker transport across India.
+          <br />
+          Shree Maruti Transport Services, since 2001.
         </p>
-        <div className="hero-actions">
-          <Link href="/services" className="button button-primary">
-            Explore our services
-            <ArrowUpRight size={19} />
+        <div>
+          <Link className="button button-primary" href="/contact">
+            Plan a movement ↗
           </Link>
-          <Link href="/fleet" className="hero-secondary">
-            Meet the fleet
-            <ArrowUpRight size={18} />
+          <Link className="button paper-button-light" href="/services">
+            Explore services ↗
           </Link>
         </div>
       </div>
-      <div className="hero-caption">
-        <span>SHREE MARUTI TRANSPORT SERVICES</span>
-        <span>PAN-INDIA OPERATIONS</span>
+      <div className="paper-hero-foot">
+        <span>Based in Bhiwandi. Connected across India.</span>
+        <Link href="/fleet">Meet our tanker fleet ↗</Link>
       </div>
-      <button
-        type="button"
-        className="motion-toggle"
-        onClick={() => setPaused(!paused)}
-        aria-label={
-          paused ? 'Play background motion' : 'Pause background motion'
-        }
-      >
-        {paused ? <Play size={14} /> : <Pause size={14} />}
-      </button>
     </section>
   );
 }

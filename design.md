@@ -112,7 +112,7 @@ The homepage is a concise overview. Inner pages contain the detail rather than r
 
 ### Homepage
 
-Full-width tanker imagery, an editorial headline anchored in the 2001 founding year, links to services and fleet, a three-part factual strip, selected client marks, service overview, fleet feature, Nicerglobe/technology introduction, India coverage, and a contact invitation.
+A rounded, inset tanker photo hero with centred Instrument Serif type, an editorial headline anchored in the 2001 founding year, links to services and fleet, a three-part factual strip, selected client marks, service overview, fleet feature, Nicerglobe/technology introduction, India coverage, and a contact invitation.
 
 ### About
 
@@ -140,7 +140,7 @@ Office location map, external Google Maps directions link, and the existing enqu
 
 ## Components
 
-- **Header:** dark, red-and-white SMTS mark, full name, active page underline, red enquiry CTA, keyboard-operable mobile disclosure.
+- **Header:** white, red-and-white SMTS mark, full name, active page underline, red enquiry CTA, keyboard-operable mobile disclosure.
 - **Photo hero:** original supplied fleet imagery shown through a CSS crop, text contrast overlay, no baked-in statistics from posters. Motion is optional and pausable.
 - **Page masthead:** breadcrumb, concise uppercase H1, short introduction, slim red rule.
 - **Primary button:** action red, white text, square corners, at least 48px tall, visible focus ring.
@@ -150,7 +150,7 @@ Office location map, external Google Maps directions link, and the existing enqu
 - **Client banner:** A continuous horizontal logo strip on Home and Clients. Pause on hover without a visible playback control; use a static scrollable strip for reduced motion. Hide the repeated logo set from assistive technology.
 - **Client grid:** uniform white logo tiles, contain sizing, original colours, company names as accessible text.
 - **Certification panel:** original Nicerglobe mark on white with accompanying text; distinct from fleet-provider panels.
-- **Coverage map:** existing geographic outline and keyboard-selectable region buttons. Mark regional cities as illustrative; show the supplied office location accurately and link to directions.
+- **Coverage map:** curved routes from Bhiwandi, dotted India outline, animated selected route and keyboard-operable destination buttons, adapted from the visual edition. Use charcoal surfaces and red accents. Show client-confirmed destinations; Kerala is a service area, not a city pin. Routes and coordinates are schematic, not live vehicle tracking.
 - **Gallery:** image controls with meaningful labels, simple selection, captions, no automatic carousel.
 - **Form:** visible labels, required-state validation, keyboard access, copy success/failure feedback. No simulated submission.
 - **Footer:** full business name, founding year, page navigation, office directions, and optional Gamoventure attribution governed by the existing setting.
@@ -197,3 +197,21 @@ On `/safety#staff-safety-kit`, pair an original illustrated worker diagram with 
 ## Expanded tanker content
 
 Use “tanker” for fleet references in public copy and metadata. Fleet specifications use a six-panel grid with owned fleet size, payload options, material grades, coverage, cargo focus, and the confirmed Nicer Globe credential. Hazard awareness uses nine numbered diamond illustrations with class descriptions; these are not official placards. The visible introduction must distinguish hazard awareness from accepted cargo. Expand each route with relevant information: company focus on About, service FAQs, tanker selection on Fleet, industry context on Clients, and enquiry preparation on Contact.
+
+## Client meeting preview — September 2026
+
+The preview now has three service guides below `/services/`: chemical tanker transport, food-grade liquid transport and scheduled tanker logistics. Editorial columns, specification tables and sample transport dossiers add detail without repeating the same card grid. Preserve the existing red/charcoal identity.
+
+Route briefs and proposed operating roles are presented without visible draft labels at the user’s request. Their copy lives in `content/service-guides.ts` and `components/transport/operations-preview.tsx`. These are meeting material, not case studies or verified company procedures. Verify, replace or remove unconfirmed operational content before launch. Preview indexing remains disabled.
+
+The client logo strip moves once for four seconds and then remains horizontally scrollable, with keyboard focus and reduced-motion support. It has no pause button. The complete logo directory is expandable on the Clients page. Equipment labels are repeated in HTML below the PPE illustration for mobile readability.
+
+The client requested a clean presentation without visible draft labels. Scenario routes and operating-role copy remain unverified meeting material; verify or replace them before public launch. Indexing remains disabled.
+
+The client requested continuous client-logo motion again. The strip loops horizontally with no visible pause button; hover/focus pause and reduced-motion handling remain. The experimental layered tanker animation was rejected and removed. The hero uses a blue-and-white Tata photographic scene without simulated wheel motion while real video is pending.
+
+## Selected main design — September 11, 2026
+
+The main edition combines its original branding with the editorial edition’s white navigation and inset photo hero. Instrument Serif is limited to the hero; existing display and body fonts remain elsewhere. The hero has subtle scroll-linked photo movement with a static fallback and reduced-motion support. The original company mark remains in the header.
+
+The route explorer uses the visual edition’s composition with red highlights. Confirmed destination markers are Ahmednagar/Supa, Mahad, Lote, Hyderabad, Visakhapatnam (Vizag), Nellore, Chennai, Cuddalore, Erode, Kochi (Cochin), Bengaluru (Bangalore), Nagpur and Kolkata. Kerala is also listed as a service area. At the user’s request, the map also includes Delhi, Jaipur, Chandigarh, Ludhiana, Amritsar, Jammu, Dehradun, Lucknow, Kanpur and Agra to represent northern coverage. These are editorial additions for the preview, distinct from the original client-supplied destination list.

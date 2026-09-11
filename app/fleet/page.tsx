@@ -1,3 +1,4 @@
+import { FleetPlanningGuide } from '@/components/transport/fleet-planning-guide';
 import { FleetSpecifications } from '@/components/transport/fleet-specifications';
 import type { Metadata } from 'next';
 import Image from 'next/image';
@@ -26,6 +27,7 @@ export default function FleetPage() {
         </div>
       </section>
       <FleetSpecifications />
+      <FleetPlanningGuide />
       <section className="section fleet-details">
         <div className="container editorial-grid">
           <div>

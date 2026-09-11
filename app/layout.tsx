@@ -1,9 +1,16 @@
 import type { Metadata } from 'next';
-import { Barlow_Condensed, Geist } from 'next/font/google';
+import { Barlow_Condensed, Geist, Instrument_Serif } from 'next/font/google';
 import './globals.css';
 import { business } from '@/content/business';
 import { Navigation } from '@/components/transport/navigation';
 import { Footer } from '@/components/transport/site';
+
+const editorial = Instrument_Serif({
+  variable: '--font-editorial',
+  subsets: ['latin'],
+  weight: '400',
+  display: 'swap',
+});
 
 const geist = Geist({
   variable: '--font-body',
@@ -33,7 +40,9 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-      <body className={`${geist.variable} ${barlow.variable}`}>
+      <body
+        className={`${geist.variable} ${barlow.variable} ${editorial.variable}`}
+      >
         <a className="skip-link" href="#main">
           Skip to content
         </a>

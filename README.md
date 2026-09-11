@@ -85,3 +85,13 @@ The staff safety kit includes an original AI-generated worker illustration with 
 The user confirmed all five payload options (16, 21, 25, 30, and 35 MT), all three stainless-steel grades (SS 304, SS 316, and SS 316L), and food-grade liquid transport on 10 September 2026. These fleet ranges are stored in `content/business.ts`. No Nepal coverage, ISO certification, or acceptance of all hazardous-material classes was inferred from the reference screenshot.
 
 The Safety page includes a simplified nine-class dangerous-goods awareness guide, not a list of accepted cargo or operational labelling instructions. Classification names were checked against UN material and [Transport Canada’s classification reference](https://tc.canada.ca/en/dangerous-goods/part-2). The reference is used only for class terminology, not as Indian legal guidance.
+
+### Client meeting preview content
+
+Three detailed service routes are generated from `content/service-guides.ts`. Their transport briefs are authored meeting scenarios, not completed customer case studies. Proposed team roles and the operating-process board live in `components/transport/operations-preview.tsx`. Replace these samples with client-approved information before launch. At the user’s request, there are no visible draft labels. `business.isPreview` continues to disable indexing. Contact submission remains a local draft until real contact details and a delivery destination are supplied.
+
+The fleet guide uses confirmed capacities and grades without inventing individual vehicle configurations. No sample contact numbers, testimonials, performance statistics or certification claims were added. Domain-dependent canonicals and production indexing should be configured after the domain is supplied.
+
+The client requested a clean presentation without visible draft labels. Scenario routes and operating-role copy remain unverified meeting material; verify or replace them before public launch. Indexing remains disabled.
+
+The client requested continuous client-logo motion again. The strip loops horizontally with no visible pause button; hover/focus pause and reduced-motion handling remain. The experimental layered tanker animation was rejected and removed. The hero uses a blue-and-white Tata photographic scene without simulated wheel motion while real video is pending.

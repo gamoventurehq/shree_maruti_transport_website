@@ -1,3 +1,4 @@
+import { OperationsPreview } from '@/components/transport/operations-preview';
 import { HazardousMaterials } from '@/components/transport/hazardous-materials';
 import { StaffSafetyKit } from '@/components/transport/staff-safety-kit';
 import { SafetyRegulations } from '@/components/transport/safety-regulations';
@@ -147,6 +148,7 @@ export default function SafetyPage() {
           </div>
         </div>
       </section>
+      <OperationsPreview safety />
       <ContactBand />
     </>
   );

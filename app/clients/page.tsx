@@ -1,3 +1,4 @@
+import { SampleBriefs } from '@/components/transport/sample-briefs';
 import { ClientBanner } from '@/components/transport/client-banner';
 import type { Metadata } from 'next';
 import {
@@ -34,7 +35,10 @@ export default function ClientsPage() {
               the businesses we work with.
             </p>
           </div>
-          <ClientGrid />
+          <details className="client-directory">
+            <summary>View the complete client directory</summary>
+            <ClientGrid />
+          </details>
           <p className="asset-note">
             All client names and logos belong to their respective owners.
           </p>
@@ -111,6 +115,7 @@ export default function ClientsPage() {
           </div>
         </div>
       </section>
+      <SampleBriefs />
       <ContactBand />
     </>
   );

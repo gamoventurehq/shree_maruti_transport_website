@@ -2,9 +2,14 @@ import assert from 'node:assert/strict';
 
 const base = new URL(process.argv[2] || 'http://localhost:3001');
 const pages = {
-  '/': 'Moving industry.',
+  '/': 'tanker transport',
   '/about': 'Our journey. Your trust.',
-  '/services': 'Your cargo. Our focus.',
+  '/services': 'Tanker transport for chemical and liquid cargo.',
+  '/services/chemical-tanker-transport':
+    'Chemical tanker transport across India',
+  '/services/food-grade-liquid-transport': 'Food-grade liquid tanker transport',
+  '/services/scheduled-tanker-logistics':
+    'Scheduled tanker logistics for industry',
   '/fleet': 'The strength behind every mile.',
   '/safety': 'Responsibility, on every road.',
   '/clients': 'Their industry. Our commitment.',
@@ -75,5 +80,5 @@ for (const path of [
   assert.match(response.headers.get('content-type') || '', /^image\//);
 }
 console.log(
-  `PASS: ${base.origin} serves all seven pages, Vision and Mission boards, enquiry form, office link, and key brand assets.`,
+  `PASS: ${base.origin} serves all ten pages, Vision and Mission boards, enquiry form, office link, and key brand assets.`,
 );
