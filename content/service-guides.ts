@@ -9,7 +9,7 @@ export const serviceGuides = [
       'A chemical consignment is more than a payload and a destination. The product specification, tanker material, loading connections and receiving arrangements all shape the transport brief. Shree Maruti Transport Services brings a fleet of 50+ owned tankers to chemical and liquid movements across India.',
     focus: 'Plan around the product',
     explanation:
-      'Our fleet includes SS 304, SS 316 and SS 316L material grades, with payload options from 16 to 35 MT. These are fleet-wide options, not a guarantee that every capacity and grade combination is available. The specific tanker and movement are agreed after reviewing the cargo requirement.',
+      'Our fleet includes SS 304, SS 316 and SS 316L material grades, with payload options from 22 to 35 MT. These are fleet-wide options, not a guarantee that every capacity and grade combination is available. The specific tanker and movement are agreed after reviewing the cargo requirement.',
     considerations: [
       [
         'Cargo information',

@@ -36,8 +36,20 @@ export const services = [
     icon: 'droplet',
   },
   {
-    id: 'tanker-movements',
+    id: 'pharmaceutical-liquids',
     number: '04',
+    title: 'Pharmaceutical liquid transport',
+    summary:
+      'Tanker transportation for pharmaceutical liquids, planned around product quality and handling requirements.',
+    detail:
+      'Share the product specification, hygiene requirements and loading conditions so tanker compatibility, preparation and receiving-site arrangements can be reviewed for the consignment.',
+    requirements:
+      'Product specification, quantity, hygiene requirements, documentation and receiving-site procedures.',
+    icon: 'flask',
+  },
+  {
+    id: 'tanker-movements',
+    number: '05',
     title: 'Planned tanker movements',
     summary:
       'Transport planning for individual consignments and recurring business requirements.',
@@ -49,7 +61,7 @@ export const services = [
   },
   {
     id: 'pan-india',
-    number: '05',
+    number: '06',
     title: 'Pan-India road transport',
     summary:
       'An owned fleet of 50+ tankers, connecting businesses across India.',

@@ -70,7 +70,7 @@ pages:
 
 ## Overview
 
-An Indian chemical and liquid transport business, established in 2001, with an owned fleet of 50+ tankers and pan-India operations. The website should help an industrial buyer understand its services, fleet, safety approach, clients, and office location before making an enquiry.
+An Indian chemical and liquid transport business, established in 2011, with an owned fleet of 50+ tankers and pan-India operations. The website should help an industrial buyer understand its services, fleet, safety approach, clients, and office location before making an enquiry.
 
 The supplied SMTS mark is the primary identity. Its red oval and white lettering determine the colour direction. The full business name is **Shree Maruti Transport Services**, including “Services” in page titles, navigation branding, enquiry drafts, and metadata.
 
@@ -78,7 +78,7 @@ This file adapts the structure and automotive presentation principles of the sup
 
 ## Sources and precedence
 
-1. The user’s direct instructions: business name, established in 2001, 50+ owned tankers, pan-India operations, Nicerglobe certification, fleet-management tie-ups.
+1. The user’s direct instructions: business name, established in 2011, 50+ owned tankers, pan-India operations, Nicerglobe certification, fleet-management tie-ups.
 2. Original assets under `client_content/`: the SMTS logo, client logos, Nicerglobe mark, Tata Motors Fleet Edge and BlackBox marks, and fleet/sample graphics.
 3. The supplied Google Maps link: the office location at 19.2516926, 73.1062199. Link directly to the supplied listing for directions.
 4. `~/Downloads/acura.design.md`: the format and visual principles for this document.
@@ -112,11 +112,11 @@ The homepage is a concise overview. Inner pages contain the detail rather than r
 
 ### Homepage
 
-A rounded, inset tanker photo hero with centred Instrument Serif type, an editorial headline anchored in the 2001 founding year, links to services and fleet, a three-part factual strip, selected client marks, service overview, fleet feature, Nicerglobe/technology introduction, India coverage, and a contact invitation.
+A rounded, inset tanker photo hero with centred Instrument Serif type, an editorial headline anchored in the 2011 founding year, links to services and fleet, a three-part factual strip, selected client marks, service overview, fleet feature, Nicerglobe/technology introduction, India coverage, and a contact invitation.
 
 ### About
 
-Company introduction, 2001 founding milestone, current fleet and reach, service approach, two prominent Vision & Mission panels following the Satya Bizcon reference, and related-business information only when the relationship is confirmed.
+Company introduction, 2011 founding milestone, current fleet and reach, service approach, two prominent Vision & Mission panels following the Satya Bizcon reference, and related-business information only when the relationship is confirmed.
 
 ### Services
 
@@ -145,7 +145,7 @@ Office location map, external Google Maps directions link, and the existing enqu
 - **Page masthead:** breadcrumb, concise uppercase H1, short introduction, slim red rule.
 - **Primary button:** action red, white text, square corners, at least 48px tall, visible focus ring.
 - **Secondary link:** text plus a consistent arrow from the installed Lucide family; underline or border on hover.
-- **Fact strip:** 50+ owned tankers; established 2001; pan-India operations. No animated fake counters.
+- **Fact strip:** 50+ owned tankers; established 2011; pan-India operations. No animated fake counters.
 - **Service rows:** descriptive headings, concise paragraphs, real fleet visuals where useful.
 - **Client banner:** A continuous horizontal logo strip on Home and Clients. Pause on hover without a visible playback control; use a static scrollable strip for reduced motion. Hide the repeated logo set from assistive technology.
 - **Client grid:** uniform white logo tiles, contain sizing, original colours, company names as accessible text.
@@ -215,3 +215,19 @@ The client requested continuous client-logo motion again. The strip loops horizo
 The main edition combines its original branding with the editorial edition’s white navigation and inset photo hero. Instrument Serif is limited to the hero; existing display and body fonts remain elsewhere. The hero has subtle scroll-linked photo movement with a static fallback and reduced-motion support. The original company mark remains in the header.
 
 The route explorer uses the visual edition’s composition with red highlights. Confirmed destination markers are Ahmednagar/Supa, Mahad, Lote, Hyderabad, Visakhapatnam (Vizag), Nellore, Chennai, Cuddalore, Erode, Kochi (Cochin), Bengaluru (Bangalore), Nagpur and Kolkata. Kerala is also listed as a service area. At the user’s request, the map also includes Delhi, Jaipur, Chandigarh, Ludhiana, Amritsar, Jammu, Dehradun, Lucknow, Kanpur and Agra to represent northern coverage. These are editorial additions for the preview, distinct from the original client-supplied destination list.
+
+## Client fleet photography and service journey
+
+Use the September client photographs for Home, About and the Fleet gallery, replacing the previous generated fleet scenes. Keep the actual cab colours, markings and tank geometry unchanged. Use contain sizing for portrait gallery photographs. Services includes a horizontal dispatch → chemical plant → customer journey with the supplied line artwork, red brand accents, ordinary scrolling and reduced-motion support.
+
+### Journey motion refinement
+
+Keep the roadside scene compact (260px maximum) and the tanker readable (48px minimum). GSAP synchronizes travel, wheel rotation and red road fill. Brief stops at dispatch, loading and receipt highlight the corresponding explanatory text. Fade the trail only after the tanker leaves the viewport. Preserve static reduced-motion presentation and pause controls.
+
+The animated tanker uses opaque vector shapes: a blue cab, white and silver tank, red stripe, dark chassis and filled tyres. Keep the rotating wheel hubs aligned with the tyres. Buildings sit at the far edge of the road; the tanker rides on the foreground edge and renders above both the road and buildings.
+
+Ease into and out of each stop, with wheel rotation and road fill following the same easing curve. Use a 14-second travel baseline and a soft trail fade after exit. Preserve journey progress when the viewport changes size.
+
+### Rounded dark sections
+
+Dark sections across every page use the hero’s 18px corner radius, reduced to 14px on mobile. Inset these sections to 96% width with a 1480px maximum; use 12px side gutters on mobile. Leave canvas space above and below so all four corners remain visible. Apply the same radius to the vision board and staff-kit figure.

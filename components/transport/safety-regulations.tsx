@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import Link from '@/components/transport/page-link';
 import { ClipboardCheck, FileCheck, FlaskConical, HardHat } from 'lucide-react';
 
 const preparationAreas = [

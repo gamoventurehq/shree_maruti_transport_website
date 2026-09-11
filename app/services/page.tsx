@@ -1,3 +1,4 @@
+import { ServiceJourney } from '@/components/transport/service-journey';
 import { serviceGuides } from '@/content/service-guides';
 import { TransportFaq } from '@/components/transport/transport-faq';
 import type { Metadata } from 'next';
@@ -8,7 +9,7 @@ import { services } from '@/content/services';
 export const metadata: Metadata = {
   title: 'Transport services',
   description:
-    'Chemical transportation, solvents, industrial and food-grade liquids, and planned tanker movements from Shree Maruti Transport Services.',
+    'Chemical transportation, solvents, food-grade and pharmaceutical liquids, and planned tanker movements from Shree Maruti Transport Services.',
 };
 const icons = {
   flask: FlaskConical,
@@ -25,6 +26,7 @@ export default function ServicesPage() {
         title="Tanker transport for chemical and liquid cargo."
         description="Chemical and liquid transportation, planned around the product and the journey it needs to make."
       />
+      <ServiceJourney />
       <section className="section">
         <div className="container services-list">
           {services.map((service) => {

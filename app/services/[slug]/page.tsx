@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
+import Link from '@/components/transport/page-link';
 import { notFound } from 'next/navigation';
 import { serviceGuides } from '@/content/service-guides';
 import { ContactBand, PageIntro } from '@/components/transport/site';

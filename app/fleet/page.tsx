@@ -10,7 +10,7 @@ import { fleetPartners } from '@/content/assets';
 export const metadata: Metadata = {
   title: 'Our fleet',
   description:
-    'Explore Shree Maruti Transport Services’ owned fleet of 50+ tankers, 16–35 MT capacities, SS 304/316/316L grades, and chemical and food-grade liquid transport.',
+    'Explore Shree Maruti Transport Services’ owned fleet of 50+ tankers, 22–35 MT capacities, SS 304/316/316L grades, and chemical, food-grade and pharmaceutical liquid transport.',
 };
 
 export default function FleetPage() {

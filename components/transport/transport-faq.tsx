@@ -5,7 +5,7 @@ const questions = [
   ],
   [
     'Which tanker capacities and material grades are available?',
-    'Our fleet range includes 16, 21, 25, 30, and 35 MT payload capacities and SS 304, SS 316, and SS 316L material grades. The appropriate combination and available tanker are confirmed against your product and shipment requirements.',
+    'Our fleet range includes 22, 25, 30, and 35 MT payload capacities and SS 304, SS 316, and SS 316L material grades. The appropriate combination and available tanker are confirmed against your product and shipment requirements.',
   ],
   [
     'Do you transport food-grade liquids?',

@@ -1,12 +1,12 @@
 import Image from 'next/image';
-import Link from 'next/link';
+import Link from '@/components/transport/page-link';
 
 export function Hero() {
   return (
     <section className="paper-hero" aria-labelledby="hero-title">
       <Image
-        src="/fleet/tata-highway-hero.png"
-        alt="Blue-and-white Tata tanker on an Indian highway"
+        src="/fleet/tanker-front-road.jpg"
+        alt="Shree Maruti blue-and-white Tata tanker photographed on the road"
         fill
         sizes="96vw"
         loading="eager"
@@ -21,7 +21,7 @@ export function Hero() {
         <p>
           Chemical and liquid tanker transport across India.
           <br />
-          Shree Maruti Transport Services, since 2001.
+          Shree Maruti Transport Services, since 2011.
         </p>
         <div>
           <Link className="button button-primary" href="/contact">

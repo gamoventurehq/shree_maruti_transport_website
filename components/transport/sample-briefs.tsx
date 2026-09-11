@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import Link from '@/components/transport/page-link';
 import { serviceGuides } from '@/content/service-guides';
 
 export function SampleBriefs() {

@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     template: '%s | Shree Maruti Transport Services',
   },
   description:
-    'Established in 2001. Shree Maruti Transport Services operates 50+ owned tankers for chemical, liquid, and pan-India road transportation.',
+    'Established in 2011. Shree Maruti Transport Services operates 50+ owned tankers for chemical, liquid, and pan-India road transportation.',
   robots: { index: !business.isPreview, follow: !business.isPreview },
 };
 

@@ -27,7 +27,7 @@ export function FleetPlanningGuide() {
             <tbody>
               <tr>
                 <th scope="row">Payload</th>
-                <td>16 / 21 / 25 / 30 / 35 MT</td>
+                <td>22 / 25 / 30 / 35 MT</td>
                 <td>
                   Confirm quantity and product density. Payload in tonnes is not
                   the same as tank volume in litres.
@@ -43,7 +43,7 @@ export function FleetPlanningGuide() {
               </tr>
               <tr>
                 <th scope="row">Cargo focus</th>
-                <td>Chemical, industrial and food-grade liquids</td>
+                <td>Chemical, food-grade and pharmaceutical liquids</td>
                 <td>
                   Identify the product and any preparation or prior-cargo
                   requirements. Acceptance is consignment-specific.

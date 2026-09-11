@@ -1,7 +1,7 @@
 import Image from 'next/image';
-import Link from 'next/link';
+import Link from '@/components/transport/page-link';
 import { ArrowRight, ArrowUpRight, MapPin } from 'lucide-react';
-import { brandLogo, clientLogos, fleetMontage } from '@/content/assets';
+import { brandLogo, clientLogos } from '@/content/assets';
 import { business } from '@/content/business';
 
 export const pageLinks = [
@@ -53,22 +53,30 @@ export function FleetVisual({
   className?: string;
   priority?: boolean;
 }) {
+  const photos = {
+    single: [
+      'tanker-front-road',
+      'Shree Maruti blue-and-white Tata tanker, front view',
+    ],
+    lineup: ['tanker-side-yard', 'Shree Maruti liquid tanker at the yard'],
+    road: ['tanker-side-road', 'Side view of a Shree Maruti tanker'],
+    rear: [
+      'tanker-rear',
+      'Rear access ladder and markings on a Shree Maruti tanker',
+    ],
+    side: ['tanker-side-yard', 'Side view of the tanker and its fittings'],
+    white: ['tanker-front-portrait', 'Shree Maruti Tata tanker cab and tank'],
+  };
+  const [name, alt] = photos[panel];
   return (
-    <div className={`fleet-visual panel-${panel} ${className}`}>
-      <div className="fleet-crop">
-        <Image
-          src={fleetMontage.src}
-          alt={
-            panel === 'single' || panel === 'road' || panel === 'side'
-              ? 'Client-supplied illustration of a stainless-steel chemical tanker'
-              : 'Client-supplied illustration of a row of tankers'
-          }
-          width={fleetMontage.width}
-          height={fleetMontage.height}
-          sizes="(max-width: 768px) 200vw, 160vw"
-          loading={priority ? 'eager' : 'lazy'}
-        />
-      </div>
+    <div className={`fleet-visual fleet-photo panel-${panel} ${className}`}>
+      <Image
+        src={`/fleet/${name}.jpg`}
+        alt={alt}
+        fill
+        sizes="(max-width: 768px) 100vw, 75vw"
+        loading={priority ? 'eager' : 'lazy'}
+      />
     </div>
   );
 }
@@ -210,7 +218,7 @@ export function Footer() {
           <span>
             © {new Date().getFullYear()} {business.name}.
           </span>
-          <span>EST. 2001 / PAN-INDIA OPERATIONS</span>
+          <span>EST. 2011 / PAN-INDIA OPERATIONS</span>
           {business.creatorCredit && (
             <a
               href="https://gamoventure.vercel.app"

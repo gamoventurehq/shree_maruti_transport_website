@@ -1,7 +1,7 @@
 import { OperationsPreview } from '@/components/transport/operations-preview';
 import type { Metadata } from 'next';
 import { ArrowUpRight } from 'lucide-react';
-import Link from 'next/link';
+import Link from '@/components/transport/page-link';
 import {
   ContactBand,
   FleetVisual,
@@ -12,7 +12,7 @@ import { business } from '@/content/business';
 export const metadata: Metadata = {
   title: 'About us',
   description:
-    'Meet Shree Maruti Transport Services: established in 2001, with 50+ owned tankers and chemical and liquid transport operations across India.',
+    'Meet Shree Maruti Transport Services: established in 2011, with 50+ owned tankers and chemical and liquid transport operations across India.',
 };
 
 export default function AboutPage() {
@@ -27,7 +27,7 @@ export default function AboutPage() {
         <div className="container about-story">
           <div className="founding-year">
             <span>ON THE ROAD SINCE</span>
-            <strong>2001</strong>
+            <strong>2011</strong>
             <p>Shree Maruti Transport Services</p>
           </div>
           <div>
@@ -38,7 +38,7 @@ export default function AboutPage() {
               Understanding responsibility.
             </h2>
             <p className="lead">
-              Shree Maruti Transport Services was established in 2001. From our
+              Shree Maruti Transport Services was established in 2011. From our
               base in {business.location}, we operate across India.
             </p>
             <p>
@@ -177,9 +177,9 @@ export default function AboutPage() {
               across India.
             </p>
             <p>
-              Our fleet includes 16 to 35 MT payload options and SS 304, SS 316,
+              Our fleet includes 22 to 35 MT payload options and SS 304, SS 316,
               and SS 316L material grades. We handle chemical, solvent,
-              industrial liquid, and food-grade liquid requirements, with tanker
+              food-grade and pharmaceutical liquid requirements, with tanker
               selection guided by the product and the journey.
             </p>
             <p>

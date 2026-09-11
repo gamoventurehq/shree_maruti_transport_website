@@ -6,9 +6,10 @@ import { FleetVisual, type FleetPanel } from './site';
 
 const views: { panel: FleetPanel; label: string }[] = [
   { panel: 'single', label: 'Chemical tanker' },
-  { panel: 'lineup', label: 'The tanker fleet' },
-  { panel: 'road', label: 'On the road' },
-  { panel: 'white', label: 'Fleet lineup' },
+  { panel: 'lineup', label: 'Tanker side view' },
+  { panel: 'road', label: 'Roadside view' },
+  { panel: 'rear', label: 'Rear access and markings' },
+  { panel: 'white', label: 'Tata cab and tanker' },
 ];
 
 export function FleetGallery() {
@@ -58,8 +59,8 @@ export function FleetGallery() {
         ))}
       </div>
       <p className="asset-note">
-        Client-supplied illustrative fleet imagery. Vehicle specifications are
-        confirmed for each requirement.
+        Photographs of the Shree Maruti Transport Services fleet. Vehicle
+        specifications are confirmed for each requirement.
       </p>
     </div>
   );

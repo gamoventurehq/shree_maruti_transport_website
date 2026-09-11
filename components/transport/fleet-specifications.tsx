@@ -7,7 +7,7 @@ export function FleetSpecifications() {
       label: 'Owned tanker fleet',
       value: `${business.fleetSize} tankers`,
       detail:
-        'Supporting chemical, industrial liquid, and food-grade liquid movements.',
+        'Supporting chemical, food-grade and pharmaceutical liquid movements.',
     },
     {
       label: 'Payload capacities',
@@ -28,7 +28,7 @@ export function FleetSpecifications() {
     },
     {
       label: 'Cargo focus',
-      value: 'Chemical & food-grade liquids',
+      value: 'Chemical, food-grade & pharmaceutical liquids',
       detail:
         'Including solvents and industrial liquids, subject to product suitability.',
     },

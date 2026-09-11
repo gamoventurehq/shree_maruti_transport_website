@@ -1,6 +1,6 @@
 import { ClientBanner } from '@/components/transport/client-banner';
 import Image from 'next/image';
-import Link from 'next/link';
+import Link from '@/components/transport/page-link';
 import {
   ArrowUpRight,
   Droplets,
@@ -61,7 +61,7 @@ export default function Home() {
               arrival.
             </p>
             <p>
-              Since 2001, Shree Maruti Transport Services has worked in road
+              Since 2011, Shree Maruti Transport Services has worked in road
               transportation, with a focus on chemicals and liquid cargo. Today,
               our 50+ owned tankers serve businesses across India.
             </p>
@@ -195,16 +195,17 @@ export default function Home() {
           <div className="industry-grid">
             <article>
               <span>01 / THE CARGO</span>
-              <h3>Chemical to food-grade.</h3>
+              <h3>Chemical, food-grade and pharma.</h3>
               <p>
                 Our tanker services cover chemicals, solvents, industrial
-                liquids, and food-grade liquids. Each movement starts with the
-                product specification and its handling requirements.
+                liquids, food-grade liquids and pharmaceutical liquids. Each
+                movement starts with the product specification and its handling
+                requirements.
               </p>
             </article>
             <article>
               <span>02 / THE TANKER</span>
-              <h3>16 to 35 MT options.</h3>
+              <h3>22 to 35 MT options.</h3>
               <p>
                 With SS 304, SS 316, and SS 316L grades in the fleet, tanker
                 selection considers material compatibility, quantity, and the
