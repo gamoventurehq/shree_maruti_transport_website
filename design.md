@@ -147,7 +147,7 @@ Office location map, external Google Maps directions link, and the existing enqu
 - **Secondary link:** text plus a consistent arrow from the installed Lucide family; underline or border on hover.
 - **Fact strip:** 50+ owned tankers; established 2011; pan-India operations. No animated fake counters.
 - **Service rows:** descriptive headings, concise paragraphs, real fleet visuals where useful.
-- **Client banner:** A continuous horizontal logo strip on Home and Clients. Pause on hover without a visible playback control; use a static scrollable strip for reduced motion. Hide the repeated logo set from assistive technology.
+- **Client banner:** A continuous horizontal logo strip on Home only. Pause on hover without a visible playback control; use a static scrollable strip for reduced motion. Hide the repeated logo set from assistive technology.
 - **Client grid:** uniform white logo tiles, contain sizing, original colours, company names as accessible text.
 - **Certification panel:** original Nicerglobe mark on white with accompanying text; distinct from fleet-provider panels.
 - **Coverage map:** curved routes from Bhiwandi, dotted India outline, animated selected route and keyboard-operable destination buttons, adapted from the visual edition. Use charcoal surfaces and red accents. Show client-confirmed destinations; Kerala is a service area, not a city pin. Routes and coordinates are schematic, not live vehicle tracking.
@@ -204,7 +204,7 @@ The preview now has three service guides below `/services/`: chemical tanker tra
 
 Route briefs and proposed operating roles are presented without visible draft labels at the user’s request. Their copy lives in `content/service-guides.ts` and `components/transport/operations-preview.tsx`. These are meeting material, not case studies or verified company procedures. Verify, replace or remove unconfirmed operational content before launch. Preview indexing remains disabled.
 
-The homepage and Clients page show a moving banner of all 23 clients, without a scrollbar. The Clients page also displays the full directory immediately, without an expand/collapse control. Equipment labels are repeated in HTML below the PPE illustration for mobile readability.
+The homepage shows a moving banner of all 23 clients, without a scrollbar. The Clients page displays the full directory immediately, without a moving banner or an expand/collapse control. Equipment labels are repeated in HTML below the PPE illustration for mobile readability.
 
 The client requested a clean presentation without visible draft labels. Scenario routes and operating-role copy remain unverified meeting material; verify or replace them before public launch. Indexing remains disabled.
 
