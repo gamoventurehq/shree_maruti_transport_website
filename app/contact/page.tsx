@@ -7,7 +7,7 @@ import { business } from '@/content/business';
 export const metadata: Metadata = {
   title: 'Contact us',
   description:
-    'Find the Shree Maruti Transport Services office in Bhiwandi, Maharashtra, and prepare your chemical or liquid transport enquiry.',
+    'Find the Shree Maruti Transport Services office in Mumbai, Bhiwandi, Maharashtra, and prepare your chemical solvent, food-grade, pharma or other liquid cargo enquiry.',
 };
 
 export default function ContactPage() {
@@ -117,7 +117,7 @@ export default function ContactPage() {
           <div className="section-heading">
             <div>
               <p className="eyebrow">FIND US</p>
-              <h2>Bhiwandi, Maharashtra.</h2>
+              <h2>Mumbai, Bhiwandi, Maharashtra.</h2>
             </div>
             <a
               className="text-link"

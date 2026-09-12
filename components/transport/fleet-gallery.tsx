@@ -1,15 +1,47 @@
 'use client';
 
 import { useState } from 'react';
+import Image from 'next/image';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
 import { FleetVisual, type FleetPanel } from './site';
 
-const views: { panel: FleetPanel; label: string }[] = [
-  { panel: 'single', label: 'Chemical tanker' },
-  { panel: 'lineup', label: 'Tanker side view' },
-  { panel: 'road', label: 'Roadside view' },
-  { panel: 'rear', label: 'Rear access and markings' },
-  { panel: 'white', label: 'Tata cab and tanker' },
+const views: {
+  panel: FleetPanel;
+  label: string;
+  photo?: string;
+  alt?: string;
+}[] = [
+  { panel: 'overview', label: 'Fleet overview' },
+  {
+    panel: 'single',
+    label: 'Tata tanker',
+    photo: 'clear-tanker-front',
+    alt: 'Blue-and-white Tata tanker parked beside the road',
+  },
+  {
+    panel: 'lineup',
+    label: 'Tanker side view',
+    photo: 'clear-tanker-side',
+    alt: 'Side view of a liquid tanker showing its cab, tank and access ladder',
+  },
+  {
+    panel: 'road',
+    label: 'Tanker at the yard',
+    photo: 'clear-tanker-yard',
+    alt: 'Liquid tanker at the yard with its valve box and tank visible',
+  },
+  {
+    panel: 'rear',
+    label: 'Rear access',
+    photo: 'clear-tanker-rear',
+    alt: 'Rear view of a tanker showing its ladder and reflective markings',
+  },
+  {
+    panel: 'white',
+    label: 'Tank markings',
+    photo: 'clear-tanker-markings',
+    alt: 'Close view of tanker markings, rear lights and tank body',
+  },
 ];
 
 export function FleetGallery() {
@@ -18,7 +50,18 @@ export function FleetGallery() {
   return (
     <div className="fleet-gallery">
       <div className="gallery-main">
-        <FleetVisual panel={selected.panel} />
+        {selected.photo ? (
+          <div className="fleet-visual fleet-photo gallery-client-photo">
+            <Image
+              src={`/fleet/${selected.photo}.jpg`}
+              alt={selected.alt ?? selected.label}
+              fill
+              sizes="90vw"
+            />
+          </div>
+        ) : (
+          <FleetVisual panel={selected.panel} />
+        )}
         <div className="gallery-caption">
           <div aria-live="polite">
             <span>
@@ -59,7 +102,7 @@ export function FleetGallery() {
         ))}
       </div>
       <p className="asset-note">
-        Photographs of the Shree Maruti Transport Services fleet. Vehicle
+        Fleet views supplied for Shree Maruti Transport Services. Vehicle
         specifications are confirmed for each requirement.
       </p>
     </div>

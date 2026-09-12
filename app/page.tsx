@@ -9,11 +9,7 @@ import {
 } from 'lucide-react';
 import { Hero } from '@/components/transport/hero';
 import { Coverage } from '@/components/transport/coverage';
-import {
-  ContactBand,
-  FleetVisual,
-  TextLink,
-} from '@/components/transport/site';
+import { ContactBand, TextLink } from '@/components/transport/site';
 import { nicerglobeLogo } from '@/content/assets';
 import { business } from '@/content/business';
 
@@ -127,7 +123,14 @@ export default function Home() {
       </section>
       <section className="home-fleet dark-section" id="fleet">
         <div className="fleet-feature-photo">
-          <FleetVisual panel="lineup" />
+          <Image
+            src="/sections/home-tanker.png"
+            alt="Side view of a blue-and-white liquid tanker at a chemical plant"
+            width={1448}
+            height={1086}
+            sizes="96vw"
+            className="home-tanker-image"
+          />
         </div>
         <div className="container fleet-feature-content">
           <div>
@@ -195,21 +198,20 @@ export default function Home() {
           <div className="industry-grid">
             <article>
               <span>01 / THE CARGO</span>
-              <h3>Chemical, food-grade and pharma.</h3>
+              <h3>Chemical solvents, food-grade and pharma.</h3>
               <p>
-                Our tanker services cover chemicals, solvents, industrial
-                liquids, food-grade liquids and pharmaceutical liquids. Each
-                movement starts with the product specification and its handling
-                requirements.
+                Our tanker services cover chemical solvents, food-grade,
+                pharmaceutical and other liquid cargo. Each movement starts with
+                the product specification and its handling requirements.
               </p>
             </article>
             <article>
               <span>02 / THE TANKER</span>
               <h3>22 to 35 MT options.</h3>
               <p>
-                With SS 304, SS 316, and SS 316L grades in the fleet, tanker
-                selection considers material compatibility, quantity, and the
-                loading and receiving arrangements.
+                With SS 304L stainless steel in the fleet, tanker selection
+                considers material compatibility, quantity, and the loading and
+                receiving arrangements.
               </p>
             </article>
             <article>

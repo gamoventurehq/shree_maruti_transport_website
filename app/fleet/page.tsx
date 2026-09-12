@@ -10,7 +10,7 @@ import { fleetPartners } from '@/content/assets';
 export const metadata: Metadata = {
   title: 'Our fleet',
   description:
-    'Explore Shree Maruti Transport Services’ owned fleet of 50+ tankers, 22–35 MT capacities, SS 304/316/316L grades, and chemical, food-grade and pharmaceutical liquid transport.',
+    'Explore Shree Maruti Transport Services’ owned fleet of 50+ tankers, 22–35 MT capacities, SS 304L stainless steel, and chemical, food-grade and pharmaceutical liquid transport.',
 };
 
 export default function FleetPage() {
@@ -38,9 +38,10 @@ export default function FleetPage() {
               industrial movement.
             </h2>
             <p>
-              Our fleet supports chemical and liquid transportation. Tanker
-              suitability, capacity, and availability are confirmed against your
-              cargo and route requirements.
+              Our fleet supports chemical solvent, food-grade, pharmaceutical
+              and other liquid cargo transportation. Tanker suitability,
+              capacity, and availability are confirmed against your cargo and
+              route requirements.
             </p>
             <TextLink href="/contact">
               Discuss your vehicle requirement
@@ -104,58 +105,6 @@ export default function FleetPage() {
                 <p>Fleet-management technology partner</p>
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-      <section className="section dark-section">
-        <div className="container editorial-grid">
-          <div>
-            <p className="eyebrow">TANKER SELECTION</p>
-            <h2>
-              Capacity is only
-              <br />
-              part of the decision.
-            </h2>
-            <p>
-              Bulk liquid logistics depend on the product as much as the
-              payload. A clear cargo brief helps establish which tanker can meet
-              the requirement.
-            </p>
-          </div>
-          <div className="process-list">
-            <div>
-              <span>01</span>
-              <div>
-                <h3>Product compatibility</h3>
-                <p>
-                  Share the product specification and safety data sheet. Tank
-                  material, fittings, and any restrictions on previous cargo
-                  need to be considered together.
-                </p>
-              </div>
-            </div>
-            <div>
-              <span>02</span>
-              <div>
-                <h3>Loading and receiving conditions</h3>
-                <p>
-                  Confirm site access, connection requirements, loading method,
-                  and unloading arrangements. Food-grade cargo also needs a
-                  clear hygiene and preparation brief.
-                </p>
-              </div>
-            </div>
-            <div>
-              <span>03</span>
-              <div>
-                <h3>Payload and route</h3>
-                <p>
-                  Quantity, density, permitted loading, and destination access
-                  help determine the appropriate capacity. Availability and
-                  dispatch timing are confirmed before the movement is agreed.
-                </p>
-              </div>
-            </div>
           </div>
         </div>
       </section>

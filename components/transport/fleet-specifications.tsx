@@ -7,7 +7,7 @@ export function FleetSpecifications() {
       label: 'Owned tanker fleet',
       value: `${business.fleetSize} tankers`,
       detail:
-        'Supporting chemical, food-grade and pharmaceutical liquid movements.',
+        'Supporting chemical solvent, food-grade, pharmaceutical and other liquid cargo movements.',
     },
     {
       label: 'Payload capacities',
@@ -16,19 +16,20 @@ export function FleetSpecifications() {
         'Capacity is matched to the product, loading requirement, and route.',
     },
     {
-      label: 'Tank material grades',
+      label: 'Tank material',
       value: business.materialGrades.join(' · '),
       detail:
-        'Stainless-steel grades selected for the cargo and its compatibility requirements.',
+        'SS 304L stainless steel, with cargo compatibility reviewed for each movement.',
     },
     {
       label: 'Operational coverage',
       value: 'Pan-India',
-      detail: 'Road tanker logistics from our base in Bhiwandi, Maharashtra.',
+      detail:
+        'Road tanker logistics from our base in Mumbai, Bhiwandi, Maharashtra.',
     },
     {
       label: 'Cargo focus',
-      value: 'Chemical, food-grade & pharmaceutical liquids',
+      value: 'Chemical solvents, food-grade, pharma & other liquids',
       detail:
         'Including solvents and industrial liquids, subject to product suitability.',
     },
@@ -75,7 +76,7 @@ export function FleetSpecifications() {
         <p className="asset-note">
           MT means metric tonnes. Actual loading quantity depends on product
           density, tanker configuration, permitted payload, and route
-          requirements. Material grades and capacities describe the fleet range;
+          requirements. The material and capacities describe the fleet range;
           availability is confirmed for each shipment.
         </p>
         <TextLink href="/contact">Discuss a tanker specification</TextLink>

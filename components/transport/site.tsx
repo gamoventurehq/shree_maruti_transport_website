@@ -38,6 +38,7 @@ export function Brand({ footer = false }: { footer?: boolean }) {
 }
 
 export type FleetPanel =
+  | 'overview'
   | 'single'
   | 'lineup'
   | 'road'
@@ -54,6 +55,7 @@ export function FleetVisual({
   priority?: boolean;
 }) {
   const photos = {
+    overview: ['fleet', 'Rows of blue-and-white tankers at a fleet yard'],
     single: [
       'tanker-front-road',
       'Shree Maruti blue-and-white Tata tanker, front view',
@@ -71,7 +73,9 @@ export function FleetVisual({
   return (
     <div className={`fleet-visual fleet-photo panel-${panel} ${className}`}>
       <Image
-        src={`/fleet/${name}.jpg`}
+        src={
+          panel === 'overview' ? '/sections/fleet.png' : `/fleet/${name}.jpg`
+        }
         alt={alt}
         fill
         sizes="(max-width: 768px) 100vw, 75vw"
@@ -175,7 +179,7 @@ export function Footer() {
           <div>
             <Brand footer />
             <p>
-              Chemical and liquid transportation.
+              Chemical solvents, food-grade, pharma and other liquid cargo.
               <br />
               On Indian roads since {business.founded}.
             </p>

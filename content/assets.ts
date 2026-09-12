@@ -173,6 +173,36 @@ export const clientLogos = [
     height: 321,
     source: 'client_content/shree maruti clients/Group-1000001956.png',
   },
+  {
+    name: 'Cohance Lifesciences',
+    src: '/clients/cohance.webp',
+    width: 275,
+    height: 183,
+    source: '~/Downloads/shree_maruti_clients/image-79.webp',
+  },
+  {
+    name: 'Satyam Petrochemicals',
+    src: '/clients/satyam-petrochemicals.png',
+    width: 337,
+    height: 131,
+    source: '~/Downloads/shree_maruti_clients/partner-logo-6-dark.png',
+  },
+  {
+    name: 'Kanoria Chemicals and Industries',
+    src: '/clients/kanoria.png',
+    width: 600,
+    height: 600,
+    source:
+      '~/Downloads/shree_maruti_clients/kanoria-chemicals-and-industries--600.png',
+  },
+  {
+    name: 'Jubilant Life Sciences',
+    src: '/clients/jubilant.jpg',
+    width: 888,
+    height: 400,
+    source:
+      '~/Downloads/shree_maruti_clients/logo-jubilant-life-sciences.jpg.jpeg',
+  },
 ] as const;
 
 export const fleetMontage = {

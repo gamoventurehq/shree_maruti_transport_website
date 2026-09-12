@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from '@/components/transport/page-link';
 import { ClipboardCheck, FileCheck, FlaskConical, HardHat } from 'lucide-react';
 
@@ -55,6 +56,14 @@ export function SafetyRegulations() {
             a chemical, liquid, or industrial cargo movement.
           </p>
         </div>
+        <Image
+          src="/sections/safety-and-regulations.png"
+          alt="Personnel wearing safety equipment inspect a tanker before dispatch"
+          width={1448}
+          height={1086}
+          sizes="90vw"
+          className="regulations-image"
+        />
         <div className="regulations-grid">
           {preparationAreas.map(({ icon: Icon, title, description, label }) => (
             <article className="regulation-card" key={title}>

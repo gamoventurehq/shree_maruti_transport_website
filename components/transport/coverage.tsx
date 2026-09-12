@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Link from '@/components/transport/page-link';
 import { coverageCities } from '@/content/coverage-cities';
 import { indiaOutline } from '@/content/india-map';
@@ -20,9 +20,9 @@ export function Coverage() {
             Connected across India.
           </h2>
           <p className="body-copy">
-            From Maharashtra’s industrial centres to destinations across
-            northern, southern and eastern India. Explore the places we serve
-            from Bhiwandi.
+            From Mumbai, Bhiwandi, Maharashtra to the destinations we serve
+            across India. Transport for chemical solvents, food-grade and
+            pharmaceutical cargo, and other liquid cargo.
           </p>
         </div>
         <RouteExplorer />
@@ -32,22 +32,57 @@ export function Coverage() {
 }
 
 function RouteExplorer() {
-  const [selected, setSelected] = useState<string>('Hyderabad');
+  const [selected, setSelected] = useState<string>(coverageCities[0].name);
+  const explorer = useRef<HTMLDivElement>(null);
+  const [inView, setInView] = useState(false);
+  const [interacting, setInteracting] = useState(false);
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => setInView(entry.isIntersecting),
+      { threshold: 0.2 },
+    );
+    if (explorer.current) observer.observe(explorer.current);
+    return () => observer.disconnect();
+  }, []);
+  useEffect(() => {
+    const motion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    if (!inView || interacting) return;
+    const timer = window.setInterval(() => {
+      if (document.hidden || motion.matches) return;
+      setSelected((current) => {
+        const index = coverageCities.findIndex(
+          (point) => point.name === current,
+        );
+        return coverageCities[(index + 1) % coverageCities.length].name;
+      });
+    }, 2000);
+    return () => window.clearInterval(timer);
+  }, [inView, interacting, selected]);
   const city =
     coverageCities.find((item) => item.name === selected) ?? coverageCities[0];
   const project = (lon: number, lat: number) => [
     (lon - 66) * 16,
     (37 - lat) * 16,
   ];
-  const hub = project(73.106, 19.252);
+  const hub = project(72.878, 19.076);
   return (
-    <div className="route-explorer">
+    <div
+      ref={explorer}
+      className="route-explorer"
+      onPointerEnter={() => setInteracting(true)}
+      onPointerLeave={() => setInteracting(false)}
+      onFocusCapture={() => setInteracting(true)}
+      onBlurCapture={(event) => {
+        if (!event.currentTarget.contains(event.relatedTarget))
+          setInteracting(false);
+      }}
+    >
       <div className="route-map">
         <div className="map-orbit orbit-one" />
         <div className="map-orbit orbit-two" />
         <svg
           viewBox="0 0 520 490"
-          aria-label="India route explorer from Bhiwandi"
+          aria-label="India route explorer from Mumbai"
         >
           <defs>
             <pattern
@@ -85,7 +120,7 @@ function RouteExplorer() {
           })}
           <circle cx={hub[0]} cy={hub[1]} r="6" fill="#ff5157" />
           <text x={hub[0] - 15} y={hub[1] + 20} textAnchor="end">
-            Bhiwandi
+            Mumbai
           </text>
           <text
             x={project(city.lon, city.lat)[0] + 10}
@@ -99,8 +134,8 @@ function RouteExplorer() {
         </span>
       </div>
       <div className="route-console">
-        <h3 aria-live="polite" aria-atomic="true">
-          Bhiwandi <span>→</span>
+        <h3 aria-live={interacting ? 'polite' : 'off'} aria-atomic="true">
+          Mumbai <span>→</span>
           <br />
           {city.name}
         </h3>

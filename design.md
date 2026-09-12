@@ -54,7 +54,7 @@ rounded:
 motion:
   duration: 200ms
   easing: ease-out
-  hero: slow optional image scale, with pause control
+  hero: continuous road and plant parallax with rotating tanker wheels and a pause control
   reduced-motion: disable decorative motion and smooth scrolling
 pages:
   - { path: /, title: Home }
@@ -112,7 +112,7 @@ The homepage is a concise overview. Inner pages contain the detail rather than r
 
 ### Homepage
 
-A rounded, inset tanker photo hero with centred Instrument Serif type, an editorial headline anchored in the 2011 founding year, links to services and fleet, a three-part factual strip, selected client marks, service overview, fleet feature, Nicerglobe/technology introduction, India coverage, and a contact invitation.
+A rounded, inset animated tanker hero with Instrument Serif type, an editorial headline anchored in the 2011 founding year, links to services and fleet, a three-part factual strip, selected client marks, service overview, fleet feature, Nicerglobe/technology introduction, India coverage, and a contact invitation. On desktop, place the headline and actions at the left and the tanker at the right. Stack the copy above the vehicle on mobile.
 
 ### About
 
@@ -204,17 +204,17 @@ The preview now has three service guides below `/services/`: chemical tanker tra
 
 Route briefs and proposed operating roles are presented without visible draft labels at the user’s request. Their copy lives in `content/service-guides.ts` and `components/transport/operations-preview.tsx`. These are meeting material, not case studies or verified company procedures. Verify, replace or remove unconfirmed operational content before launch. Preview indexing remains disabled.
 
-The client logo strip moves once for four seconds and then remains horizontally scrollable, with keyboard focus and reduced-motion support. It has no pause button. The complete logo directory is expandable on the Clients page. Equipment labels are repeated in HTML below the PPE illustration for mobile readability.
+The homepage and Clients page show a moving banner of all 23 clients, without a scrollbar. The Clients page also displays the full directory immediately, without an expand/collapse control. Equipment labels are repeated in HTML below the PPE illustration for mobile readability.
 
 The client requested a clean presentation without visible draft labels. Scenario routes and operating-role copy remain unverified meeting material; verify or replace them before public launch. Indexing remains disabled.
 
-The client requested continuous client-logo motion again. The strip loops horizontally with no visible pause button; hover/focus pause and reduced-motion handling remain. The experimental layered tanker animation was rejected and removed. The hero uses a blue-and-white Tata photographic scene without simulated wheel motion while real video is pending.
+The client requested continuous client-logo motion again. The strip loops horizontally with no visible pause button; hover/focus pause and reduced-motion handling remain.
 
 ## Selected main design — September 11, 2026
 
-The main edition combines its original branding with the editorial edition’s white navigation and inset photo hero. Instrument Serif is limited to the hero; existing display and body fonts remain elsewhere. The hero has subtle scroll-linked photo movement with a static fallback and reduced-motion support. The original company mark remains in the header.
+The main edition combines its original branding with the editorial edition’s white navigation and inset hero. Instrument Serif is limited to the hero; existing display and body fonts remain elsewhere. The original company mark remains in the header.
 
-The route explorer uses the visual edition’s composition with red highlights. Confirmed destination markers are Ahmednagar/Supa, Mahad, Lote, Hyderabad, Visakhapatnam (Vizag), Nellore, Chennai, Cuddalore, Erode, Kochi (Cochin), Bengaluru (Bangalore), Nagpur and Kolkata. Kerala is also listed as a service area. At the user’s request, the map also includes Delhi, Jaipur, Chandigarh, Ludhiana, Amritsar, Jammu, Dehradun, Lucknow, Kanpur and Agra to represent northern coverage. These are editorial additions for the preview, distinct from the original client-supplied destination list.
+The route explorer uses Mumbai as its schematic origin, with the operating location written as Mumbai, Bhiwandi, Maharashtra. Keep only the client-confirmed destinations: Ahmednagar/Supa, Mahad, Lote, Hyderabad, Visakhapatnam (Vizag), Nellore, Chennai, Cuddalore, Erode, Kochi (Cochin), Bengaluru (Bangalore), Nagpur and Kolkata. Kerala remains a service-area note. Cycle through destinations every two seconds while visible; pause during interaction and respect reduced motion. Tank material is SS 304L only. Cargo focus is chemical solvents, food-grade, pharmaceutical and other liquid cargo.
 
 ## Client fleet photography and service journey
 
@@ -231,3 +231,11 @@ Ease into and out of each stop, with wheel rotation and road fill following the 
 ### Rounded dark sections
 
 Dark sections across every page use the hero’s 18px corner radius, reduced to 14px on mobile. Inset these sections to 96% width with a 1480px maximum; use 12px side gutters on mobile. Leave canvas space above and below so all four corners remain visible. Apply the same radius to the vision board and staff-kit figure.
+
+### Homepage road animation — September 12, 2026
+
+Match the front-and-side camera angle in the supplied `header.png`. Keep the blue-and-white Tata tanker in frame while its wheel details rotate, the road moves beneath it and the chemical plant passes behind. Preserve the vehicle silhouette with an SVG clip. Use fixed metal rim shading and rotate only vents and lug details within elliptical perspective transforms. Keep the body, axle centres and contact shadow stable.
+
+Road motion is continuous at 144 CSS pixels per second; plant and kerb markings run at 32 pixels per second. The plant, kerb and road share one angled plane matching the tanker view. Crop the photographed kerb and road out of the levelled scenery panels. Draw one continuous kerb and road from that fixed baseline, extending the road below the frame. Use seamless grain instead of moving photographic road lighting. Derive wheel duration from the rendered front tyre diameter. Mirrored pairs of scenery panels repeat without a gap. Use compositor transforms, with no animation state updates on every frame. Pause when offscreen, when the tab is hidden or through the visible motion control. Reduced motion shows a static composition.
+
+The hero layers in `public/hero/` are AI-prepared illustrations based on supplied imagery, not documentary footage. Their source images and prompts are recorded in `docs/references/hero-motion.md`. Keep the original fleet photographs and Services journey intact.

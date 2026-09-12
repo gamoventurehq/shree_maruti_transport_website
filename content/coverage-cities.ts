@@ -1,4 +1,4 @@
-// Supplied destinations and user-requested northern coverage cities.
+// Client-confirmed destinations; Kerala is represented by Kochi and the area note.
 // Coordinates are schematic city markers, not branch addresses.
 export const coverageCities = [
   {
@@ -38,14 +38,4 @@ export const coverageCities = [
   },
   { name: 'Nagpur', region: 'central', lat: 21.15, lon: 79.09, label: true },
   { name: 'Kolkata', region: 'east', lat: 22.57, lon: 88.36, label: true },
-  { name: 'Delhi', region: 'north', lat: 28.61, lon: 77.21, label: true },
-  { name: 'Jaipur', region: 'north', lat: 26.91, lon: 75.79, label: true },
-  { name: 'Chandigarh', region: 'north', lat: 30.73, lon: 76.78, label: true },
-  { name: 'Ludhiana', region: 'north', lat: 30.9, lon: 75.86, label: true },
-  { name: 'Amritsar', region: 'north', lat: 31.63, lon: 74.87, label: true },
-  { name: 'Jammu', region: 'north', lat: 32.73, lon: 74.86, label: true },
-  { name: 'Dehradun', region: 'north', lat: 30.32, lon: 78.03, label: true },
-  { name: 'Lucknow', region: 'north', lat: 26.85, lon: 80.95, label: true },
-  { name: 'Kanpur', region: 'north', lat: 26.45, lon: 80.33, label: true },
-  { name: 'Agra', region: 'north', lat: 27.18, lon: 78.01, label: true },
 ] as const;

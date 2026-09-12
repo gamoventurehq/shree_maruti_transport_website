@@ -1,6 +1,5 @@
 import { ServiceJourney } from '@/components/transport/service-journey';
 import { serviceGuides } from '@/content/service-guides';
-import { TransportFaq } from '@/components/transport/transport-faq';
 import type { Metadata } from 'next';
 import { Droplets, FlaskConical, Route, Truck } from 'lucide-react';
 import { ContactBand, PageIntro, TextLink } from '@/components/transport/site';
@@ -24,7 +23,7 @@ export default function ServicesPage() {
       <PageIntro
         eyebrow="OUR SERVICES"
         title="Tanker transport for chemical and liquid cargo."
-        description="Chemical and liquid transportation, planned around the product and the journey it needs to make."
+        description="Transport for chemical solvents, food-grade, pharmaceutical and other liquid cargo, planned around the product and its journey."
       />
       <ServiceJourney />
       <section className="section">
@@ -98,7 +97,6 @@ export default function ServicesPage() {
           </div>
         </div>
       </section>
-      <TransportFaq />
       <ContactBand />
     </>
   );

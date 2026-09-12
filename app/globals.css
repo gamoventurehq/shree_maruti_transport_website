@@ -2162,9 +2162,12 @@ p {
 }
 .client-banner-window {
   overflow-x: auto;
-  scrollbar-color: var(--red) var(--canvas);
+  scrollbar-width: none;
   border-block: 1px solid var(--line);
   background: white;
+}
+.client-banner-window::-webkit-scrollbar {
+  display: none;
 }
 .client-banner-track {
   display: flex;
@@ -3125,50 +3128,58 @@ p {
   }
 }
 .paper-hero {
+  --road-hero-height: clamp(620px, calc(100svh - 120px), 790px);
   position: relative;
   overflow: hidden;
   border-radius: var(--section-radius);
   width: 96%;
   max-width: 1480px;
-  min-height: 690px;
+  min-height: var(--road-hero-height);
   margin: auto;
   background: var(--ink);
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
-}
-.paper-hero > img {
-  object-fit: cover;
-  object-position: 65% center;
-  filter: saturate(0.65);
 }
 .paper-hero-wash {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, #11211e35, #11211e55 45%, #11211ec0);
+  pointer-events: none;
+  background: linear-gradient(
+    180deg,
+    #101b28eb,
+    #101b28b3 27%,
+    #101b2826 48%,
+    transparent 64%
+  );
 }
 .paper-hero-copy {
   position: relative;
   z-index: 2;
-  text-align: center;
+  display: block;
+  text-align: left;
   color: white;
-  max-width: 1080px;
-  padding: 70px 25px 120px;
+  width: 100%;
+  padding: 62px 5% 0;
 }
 .paper-hero h1 {
-  font-size: clamp(48px, 5.8vw, 82px);
+  max-width: 600px;
+  font-size: clamp(48px, 5.6vw, 78px);
   text-wrap: balance;
 }
 .paper-hero-copy p {
   color: #f6f7f1;
-  margin: 28px 0;
-  font-size: 17px;
+  margin: 26px 0 0;
+  max-width: 390px;
+  font-size: 16px;
 }
 .paper-hero-copy > div {
   display: flex;
-  gap: 15px;
-  justify-content: center;
-  margin-top: 32px;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  margin-top: 22px;
+  max-width: 440px;
 }
 .paper-hero-foot {
   position: absolute;
@@ -3254,6 +3265,35 @@ p {
     margin-inline: auto;
   }
 }
+@media (max-width: 900px) {
+  .paper-hero {
+    --road-hero-height: 860px;
+  }
+  .paper-hero-copy {
+    display: block;
+    text-align: center;
+    padding: 42px 28px 0;
+  }
+  .paper-hero h1 {
+    max-width: none;
+  }
+  .paper-hero-copy p {
+    margin: 22px auto 0;
+  }
+  .paper-hero-copy > div {
+    justify-content: center;
+    margin-inline: auto;
+  }
+  .paper-hero-wash {
+    background: linear-gradient(
+      180deg,
+      #101b28fa,
+      #101b28bf 40%,
+      #101b2820 70%,
+      transparent 82%
+    );
+  }
+}
 @media (max-width: 600px) {
   :root {
     --section-radius: 14px;
@@ -3263,22 +3303,25 @@ p {
     margin-block: 16px;
   }
   .paper-hero {
+    --road-hero-height: 730px;
     width: calc(100% - 24px);
-    min-height: 620px;
     border-radius: var(--section-radius);
   }
   .paper-hero h1 {
     font-size: clamp(38px, 10vw, 54px);
   }
   .paper-hero-copy {
-    padding: 48px 20px 125px;
+    padding: 32px 20px 0;
   }
   .paper-hero-copy p {
-    font-size: 16px;
+    font-size: 14px;
+    margin-top: 18px;
   }
   .paper-hero-copy > div {
     flex-direction: column;
-    gap: 12px;
+    gap: 10px;
+    max-width: 300px;
+    margin-inline: auto;
   }
   .paper-hero-foot {
     left: 20px;
@@ -3317,24 +3360,6 @@ p {
 .site-header .mobile-navigation a[aria-current] {
   color: var(--red);
 }
-@supports (animation-timeline: view()) {
-  @media (prefers-reduced-motion: no-preference) {
-    .paper-hero > img {
-      animation: main-hero-drift linear both;
-      animation-timeline: view();
-      animation-range: entry 0% exit 100%;
-    }
-  }
-}
-@keyframes main-hero-drift {
-  from {
-    transform: translateY(-6%) scale(1.14);
-  }
-  to {
-    transform: translateY(6%) scale(1.14);
-  }
-}
-
 /* Fleet photography replaces cropped promotional montages. */
 .fleet-visual.fleet-photo {
   aspect-ratio: 16 / 9;
@@ -3352,9 +3377,6 @@ p {
 .gallery-main .panel-rear img,
 .gallery-main .panel-white img {
   object-fit: contain;
-}
-.paper-hero > img {
-  object-position: 60% 55%;
 }
 .service-journey {
   overflow-x: clip;
@@ -3567,4 +3589,29 @@ p {
   .service-journey .journey-steps {
     gap: 20px;
   }
+}
+
+.home-tanker-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 65%;
+}
+.regulations-image {
+  width: 100%;
+  height: auto;
+  border-radius: var(--section-radius);
+  margin-bottom: 40px;
+}
+
+.gallery-main .gallery-client-photo img {
+  object-fit: contain;
+}
+
+.fleet-technology {
+  background: var(--white);
+  border-block: 1px solid var(--line);
+}
+.fleet-technology .technology-partners article {
+  border-color: var(--line);
 }

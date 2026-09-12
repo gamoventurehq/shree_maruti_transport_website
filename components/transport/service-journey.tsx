@@ -139,7 +139,10 @@ export function ServiceJourney() {
         <div className="section-heading">
           <div>
             <h2 id="journey-title">From dispatch to delivery.</h2>
-            <p>A connected journey for your chemical and liquid cargo.</p>
+            <p>
+              A connected journey for chemical solvents, food-grade, pharma and
+              other liquid cargo.
+            </p>
           </div>
           <div className="journey-controls">
             <button

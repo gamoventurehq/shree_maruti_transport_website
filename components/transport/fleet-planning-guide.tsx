@@ -35,7 +35,7 @@ export function FleetPlanningGuide() {
               </tr>
               <tr>
                 <th scope="row">Tank material</th>
-                <td>SS 304 / SS 316 / SS 316L</td>
+                <td>SS 304L</td>
                 <td>
                   Review the product and its compatibility requirements before
                   selecting the material grade.
@@ -43,7 +43,7 @@ export function FleetPlanningGuide() {
               </tr>
               <tr>
                 <th scope="row">Cargo focus</th>
-                <td>Chemical, food-grade and pharmaceutical liquids</td>
+                <td>Chemical solvents, food-grade, pharma and other liquids</td>
                 <td>
                   Identify the product and any preparation or prior-cargo
                   requirements. Acceptance is consignment-specific.

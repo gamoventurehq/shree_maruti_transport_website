@@ -12,7 +12,7 @@ import { business } from '@/content/business';
 export const metadata: Metadata = {
   title: 'About us',
   description:
-    'Meet Shree Maruti Transport Services: established in 2011, with 50+ owned tankers and chemical and liquid transport operations across India.',
+    'Meet Shree Maruti Transport Services: established in 2011, with 50+ owned tankers and chemical solvent, food-grade, pharmaceutical and other liquid cargo transport operations across India.',
 };
 
 export default function AboutPage() {
@@ -42,10 +42,10 @@ export default function AboutPage() {
               base in {business.location}, we operate across India.
             </p>
             <p>
-              Our work centres on road transportation for chemicals, solvents,
-              and industrial liquids. An owned fleet of 50+ tankers supports
-              those movements, with a focus on the product, the people handling
-              it, and the destination.
+              Our work centres on road transportation for chemical solvents,
+              food-grade, pharmaceutical and other liquid cargo. An owned fleet
+              of 50+ tankers supports those movements, with a focus on the
+              product, the people handling it, and the destination.
             </p>
             <p>
               We work with businesses across the chemical, pharmaceutical, and
@@ -115,8 +115,9 @@ export default function AboutPage() {
               <h3>Our vision</h3>
               <p>
                 To be a trusted transport partner for Indian industry, known for
-                responsible chemical and liquid transportation and lasting
-                business relationships.
+                responsible chemical solvent, food-grade, pharmaceutical and
+                other liquid cargo transportation and lasting business
+                relationships.
               </p>
               <span className="board-word" aria-hidden="true">
                 VISION
@@ -172,14 +173,14 @@ export default function AboutPage() {
           </div>
           <div className="editorial-copy">
             <p className="lead">
-              From our Bhiwandi base, Shree Maruti brings together an owned
-              tanker fleet, cargo planning, and site coordination for movements
-              across India.
+              From our Mumbai base in Bhiwandi, Shree Maruti brings together an
+              owned tanker fleet, cargo planning, and site coordination for
+              movements across India.
             </p>
             <p>
-              Our fleet includes 22 to 35 MT payload options and SS 304, SS 316,
-              and SS 316L material grades. We handle chemical, solvent,
-              food-grade and pharmaceutical liquid requirements, with tanker
+              Our fleet includes 22 to 35 MT payload options and SS 304L
+              stainless steel. We handle chemical, solvent, food-grade,
+              pharmaceutical and other liquid cargo requirements, with tanker
               selection guided by the product and the journey.
             </p>
             <p>

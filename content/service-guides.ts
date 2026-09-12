@@ -9,7 +9,7 @@ export const serviceGuides = [
       'A chemical consignment is more than a payload and a destination. The product specification, tanker material, loading connections and receiving arrangements all shape the transport brief. Shree Maruti Transport Services brings a fleet of 50+ owned tankers to chemical and liquid movements across India.',
     focus: 'Plan around the product',
     explanation:
-      'Our fleet includes SS 304, SS 316 and SS 316L material grades, with payload options from 22 to 35 MT. These are fleet-wide options, not a guarantee that every capacity and grade combination is available. The specific tanker and movement are agreed after reviewing the cargo requirement.',
+      'Our fleet includes SS 304L stainless steel, with payload options from 22 to 35 MT. Available capacity and product compatibility are reviewed for each consignment. The specific tanker and movement are agreed after reviewing the cargo requirement.',
     considerations: [
       [
         'Cargo information',
@@ -26,7 +26,7 @@ export const serviceGuides = [
     ],
     scenario: {
       title: 'A manufacturer-to-plant movement',
-      route: 'Dahej → Bhiwandi',
+      route: 'Dahej → Mumbai',
       cargo: 'Industrial chemical · 25 MT enquiry',
       brief:
         'A manufacturer needs a bulk liquid consignment collected from its Gujarat facility and delivered to a receiving plant in Maharashtra. The buyer supplies the product specification and a preferred loading date.',
@@ -49,7 +49,7 @@ export const serviceGuides = [
       'Food-grade liquid transport brings the quality team into the planning conversation. Alongside the quantity and route, the buyer needs to specify cleanliness requirements, prior-cargo restrictions, product identification and receiving conditions. These details establish what a suitable movement must look like before dispatch.',
     focus: 'Make the quality brief explicit',
     explanation:
-      'Shree Maruti handles food-grade liquid transport and operates stainless-steel tankers across SS 304, SS 316 and SS 316L grades. A material grade by itself does not establish food-grade suitability. Product requirements and tanker preparation need to be agreed for the particular consignment.',
+      'Shree Maruti handles food-grade liquid transport and operates SS 304L stainless-steel tankers. A material grade by itself does not establish food-grade suitability. Product requirements and tanker preparation need to be agreed for the particular consignment.',
     considerations: [
       [
         'Product and quality requirements',
@@ -67,7 +67,7 @@ export const serviceGuides = [
     scenario: {
       title: 'A food-production supply movement',
       route: 'Ahmedabad → Pune',
-      cargo: 'Food-grade liquid · 21 MT enquiry',
+      cargo: 'Food-grade liquid · 22 MT enquiry',
       brief:
         'A food producer needs a liquid ingredient moved between two facilities. Its quality team provides a preparation checklist and prior-cargo restrictions with the transport enquiry.',
       approach:
@@ -106,7 +106,7 @@ export const serviceGuides = [
     ],
     scenario: {
       title: 'A recurring plant supply schedule',
-      route: 'Bhiwandi → Hyderabad',
+      route: 'Mumbai → Hyderabad',
       cargo: 'Industrial liquid · weekly dispatch brief',
       brief:
         'A procurement team is planning regular liquid deliveries to a manufacturing facility. The brief includes expected weekly quantities and two possible receiving windows.',

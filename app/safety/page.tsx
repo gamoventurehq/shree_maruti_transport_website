@@ -1,4 +1,3 @@
-import { OperationsPreview } from '@/components/transport/operations-preview';
 import { HazardousMaterials } from '@/components/transport/hazardous-materials';
 import { StaffSafetyKit } from '@/components/transport/staff-safety-kit';
 import { SafetyRegulations } from '@/components/transport/safety-regulations';
@@ -11,7 +10,6 @@ import {
   nicerglobeLogo,
   trackingGraphic,
 } from '@/content/assets';
-import { safetyPractices } from '@/content/services';
 
 export const metadata: Metadata = {
   title: 'Safety & regulations',
@@ -25,7 +23,7 @@ export default function SafetyPage() {
       <PageIntro
         eyebrow="SAFETY & REGULATIONS"
         title="Responsibility, on every road."
-        description="People, vehicle care, and journey visibility. A considered approach to chemical and liquid transportation."
+        description="People, vehicle care, and journey visibility. A considered approach to chemical solvent, food-grade, pharmaceutical and other liquid cargo transportation."
       />
       <section className="section">
         <div className="container certification-feature">
@@ -69,30 +67,7 @@ export default function SafetyPage() {
       <StaffSafetyKit />
       <SafetyRegulations />
       <HazardousMaterials />
-      <section className="section safety-practices">
-        <div className="container">
-          <div className="section-heading">
-            <div>
-              <p className="eyebrow">OUR APPROACH</p>
-              <h2>
-                Prepared people.
-                <br />
-                Prepared vehicles.
-              </h2>
-            </div>
-          </div>
-          <div className="practice-grid">
-            {safetyPractices.map((practice, i) => (
-              <article key={practice.title}>
-                <span>0{i + 1}</span>
-                <h3>{practice.title}</h3>
-                <p>{practice.body}</p>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-      <section className="section dark-section" id="technology">
+      <section className="section fleet-technology" id="technology">
         <div className="container">
           <div className="section-heading">
             <div>
@@ -148,7 +123,6 @@ export default function SafetyPage() {
           </div>
         </div>
       </section>
-      <OperationsPreview safety />
       <ContactBand />
     </>
   );
