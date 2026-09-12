@@ -218,11 +218,11 @@ The route explorer uses Mumbai as its schematic origin, with the operating locat
 
 ## Client fleet photography and service journey
 
-Use the September client photographs for Home, About and the Fleet gallery, replacing the previous generated fleet scenes. Keep the actual cab colours, markings and tank geometry unchanged. Use contain sizing for portrait gallery photographs. Services includes a horizontal dispatch → chemical plant → customer journey with the supplied line artwork, red brand accents, ordinary scrolling and reduced-motion support.
+Use the September client photographs for Home, About and the Fleet gallery, replacing the previous generated fleet scenes. Keep the actual cab colours, markings and tank geometry unchanged. Use contain sizing for portrait gallery photographs. Services includes a horizontal chemical plant collection → customer handover journey with the supplied line artwork, red brand accents, ordinary scrolling and reduced-motion support.
 
 ### Journey motion refinement
 
-Keep the roadside scene compact (260px maximum) and the tanker readable (48px minimum). GSAP synchronizes travel, wheel rotation and red road fill. Brief stops at dispatch, loading and receipt highlight the corresponding explanatory text. Fade the trail only after the tanker leaves the viewport. Preserve static reduced-motion presentation and pause controls.
+Keep the roadside scene compact (260px maximum) and the tanker readable (48px minimum). GSAP synchronizes travel, wheel rotation and red road fill. Brief stops at collection and handover highlight the corresponding explanatory text in two columns. Align each stop with its building. Fade the trail only after the tanker leaves the viewport. Preserve static reduced-motion presentation and pause controls.
 
 The animated tanker uses opaque vector shapes: a blue cab, white and silver tank, red stripe, dark chassis and filled tyres. Keep the rotating wheel hubs aligned with the tyres. Buildings sit at the far edge of the road; the tanker rides on the foreground edge and renders above both the road and buildings.
 

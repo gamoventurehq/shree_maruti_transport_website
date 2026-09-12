@@ -36,6 +36,9 @@ export function ServiceJourney() {
         const wheels = element.querySelectorAll('.journey-wheel');
         const trail = element.querySelector('.journey-road-trail');
         const steps = root.current!.querySelectorAll('.journey-steps li');
+        const stops = element.querySelectorAll<HTMLElement>(
+          '[data-journey-stop]',
+        );
         let inView = false;
         let previousWidth = 0;
         const sync = () =>
@@ -50,11 +53,13 @@ export function ServiceJourney() {
           timeline.current?.kill();
           const size = tanker.offsetWidth;
           const wheelDiameter = size * (88 / 588);
+          const sceneLeft = element.getBoundingClientRect().left;
           const positions = [
             -size - 4,
-            width * 0.18 - size / 2,
-            width * 0.5 - size / 2,
-            width * 0.82 - size / 2,
+            ...Array.from(stops, (stop) => {
+              const bounds = stop.getBoundingClientRect();
+              return bounds.left - sceneLeft + bounds.width / 2 - size / 2;
+            }),
             width + 4,
           ];
           const sequence = gsap.timeline({
@@ -73,7 +78,11 @@ export function ServiceJourney() {
             const distance = positions[i] - positions[i - 1];
             const duration = distance / (width / 14);
             const ease =
-              i === 1 ? 'sine.out' : i === 4 ? 'sine.in' : 'sine.inOut';
+              i === 1
+                ? 'sine.out'
+                : i === positions.length - 1
+                  ? 'sine.in'
+                  : 'sine.inOut';
             rotation += (distance / (Math.PI * wheelDiameter)) * 360;
             const start = sequence.duration();
             sequence
@@ -91,10 +100,10 @@ export function ServiceJourney() {
                 },
                 start,
               );
-            if (i < 4) {
+            if (i < positions.length - 1) {
               sequence.set(steps, { attr: { 'data-active': 'false' } });
               sequence.set(steps[i - 1], { attr: { 'data-active': 'true' } });
-              sequence.to({}, { duration: i === 2 ? 1.4 : 0.7 });
+              sequence.to({}, { duration: i === 1 ? 1.4 : 0.7 });
             }
           }
           sequence
@@ -138,7 +147,7 @@ export function ServiceJourney() {
       <div className="container">
         <div className="section-heading">
           <div>
-            <h2 id="journey-title">From dispatch to delivery.</h2>
+            <h2 id="journey-title">From collection to handover.</h2>
             <p>
               A connected journey for chemical solvents, food-grade, pharma and
               other liquid cargo.
@@ -163,14 +172,10 @@ export function ServiceJourney() {
         <div
           ref={scene}
           className="journey-scene"
-          aria-label="A tanker travels from dispatch to a chemical plant for loading, then to the receiving customer"
+          aria-label="A tanker collects liquid cargo at a chemical plant, then travels to the receiving customer for handover"
         >
           <div className="journey-stations" aria-hidden="true">
-            <div>
-              <JourneyOffice />
-            </div>
-            <JourneyTree />
-            <div className="journey-plant">
+            <div className="journey-plant" data-journey-stop>
               <Image
                 src="/journey/chemical-plant-line.jpg"
                 width={350}
@@ -179,8 +184,9 @@ export function ServiceJourney() {
               />
             </div>
             <JourneyTree />
-            <div>
-              <JourneyOffice delivery />
+            <JourneyTree />
+            <div data-journey-stop>
+              <JourneyDeliveryOffice />
             </div>
           </div>
           <div className="journey-road" aria-hidden="true">
@@ -255,13 +261,6 @@ export function ServiceJourney() {
         </div>
         <ol className="journey-steps">
           <li>
-            <h3>Prepare for the movement.</h3>
-            <p>
-              Confirm the tanker, route, cargo requirements and loading
-              appointment before departure.
-            </p>
-          </li>
-          <li>
             <h3>Collect the liquid cargo.</h3>
             <p>
               Coordinate site entry, product documentation and loading
@@ -281,55 +280,26 @@ export function ServiceJourney() {
   );
 }
 
-function JourneyOffice({ delivery = false }: { delivery?: boolean }) {
-  if (delivery) {
-    return (
-      <svg
-        viewBox="0 0 200 150"
-        fill="none"
-        stroke="#17191b"
-        strokeWidth="3"
-        strokeLinejoin="round"
-        aria-hidden="true"
-      >
-        <path d="M4 148H196M20 146V30H116V146M116 55H180V146M16 30V20H120V30M116 55V47H184V55" />
-        <path d="M31 20V12H104V20M132 47V39H166V47" />
-        <rect x="32" y="41" width="72" height="65" fill="#edf3f5" />
-        <path d="M56 41V106M80 41V106M32 62H104M32 84H104" />
-        <rect x="130" y="66" width="37" height="53" fill="#edf3f5" />
-        <path d="M149 66V119M130 84H167M130 101H167" />
-        <path d="M40 146V124H95V146M67 124V146M59 133V138M75 133V138M33 124V116H104V124ZM32 146V142H104V146M123 146V135H175V146" />
-        <path d="M129 133V127M140 133V124M151 133V126M163 133V123M9 146V119M6 118H13M190 146V119M187 118H194" />
-        <path d="M25 25H111" stroke="var(--red)" strokeWidth="4" />
-        <path d="M25 110H111M121 124H176" strokeWidth="2" />
-      </svg>
-    );
-  }
+function JourneyDeliveryOffice() {
   return (
     <svg
       viewBox="0 0 200 150"
       fill="none"
-      stroke="currentColor"
+      stroke="#17191b"
       strokeWidth="3"
       strokeLinejoin="round"
       aria-hidden="true"
     >
-      <path d="M5 148H195M18 147V44H119V147M14 44V34H123V44ZM119 76H181V147M115 76L150 60L188 76" />
-      <path d="M29 34V24H108V34M25 140H112M119 140H181" />
-      {[54, 80].map((y) =>
-        [30, 57, 84].map((x) => (
-          <g key={`${x}-${y}`}>
-            <rect x={x} y={y} width="18" height="16" />
-            <path d={`M${x + 9} ${y}v16M${x} ${y + 8}h18`} />
-          </g>
-        )),
-      )}
-      <path d="M53 147V113H87V147M70 113V147M49 110H91M65 129V134M75 129V134" />
-      <rect x="132" y="94" width="36" height="46" />
-      <path d="M150 94V140M132 117H168M135 89H165" />
-      <path d="M10 147V122M8 121H13M187 147V122M185 121H190M26 147V137M23 136H30" />
-      <path d="M31 27H104" stroke="var(--red)" strokeWidth="3" />
-      <path d="M44 147V142H96V147M48 142V138H92V142" />
+      <path d="M4 148H196M20 146V30H116V146M116 55H180V146M16 30V20H120V30M116 55V47H184V55" />
+      <path d="M31 20V12H104V20M132 47V39H166V47" />
+      <rect x="32" y="41" width="72" height="65" fill="#edf3f5" />
+      <path d="M56 41V106M80 41V106M32 62H104M32 84H104" />
+      <rect x="130" y="66" width="37" height="53" fill="#edf3f5" />
+      <path d="M149 66V119M130 84H167M130 101H167" />
+      <path d="M40 146V124H95V146M67 124V146M59 133V138M75 133V138M33 124V116H104V124ZM32 146V142H104V146M123 146V135H175V146" />
+      <path d="M129 133V127M140 133V124M151 133V126M163 133V123M9 146V119M6 118H13M190 146V119M187 118H194" />
+      <path d="M25 25H111" stroke="var(--red)" strokeWidth="4" />
+      <path d="M25 110H111M121 124H176" strokeWidth="2" />
     </svg>
   );
 }
