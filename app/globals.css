@@ -254,6 +254,46 @@ p {
   gap: 15px;
   flex-shrink: 0;
 }
+.header-brands {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+.header-brand-divider {
+  color: var(--red);
+  font-size: 38px;
+  font-weight: 400;
+  line-height: 1;
+}
+.header-associated-brand {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  min-height: 48px;
+  flex-shrink: 0;
+}
+.header-associated-brand img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+@media (max-width: 767px) {
+  .header-brands {
+    gap: 8px;
+  }
+  .header-associated-brand {
+    width: 44px;
+  }
+  .site-header .menu-toggle {
+    flex-shrink: 0;
+  }
+}
+@media (max-width: 380px) {
+  .header-brands .brand-name {
+    display: none;
+  }
+}
 .brand-mark {
   position: relative;
   display: block;
@@ -2621,6 +2661,45 @@ p {
   gap: 9%;
   align-items: start;
 }
+.social-icons {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 24px 0 0;
+}
+.social-icon {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+.social-logo {
+  display: block;
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+.dark-section .social-icon {
+  border-color: var(--dark-line);
+}
+.dark-section .social-logo {
+  filter: invert(1);
+}
+a.social-icon:hover,
+a.social-icon:focus-visible {
+  background: var(--red);
+  border-color: var(--red);
+}
+a.social-icon:hover .social-logo,
+a.social-icon:focus-visible .social-logo {
+  filter: invert(1);
+}
 .service-guide-index {
   position: sticky;
   top: 120px;
@@ -3058,29 +3137,20 @@ p {
   fill: var(--map-accent);
   font: 12px var(--font-body);
 }
-.route-arc {
-  fill: none;
-  stroke: #a38c8f;
-  stroke-width: 0.7;
-  opacity: 0.3;
+.coverage-point {
+  cursor: pointer;
 }
-.route-arc.is-selected {
-  stroke: var(--map-accent);
-  stroke-width: 2;
-  opacity: 1;
-  stroke-dasharray: 8 5;
-  animation: route-flow 2s linear infinite;
+.coverage-point-halo {
+  fill: transparent;
 }
-.map-orbit {
-  position: absolute;
-  border: 1px solid #b2a2a224;
-  border-radius: 50%;
-  inset: 10%;
-  transform: rotate(-24deg) scaleY(0.7);
+.coverage-point[aria-pressed='true'] .coverage-point-halo {
+  fill: #ff515730;
 }
-.orbit-two {
-  inset: 0;
-  transform: rotate(30deg) scaleY(0.6);
+.coverage-point:hover .coverage-point-halo,
+.coverage-point:focus-visible .coverage-point-halo {
+  fill: #ffffff30;
+  stroke: #fff;
+  stroke-width: 1;
 }
 .map-caption {
   position: absolute;
@@ -3122,11 +3192,6 @@ p {
   border-color: var(--map-accent);
   color: var(--white);
 }
-@keyframes route-flow {
-  to {
-    stroke-dashoffset: -52;
-  }
-}
 .paper-hero {
   --road-hero-height: clamp(620px, calc(100svh - 120px), 790px);
   position: relative;
@@ -3141,17 +3206,17 @@ p {
   align-items: flex-start;
   justify-content: center;
 }
+.paper-hero > img {
+  object-fit: cover;
+  object-position: 65% center;
+}
 .paper-hero-wash {
   position: absolute;
   inset: 0;
   pointer-events: none;
-  background: linear-gradient(
-    180deg,
-    #101b28eb,
-    #101b28b3 27%,
-    #101b2826 48%,
-    transparent 64%
-  );
+  background:
+    linear-gradient(90deg, #101b28d9, #101b2870 44%, transparent 75%),
+    linear-gradient(180deg, #101b2840, transparent 55%, #101b28b3);
 }
 .paper-hero-copy {
   position: relative;
@@ -3290,7 +3355,7 @@ p {
       #101b28fa,
       #101b28bf 40%,
       #101b2820 70%,
-      transparent 82%
+      #101b28b3
     );
   }
 }
@@ -3337,11 +3402,6 @@ p {
   }
   .map-caption {
     font-size: 10px;
-  }
-}
-@media (prefers-reduced-motion: reduce) {
-  .route-arc.is-selected {
-    animation: none;
   }
 }
 
@@ -3578,6 +3638,21 @@ p {
 .journey-steps h3 {
   transition: color 0.25s;
 }
+.associated-company-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+}
+.associated-company-logo img {
+  display: block;
+  width: min(100%, 220px);
+  height: auto;
+}
+
 .journey-controls button:hover {
   background: var(--canvas);
   border-color: var(--muted);

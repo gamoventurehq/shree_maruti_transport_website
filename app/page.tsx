@@ -57,7 +57,7 @@ export default function Home() {
               arrival.
             </p>
             <p>
-              Since 2011, Shree Maruti Transport Services has worked in road
+              Since 2011, Shree Maruti Transport Service has worked in road
               transportation, with a focus on chemicals and liquid cargo. Today,
               our 50+ owned tankers serve businesses across India.
             </p>

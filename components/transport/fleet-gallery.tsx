@@ -102,7 +102,7 @@ export function FleetGallery() {
         ))}
       </div>
       <p className="asset-note">
-        Fleet views supplied for Shree Maruti Transport Services. Vehicle
+        Fleet views supplied for Shree Maruti Transport Service. Vehicle
         specifications are confirmed for each requirement.
       </p>
     </div>

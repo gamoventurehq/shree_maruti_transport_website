@@ -1,4 +1,4 @@
-# Shree Maruti Transport Services
+# Shree Maruti Transport Service
 
 A seven-page transport website built with Next.js, React, and TypeScript. The visual system in `design.md` uses the supplied SMTS logo, red accents, charcoal backgrounds, and condensed headings.
 
@@ -29,16 +29,17 @@ The form validates required fields and prepares a copyable draft. It does not se
 
 Original material remains in `client_content/`. Selected assets are copied to `public/brand`, `public/fleet`, `public/clients`, and `public/partners`. Customer logos, fleet technology partners, and certification imagery appear in separate sections.
 
-The site uses the user-confirmed name Shree Maruti Transport Services, founding year 2011, 50+ owned tankers, pan-India operations, and Nicer Globe certification. The fleet count follows the user’s latest confirmed figure of 50+ tankers. The tanker imagery is supplied illustrative material, not verified fleet photography.
+The site uses the user-confirmed name Shree Maruti Transport Service, founding year 2011, 50+ owned tankers, pan-India operations, and Nicer Globe certification. The fleet count follows the user’s latest confirmed figure of 50+ tankers. The tanker imagery is supplied illustrative material, not verified fleet photography.
 
-The office map uses the location from the supplied Google Maps link. Regional city pins on the India map remain examples, not confirmed branches or live vehicle positions. The map outline is derived from [Natural Earth via world.geo.json](https://github.com/johan/world.geo.json/blob/master/countries/IND.geo.json) and should be reviewed for public use.
+Jay Ambey Road Line and Shree Maruti Transport Service are two names for the same business. Present both names equally without suggesting a parent company or subsidiary. The Jay Ambey page uses the supplied JARL logo and the same fleet, services and contact details. It is linked from the header, About page and footer at `/jay-ambey-road-line`.
+
+The office map uses the location from the supplied Google Maps link. The India coverage map shows Mumbai and the client-confirmed destinations as clickable points. Selecting a point or location button highlights it and shows its state and service information. It has no route lines or automatic location switching. These are schematic service markers, not branch addresses or live vehicle positions. The map outline is derived from [Natural Earth via world.geo.json](https://github.com/johan/world.geo.json/blob/master/countries/IND.geo.json) and should be reviewed for public use.
 
 ### Still needed for launch
 
 - Official phone, WhatsApp, email, full postal address, and enquiry recipient.
 - Client approval of page copy, including the drafted Vision and Mission statements and safety practices.
 - Vehicle-level configuration and availability, actual service routes, and original fleet photography.
-- The Jai Ambey Road Line logo and its relationship to Shree Maruti; no separate file was found in the supplied folder.
 - Identification of the two withheld client logos listed in the asset manifest.
 
 No separate written-content document was found in `client_content/` during this build. The site copy was drafted around the supplied imagery and user-confirmed facts.

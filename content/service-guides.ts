@@ -6,7 +6,7 @@ export const serviceGuides = [
     summary:
       'Bulk liquid transport for chemical supply chains, connecting production facilities, storage points and receiving plants.',
     introduction:
-      'A chemical consignment is more than a payload and a destination. The product specification, tanker material, loading connections and receiving arrangements all shape the transport brief. Shree Maruti Transport Services brings a fleet of 50+ owned tankers to chemical and liquid movements across India.',
+      'A chemical consignment is more than a payload and a destination. The product specification, tanker material, loading connections and receiving arrangements all shape the transport brief. Shree Maruti Transport Service brings a fleet of 50+ owned tankers to chemical and liquid movements across India.',
     focus: 'Plan around the product',
     explanation:
       'Our fleet includes SS 304L stainless steel, with payload options from 22 to 35 MT. Available capacity and product compatibility are reviewed for each consignment. The specific tanker and movement are agreed after reviewing the cargo requirement.',

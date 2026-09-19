@@ -1,5 +1,7 @@
 import { OperationsPreview } from '@/components/transport/operations-preview';
 import type { Metadata } from 'next';
+import Image from 'next/image';
+import { jayAmbeyLogo } from '@/content/assets';
 import { ArrowUpRight } from 'lucide-react';
 import Link from '@/components/transport/page-link';
 import {
@@ -12,7 +14,7 @@ import { business } from '@/content/business';
 export const metadata: Metadata = {
   title: 'About us',
   description:
-    'Meet Shree Maruti Transport Services: established in 2011, with 50+ owned tankers and chemical solvent, food-grade, pharmaceutical and other liquid cargo transport operations across India.',
+    'Meet Shree Maruti Transport Service: established in 2011, with 50+ owned tankers and chemical solvent, food-grade, pharmaceutical and other liquid cargo transport operations across India.',
 };
 
 export default function AboutPage() {
@@ -28,7 +30,7 @@ export default function AboutPage() {
           <div className="founding-year">
             <span>ON THE ROAD SINCE</span>
             <strong>2011</strong>
-            <p>Shree Maruti Transport Services</p>
+            <p>Shree Maruti Transport Service</p>
           </div>
           <div>
             <p className="eyebrow">WHO WE ARE</p>
@@ -38,7 +40,7 @@ export default function AboutPage() {
               Understanding responsibility.
             </h2>
             <p className="lead">
-              Shree Maruti Transport Services was established in 2011. From our
+              Shree Maruti Transport Service was established in 2011. From our
               base in {business.location}, we operate across India.
             </p>
             <p>
@@ -196,6 +198,36 @@ export default function AboutPage() {
         </div>
       </section>
       <OperationsPreview />
+      <section className="section">
+        <div className="container editorial-grid">
+          <div className="associated-company-logo">
+            <Image
+              src={jayAmbeyLogo.src}
+              alt="Jay Ambey Road Line — JARL logo"
+              width={jayAmbeyLogo.width}
+              height={jayAmbeyLogo.height}
+              sizes="220px"
+            />
+          </div>
+          <div className="editorial-copy">
+            <p className="eyebrow">ONE BUSINESS. TWO NAMES.</p>
+            <h2>Jay Ambey Road Line.</h2>
+            <p className="lead">
+              Jay Ambey Road Line and Shree Maruti Transport Service are two
+              names for the same business, with the same team, tanker fleet and
+              services.
+            </p>
+            <p>
+              From chemical solvents to food-grade, pharmaceutical and other
+              liquid cargo, we serve customers across India from our Mumbai base
+              in Bhiwandi under both names.
+            </p>
+            <Link href="/jay-ambey-road-line" className="text-link">
+              About Jay Ambey Road Line <ArrowUpRight size={18} />
+            </Link>
+          </div>
+        </div>
+      </section>
       <ContactBand />
     </>
   );

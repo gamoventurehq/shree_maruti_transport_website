@@ -9,7 +9,7 @@ import {
 export const metadata: Metadata = {
   title: 'Our clients',
   description:
-    'Businesses across chemicals, pharmaceuticals, manufacturing, and industrial supply served by Shree Maruti Transport Services.',
+    'Businesses across chemicals, pharmaceuticals, manufacturing, and industrial supply served by Shree Maruti Transport Service.',
 };
 
 export default function ClientsPage() {

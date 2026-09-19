@@ -27,11 +27,11 @@ const barlow = Barlow_Condensed({
 export const metadata: Metadata = {
   icons: { icon: '/brand/smts-logo.png' },
   title: {
-    default: 'Shree Maruti Transport Services | Chemical & Liquid Transport',
-    template: '%s | Shree Maruti Transport Services',
+    default: 'Shree Maruti Transport Service | Chemical & Liquid Transport',
+    template: '%s | Shree Maruti Transport Service',
   },
   description:
-    'Established in 2011. Shree Maruti Transport Services operates 50+ owned tankers for chemical solvents, food-grade, pharmaceutical and other liquid cargo across India.',
+    'Established in 2011. Shree Maruti Transport Service operates 50+ owned tankers for chemical solvents, food-grade, pharmaceutical and other liquid cargo across India.',
   robots: { index: !business.isPreview, follow: !business.isPreview },
 };
 

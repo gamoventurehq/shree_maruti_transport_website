@@ -3,6 +3,7 @@ import Link from '@/components/transport/page-link';
 import { ArrowRight, ArrowUpRight, MapPin } from 'lucide-react';
 import { brandLogo, clientLogos } from '@/content/assets';
 import { business } from '@/content/business';
+import { GoogleMapsIcon, SocialIcons } from './social-icons';
 
 export const pageLinks = [
   { label: 'Home', href: '/' },
@@ -31,7 +32,7 @@ export function Brand({ footer = false }: { footer?: boolean }) {
         />
       </span>
       <span className="brand-name">
-        SHREE MARUTI<span>TRANSPORT SERVICES</span>
+        SHREE MARUTI<span>TRANSPORT SERVICE</span>
       </span>
     </Link>
   );
@@ -183,6 +184,7 @@ export function Footer() {
               <br />
               On Indian roads since {business.founded}.
             </p>
+            <SocialIcons />
           </div>
           <div>
             <h2>Explore</h2>
@@ -192,6 +194,7 @@ export function Footer() {
                   {link.label}
                 </Link>
               ))}
+              <Link href="/jay-ambey-road-line">Jay Ambey Road Line</Link>
             </div>
           </div>
           <div>
@@ -213,6 +216,7 @@ export function Footer() {
               target="_blank"
               rel="noopener noreferrer"
             >
+              <GoogleMapsIcon />
               Find our office
               <ArrowUpRight size={16} />
             </a>

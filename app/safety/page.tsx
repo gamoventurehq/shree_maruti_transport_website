@@ -44,7 +44,7 @@ export default function SafetyPage() {
               is a shared responsibility.
             </h2>
             <p className="lead">
-              Shree Maruti Transport Services is Nicer Globe certified.
+              Shree Maruti Transport Service is Nicer Globe certified.
             </p>
             <p>
               Nicer Globe is an Indian Chemical Council initiative focused on

@@ -1,5 +1,5 @@
 export const business = {
-  name: 'Shree Maruti Transport Services',
+  name: 'Shree Maruti Transport Service',
   founded: 2011,
   location: 'Mumbai, Bhiwandi, Maharashtra',
   mapsUrl: 'https://maps.app.goo.gl/3vC8XKiXLMS5d9A86',

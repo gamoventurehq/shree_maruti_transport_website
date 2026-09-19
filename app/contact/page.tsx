@@ -3,11 +3,15 @@ import { ArrowUpRight, MapPin } from 'lucide-react';
 import { PageIntro } from '@/components/transport/site';
 import { EnquiryForm } from '@/components/transport/enquiry-form';
 import { business } from '@/content/business';
+import {
+  GoogleMapsIcon,
+  SocialIcons,
+} from '@/components/transport/social-icons';
 
 export const metadata: Metadata = {
   title: 'Contact us',
   description:
-    'Find the Shree Maruti Transport Services office in Mumbai, Bhiwandi, Maharashtra, and prepare your chemical solvent, food-grade, pharma or other liquid cargo enquiry.',
+    'Find the Shree Maruti Transport Service office in Mumbai, Bhiwandi, Maharashtra, and prepare your chemical solvent, food-grade, pharma or other liquid cargo enquiry.',
 };
 
 export default function ContactPage() {
@@ -21,7 +25,7 @@ export default function ContactPage() {
       <section className="section" id="contact">
         <div className="container contact-layout">
           <div className="contact-information">
-            <p className="eyebrow">SHREE MARUTI TRANSPORT SERVICES</p>
+            <p className="eyebrow">SHREE MARUTI TRANSPORT SERVICE</p>
             <h2>
               Let’s talk
               <br />
@@ -46,6 +50,7 @@ export default function ContactPage() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
+                <GoogleMapsIcon />
                 Open directions in Google Maps
                 <ArrowUpRight size={18} />
               </a>
@@ -54,6 +59,7 @@ export default function ContactPage() {
               Direct phone and email details will be added once confirmed by the
               team.
             </p>
+            <SocialIcons />
           </div>
           <div className="form-panel">
             <h2>Your transport requirement</h2>
@@ -125,12 +131,13 @@ export default function ContactPage() {
               target="_blank"
               rel="noopener noreferrer"
             >
+              <GoogleMapsIcon />
               View the business listing
               <ArrowUpRight size={18} />
             </a>
           </div>
           <iframe
-            title="Shree Maruti Transport Services office location"
+            title="Shree Maruti Transport Service office location"
             src="https://maps.google.com/maps?q=19.2516926,73.1062199&z=15&output=embed"
             width="1200"
             height="450"
@@ -140,7 +147,7 @@ export default function ContactPage() {
           />
           <p className="asset-note">
             Office location from the Google Maps link provided by Shree Maruti
-            Transport Services.
+            Transport Service.
           </p>
         </div>
       </section>

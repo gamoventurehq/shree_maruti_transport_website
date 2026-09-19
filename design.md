@@ -1,6 +1,6 @@
 ---
 version: 1
-name: Shree Maruti Transport Services
+name: Shree Maruti Transport Service
 status: client-content iteration
 reference: ~/Downloads/acura.design.md
 purpose: Brand identity and implementation specification for the seven-page website.
@@ -54,7 +54,7 @@ rounded:
 motion:
   duration: 200ms
   easing: ease-out
-  hero: continuous road and plant parallax with rotating tanker wheels and a pause control
+  hero: static client-supplied header image with a dark text overlay
   reduced-motion: disable decorative motion and smooth scrolling
 pages:
   - { path: /, title: Home }
@@ -66,13 +66,13 @@ pages:
   - { path: /contact, title: Contact }
 ---
 
-# Shree Maruti Transport Services
+# Shree Maruti Transport Service
 
 ## Overview
 
 An Indian chemical and liquid transport business, established in 2011, with an owned fleet of 50+ tankers and pan-India operations. The website should help an industrial buyer understand its services, fleet, safety approach, clients, and office location before making an enquiry.
 
-The supplied SMTS mark is the primary identity. Its red oval and white lettering determine the colour direction. The full business name is **Shree Maruti Transport Services**, including “Services” in page titles, navigation branding, enquiry drafts, and metadata.
+The supplied SMTS mark is the primary identity. Its red oval and white lettering determine the colour direction. The full business name is **Shree Maruti Transport Service**, with singular “Service” in page titles, navigation branding, enquiry drafts, and metadata. General references to the transport services offered remain plural where appropriate.
 
 This file adapts the structure and automotive presentation principles of the supplied Acura document. It does not claim that Shree Maruti uses Acura’s brand assets, proprietary fonts, or exact interface. The useful references are vehicle-led imagery, compact display typography, restrained red accents, sharp edges, and clear dark/light section roles.
 
@@ -112,7 +112,7 @@ The homepage is a concise overview. Inner pages contain the detail rather than r
 
 ### Homepage
 
-A rounded, inset animated tanker hero with Instrument Serif type, an editorial headline anchored in the 2011 founding year, links to services and fleet, a three-part factual strip, selected client marks, service overview, fleet feature, Nicerglobe/technology introduction, India coverage, and a contact invitation. On desktop, place the headline and actions at the left and the tanker at the right. Stack the copy above the vehicle on mobile.
+A rounded, inset static tanker hero using `/sections/header.png`, with Instrument Serif type, an editorial headline anchored in the 2011 founding year, links to services and fleet, a three-part factual strip, selected client marks, service overview, fleet feature, Nicerglobe/technology introduction, India coverage, and a contact invitation. Keep the headline and actions at the left on desktop and centred on mobile. Use a dark overlay for text contrast.
 
 ### About
 
@@ -138,9 +138,13 @@ Recognisable supplied customer marks with readable names. Keep client relationsh
 
 Office location map, external Google Maps directions link, and the existing enquiry draft tool. Add direct phone/email links only when supplied or verified. Until a recipient exists, the form must say it creates a copyable draft and never claim that a message has been sent.
 
+### Jay Ambey Road Line
+
+Provide `/jay-ambey-road-line`, linked from the header logo, About and the footer. Use “Jay Ambey Road Line” in all displayed text; preserve the existing URL. The owner confirms that Jay Ambey Road Line and Shree Maruti Transport Service are two names for the same business. Present both names equally. Do not describe Jay Ambey as operating under Shree Maruti, an associated company, or a subsidiary. Describe one business, one team and one fleet. Use the supplied red JARL logo on a white panel and the existing typography and colours. Show fleet specifications from the shared business data. Do not count the fleet twice. Keep enquiries on the existing Contact page.
+
 ## Components
 
-- **Header:** white, red-and-white SMTS mark, full name, active page underline, red enquiry CTA, keyboard-operable mobile disclosure.
+- **Header:** white, red-and-white SMTS mark and full name, a red slash, then the JARL logo linked to `/jay-ambey-road-line`. Hide the full name at narrow mobile widths so both marks and the menu fit. Preserve the active page underline, enquiry CTA and keyboard-operable mobile disclosure.
 - **Photo hero:** original supplied fleet imagery shown through a CSS crop, text contrast overlay, no baked-in statistics from posters. Motion is optional and pausable.
 - **Page masthead:** breadcrumb, concise uppercase H1, short introduction, slim red rule.
 - **Primary button:** action red, white text, square corners, at least 48px tall, visible focus ring.
@@ -150,10 +154,11 @@ Office location map, external Google Maps directions link, and the existing enqu
 - **Client banner:** A continuous horizontal logo strip on Home only. Pause on hover without a visible playback control; use a static scrollable strip for reduced motion. Hide the repeated logo set from assistive technology.
 - **Client grid:** uniform white logo tiles, contain sizing, original colours, company names as accessible text.
 - **Certification panel:** original Nicerglobe mark on white with accompanying text; distinct from fleet-provider panels.
-- **Coverage map:** curved routes from Bhiwandi, dotted India outline, animated selected route and keyboard-operable destination buttons, adapted from the visual edition. Use charcoal surfaces and red accents. Show client-confirmed destinations; Kerala is a service area, not a city pin. Routes and coordinates are schematic, not live vehicle tracking.
+- **Coverage map:** dotted India outline with clickable location points and keyboard-operable location buttons. Use charcoal surfaces and a red highlight for the selected location. Show its name, state and short service description. No route lines, decorative orbits or automatic selection. Show client-confirmed destinations; Kerala is a service area, not a city pin. Coordinates are schematic, not live vehicle tracking.
 - **Gallery:** image controls with meaningful labels, simple selection, captions, no automatic carousel.
 - **Form:** visible labels, required-state validation, keyboard access, copy success/failure feedback. No simulated submission.
 - **Footer:** full business name, founding year, page navigation, office directions, and optional Gamoventure attribution governed by the existing setting.
+- **Social icons:** LinkedIn, Instagram, Facebook and Google Maps appear in the footer and Contact page. Social profiles remain non-interactive logos until URLs are supplied. Google Maps opens the confirmed office URL. Use monochrome marks, 44px icon containers and visible keyboard focus for the Maps link.
 
 ## Images and asset handling
 
@@ -172,7 +177,7 @@ The fleet montage contains multiple panels. CSS cropping can show one panel with
 
 ## Known gaps
 
-- Only one business logo was present during initial inventory. Jai Ambey Road Line’s logo and relationship are pending clarification; do not invent a logo or founding year for it.
+- The client supplied the Jay Ambey Road Line logo and confirmed it is another name for the same business.
 - No standalone text document, phone number, or email address was present in the supplied folder at initial inventory.
 - Certification is client-confirmed; no certificate document or validity dates were supplied.
 - Supplied imagery includes AI-generated promotional graphics. It is not treated as proof of vehicle specifications, fleet size, or operational performance.
@@ -214,7 +219,7 @@ The client requested continuous client-logo motion again. The strip loops horizo
 
 The main edition combines its original branding with the editorial edition’s white navigation and inset hero. Instrument Serif is limited to the hero; existing display and body fonts remain elsewhere. The original company mark remains in the header.
 
-The route explorer uses Mumbai as its schematic origin, with the operating location written as Mumbai, Bhiwandi, Maharashtra. Keep only the client-confirmed destinations: Ahmednagar/Supa, Mahad, Lote, Hyderabad, Visakhapatnam (Vizag), Nellore, Chennai, Cuddalore, Erode, Kochi (Cochin), Bengaluru (Bangalore), Nagpur and Kolkata. Kerala remains a service-area note. Cycle through destinations every two seconds while visible; pause during interaction and respect reduced motion. Tank material is SS 304L only. Cargo focus is chemical solvents, food-grade, pharmaceutical and other liquid cargo.
+The location explorer initially highlights Mumbai, with the operating location written as Mumbai, Bhiwandi, Maharashtra. Keep only the client-confirmed destinations: Ahmednagar/Supa, Mahad, Lote, Hyderabad, Visakhapatnam (Vizag), Nellore, Chennai, Cuddalore, Erode, Kochi (Cochin), Bengaluru (Bangalore), Nagpur and Kolkata. Kerala remains a service-area note. Clicking a point or location button updates the highlight and information; the selection stays until the visitor changes it. Tank material is SS 304L only. Cargo focus is chemical solvents, food-grade, pharmaceutical and other liquid cargo.
 
 ## Client fleet photography and service journey
 
@@ -232,7 +237,9 @@ Ease into and out of each stop, with wheel rotation and road fill following the 
 
 Dark sections across every page use the hero’s 18px corner radius, reduced to 14px on mobile. Inset these sections to 96% width with a 1480px maximum; use 12px side gutters on mobile. Leave canvas space above and below so all four corners remain visible. Apply the same radius to the vision board and staff-kit figure.
 
-### Homepage road animation — September 12, 2026
+### Archived homepage road animation — September 12, 2026
+
+Removed from the homepage on September 18 at the client’s request. The static `/sections/header.png` is now the hero. The following notes document the unused animation assets; the Services journey remains active.
 
 Match the front-and-side camera angle in the supplied `header.png`. Keep the blue-and-white Tata tanker in frame while its wheel details rotate, the road moves beneath it and the chemical plant passes behind. Preserve the vehicle silhouette with an SVG clip. Use fixed metal rim shading and rotate only vents and lug details within elliptical perspective transforms. Keep the body, axle centres and contact shadow stable.
 

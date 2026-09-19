@@ -1,9 +1,17 @@
 export const brandLogo = {
-  name: 'Shree Maruti Transport Services',
+  name: 'Shree Maruti Transport Service',
   src: '/brand/smts-logo.png',
   width: 3264,
   height: 3264,
   source: 'client_content/shree maruti transport logo/20200812_000406 (1).png',
+} as const;
+
+export const jayAmbeyLogo = {
+  name: 'Jay Ambey Road Line',
+  src: '/brand/jay-ambey-road-line.jpg',
+  width: 452,
+  height: 480,
+  source: '~/Downloads/img988 (2).jpg.jpeg',
 } as const;
 
 export const nicerglobeLogo = {

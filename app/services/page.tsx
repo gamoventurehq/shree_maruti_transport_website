@@ -8,7 +8,7 @@ import { services } from '@/content/services';
 export const metadata: Metadata = {
   title: 'Transport services',
   description:
-    'Chemical transportation, solvents, food-grade and pharmaceutical liquids, and planned tanker movements from Shree Maruti Transport Services.',
+    'Chemical transportation, solvents, food-grade and pharmaceutical liquids, and planned tanker movements from Shree Maruti Transport Service.',
 };
 const icons = {
   flask: FlaskConical,

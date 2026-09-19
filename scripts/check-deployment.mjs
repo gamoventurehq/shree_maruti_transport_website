@@ -27,7 +27,7 @@ for (const [path, heading] of Object.entries(pages)) {
   const html = await response.text();
   assert.ok(html.includes(heading), `${path} is missing its heading`);
   assert.ok(
-    html.includes('Shree Maruti Transport Services'),
+    html.includes('Shree Maruti Transport Service'),
     `${path} is missing the company name`,
   );
   const visibleText = html

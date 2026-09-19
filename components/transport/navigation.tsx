@@ -1,10 +1,12 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
+import Image from 'next/image';
 import Link from '@/components/transport/page-link';
 import { usePathname } from 'next/navigation';
 import { ArrowUpRight, Menu, X } from 'lucide-react';
 import { Brand, pageLinks } from './site';
+import { jayAmbeyLogo } from '@/content/assets';
 
 export function Navigation() {
   const pathname = usePathname();
@@ -24,7 +26,29 @@ export function Navigation() {
   return (
     <header className="site-header">
       <div className="header-inner">
-        <Brand />
+        <div className="header-brands">
+          <Brand />
+          <span className="header-brand-divider" aria-hidden="true">
+            /
+          </span>
+          <Link
+            href="/jay-ambey-road-line"
+            className="header-associated-brand"
+            aria-label="Jay Ambey Road Line"
+            aria-current={
+              pathname === '/jay-ambey-road-line' ? 'page' : undefined
+            }
+            onClick={() => setOpen(false)}
+          >
+            <Image
+              src={jayAmbeyLogo.src}
+              alt="JARL"
+              width={jayAmbeyLogo.width}
+              height={jayAmbeyLogo.height}
+              sizes="48px"
+            />
+          </Link>
+        </div>
         <nav className="desktop-navigation" aria-label="Main navigation">
           {pageLinks.slice(1, -1).map((link) => (
             <Link

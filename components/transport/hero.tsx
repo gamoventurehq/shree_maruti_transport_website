@@ -1,10 +1,16 @@
+import Image from 'next/image';
 import Link from '@/components/transport/page-link';
-import { HeroRoadScene } from './hero-road-scene';
 
 export function Hero() {
   return (
     <section className="paper-hero" aria-labelledby="hero-title">
-      <HeroRoadScene />
+      <Image
+        src="/sections/header.png"
+        alt="Blue-and-white Tata liquid tanker on the road beside a chemical plant"
+        fill
+        sizes="(min-width: 1542px) 1480px, 96vw"
+        loading="eager"
+      />
       <div className="paper-hero-wash" />
       <div className="paper-hero-copy">
         <h1 id="hero-title">
@@ -16,7 +22,7 @@ export function Hero() {
           Chemical solvents, food-grade, pharma and other liquid cargo across
           India.
           <br />
-          Shree Maruti Transport Services, since 2011.
+          Shree Maruti Transport Service, since 2011.
         </p>
         <div>
           <Link className="button button-primary" href="/contact">
