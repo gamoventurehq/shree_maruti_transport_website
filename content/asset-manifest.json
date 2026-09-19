@@ -1,6 +1,14 @@
 {
   "published": [
     {
+      "name": "Tata tanker — approved background cleanup",
+      "src": "/fleet/tanker-front-cleaned.png",
+      "width": 1448,
+      "height": 1086,
+      "source": "~/Downloads/WhatsApp Image 2026-09-09 at 7.38.34 PM.jpeg",
+      "edit": "Background car and right-side tempo removed with the built-in image-generation tool; approved by the user before replacing the second carousel photo."
+    },
+    {
       "name": "Dr. Reddy\u2019s",
       "src": "/clients/dr-reddys.png",
       "width": 649,

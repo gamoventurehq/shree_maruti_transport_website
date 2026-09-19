@@ -11,8 +11,8 @@ const views = [
     overview: true,
   },
   {
-    src: '/fleet/clear-tanker-front.jpg',
-    alt: 'Blue-and-white Tata tanker parked beside the road',
+    src: '/fleet/tanker-front-cleaned.png',
+    alt: 'Front and side view of a blue-and-white Tata liquid tanker beside the road',
   },
   {
     src: '/fleet/clear-tanker-yard.jpg',
