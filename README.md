@@ -25,6 +25,8 @@ The form validates required fields and prepares a copyable draft. It does not se
 
 ## Brand and content
 
+Responsive findings, fixes and viewport coverage are recorded in [docs/responsive-audit.md](docs/responsive-audit.md).
+
 `design.md` is the brand and interface specification, structured using the supplied Acura design document. `content/business.ts` holds business details and preview settings; `content/assets.ts` holds image metadata; `content/asset-manifest.json` records the original file for each published asset.
 
 Original material remains in `client_content/`. Selected assets are copied to `public/brand`, `public/fleet`, `public/clients`, and `public/partners`. Customer logos, fleet technology partners, and certification imagery appear in separate sections.

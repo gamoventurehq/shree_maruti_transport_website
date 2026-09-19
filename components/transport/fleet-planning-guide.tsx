@@ -1,3 +1,30 @@
+const specifications = [
+  {
+    label: 'Payload',
+    range: '22 / 25 / 30 / 35 MT',
+    guidance:
+      'Confirm quantity and product density. Payload in tonnes is not the same as tank volume in litres.',
+  },
+  {
+    label: 'Tank material',
+    range: 'SS 304L',
+    guidance:
+      'Review the product and its compatibility requirements before selecting the material grade.',
+  },
+  {
+    label: 'Cargo focus',
+    range: 'Chemical solvents, food-grade, pharma and other liquids',
+    guidance:
+      'Identify the product and any preparation or prior-cargo requirements. Acceptance is consignment-specific.',
+  },
+  {
+    label: 'Fleet and reach',
+    range: '50+ owned tankers · Pan-India',
+    guidance:
+      'Confirm the route, available configuration, site access and intended loading date.',
+  },
+];
+
 export function FleetPlanningGuide() {
   return (
     <section className="section fleet-planning-guide">
@@ -25,41 +52,30 @@ export function FleetPlanningGuide() {
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <th scope="row">Payload</th>
-                <td>22 / 25 / 30 / 35 MT</td>
-                <td>
-                  Confirm quantity and product density. Payload in tonnes is not
-                  the same as tank volume in litres.
-                </td>
-              </tr>
-              <tr>
-                <th scope="row">Tank material</th>
-                <td>SS 304L</td>
-                <td>
-                  Review the product and its compatibility requirements before
-                  selecting the material grade.
-                </td>
-              </tr>
-              <tr>
-                <th scope="row">Cargo focus</th>
-                <td>Chemical solvents, food-grade, pharma and other liquids</td>
-                <td>
-                  Identify the product and any preparation or prior-cargo
-                  requirements. Acceptance is consignment-specific.
-                </td>
-              </tr>
-              <tr>
-                <th scope="row">Fleet and reach</th>
-                <td>50+ owned tankers · Pan-India</td>
-                <td>
-                  Confirm the route, available configuration, site access and
-                  intended loading date.
-                </td>
-              </tr>
+              {specifications.map(({ label, range, guidance }) => (
+                <tr key={label}>
+                  <th scope="row">{label}</th>
+                  <td>{range}</td>
+                  <td>{guidance}</td>
+                </tr>
+              ))}
             </tbody>
           </table>
         </section>
+        <dl
+          className="spec-guide-mobile"
+          aria-label="Tanker specification guide"
+        >
+          {specifications.map(({ label, range, guidance }) => (
+            <div key={label}>
+              <dt>{label}</dt>
+              <dd>
+                <strong>{range}</strong>
+                <p>{guidance}</p>
+              </dd>
+            </div>
+          ))}
+        </dl>
         <div className="fleet-document-note">
           <h3>A useful tanker brief includes more than tonnage.</h3>
           <p>

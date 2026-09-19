@@ -170,6 +170,11 @@ The fleet montage contains multiple panels. CSS cropping can show one panel with
 
 ## Responsive behaviour and accessibility
 
+- Use desktop navigation from 1300px; the expandable navigation must remain visible when opened at every smaller width.
+- Below 1024px, stack masthead copy, the contact layout and service-guide navigation. Keep tablet form fields and guide links in two columns where space permits; use one column on phones.
+- Below 768px, present fleet specification guidance as vertical definitions instead of a horizontally scrolling table. Maintain one shared set of specification data for both layouts.
+- Keep the homepage hero footer in normal flow. Short landscape screens use a compact hero minimum height, with room to grow for its content.
+- Shared navigation and action links have a minimum 44px target height. Enquiry inputs use 16px text. Carousel hover pausing applies only to hover-capable devices.
 - Desktop: horizontal navigation; two-column editorial sections; up to four client tiles per row.
 - Tablet: smaller navigation switches to the mobile menu before links collide; sections may reduce to two columns.
 - Mobile: single-column reading order, full-width images, two-column logo grid, stacked form fields where needed.

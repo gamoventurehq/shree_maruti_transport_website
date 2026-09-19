@@ -40,6 +40,7 @@ export function FleetGallery() {
     const motionPreference = window.matchMedia(
       '(prefers-reduced-motion: reduce)',
     );
+    const hoverCapability = window.matchMedia('(hover: hover)');
     const updateMotionPreference = () =>
       setReducedMotion(motionPreference.matches);
     updateMotionPreference();
@@ -59,7 +60,7 @@ export function FleetGallery() {
         motionPreference.matches ||
         !inView ||
         document.hidden ||
-        gallery.matches(':hover') ||
+        (hoverCapability.matches && gallery.matches(':hover')) ||
         gallery.contains(document.activeElement)
       )
         return;
