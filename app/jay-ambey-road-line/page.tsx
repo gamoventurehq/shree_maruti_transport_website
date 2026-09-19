@@ -7,7 +7,7 @@ import { business } from '@/content/business';
 export const metadata: Metadata = {
   title: 'Jay Ambey Road Line',
   description:
-    'Jay Ambey Road Line and Shree Maruti Transport Service are two names for the same business, transporting chemical solvents and liquid cargo across India.',
+    'Jay Ambey Road Line and Shree Maruti Transport Service operate as one transport business, with a shared team and tanker fleet serving India.',
 };
 
 export default function JayAmbeyRoadLinePage() {
@@ -16,7 +16,7 @@ export default function JayAmbeyRoadLinePage() {
       <PageIntro
         eyebrow="JAY AMBEY ROAD LINE"
         title="Jay Ambey Road Line."
-        description="One business, known by two names. The same team and tanker fleet transporting chemical solvents, food-grade, pharmaceutical and other liquid cargo across India."
+        description="Pan-India tanker transportation for chemical solvents, food-grade, pharmaceutical and other liquid cargo, coordinated from Mumbai, Bhiwandi, Maharashtra."
       />
       <section className="section">
         <div className="container editorial-grid">
@@ -31,12 +31,11 @@ export default function JayAmbeyRoadLinePage() {
           </div>
           <div className="editorial-copy">
             <p className="eyebrow">OUR TRANSPORT BUSINESS</p>
-            <h2>One business. Two names.</h2>
+            <h2>A shared team, fleet and service network.</h2>
             <p className="lead">
-              Jay Ambey Road Line and Shree Maruti Transport Service are two
-              names for the same business. Our team, tanker fleet, transport
-              services and contact details remain the same whichever name you
-              know us by.
+              Our transport business operates as both Jay Ambey Road Line and
+              Shree Maruti Transport Service, with a shared team, owned tanker
+              fleet and pan-India service network.
             </p>
             <p>
               Our base is in {business.location}. We coordinate liquid cargo
@@ -44,10 +43,12 @@ export default function JayAmbeyRoadLinePage() {
               handover at the receiving site.
             </p>
             <p>
-              For every enquiry, our team starts with your cargo details, route
-              requirements and delivery arrangements.
+              Customers working with either name receive the same transport
+              services, operational support and safety procedures. Our team
+              reviews cargo details, route requirements and delivery
+              arrangements for every enquiry.
             </p>
-            <TextLink href="/about">Meet the transport business</TextLink>
+            <TextLink href="/about">About our business</TextLink>
           </div>
         </div>
       </section>
@@ -66,7 +67,9 @@ export default function JayAmbeyRoadLinePage() {
               <dd>
                 <strong>{business.fleetSize}</strong>
               </dd>
-              <p>One owned fleet supports our operations under both names.</p>
+              <p>
+                A shared owned fleet supports transport services for both names.
+              </p>
             </div>
             <div>
               <dt>Payload capacities</dt>
@@ -136,15 +139,16 @@ export default function JayAmbeyRoadLinePage() {
           </div>
           <div className="editorial-copy">
             <p className="lead">
-              Our operating network and safety practices apply to every movement
-              under either name. The dispatch team coordinates with drivers and
-              the people loading and receiving the cargo.
+              Both names share the same operating network and safety practices.
+              Our dispatch team coordinates with drivers, loading personnel and
+              receiving teams throughout each movement.
             </p>
             <p>
               Movements connect destinations including Ahmednagar–Supa, Mahad,
               Lote, Hyderabad, Vizag, Nellore, Chennai, Cuddalore, Erode, Kochi
-              and Kerala, Bengaluru, Nagpur and Kolkata. Contact the same team
-              to discuss your pickup, destination and schedule.
+              and Kerala, Bengaluru, Nagpur and Kolkata. Our transport team
+              handles enquiries for both names through a common point of
+              contact.
             </p>
             <TextLink href="/safety">
               Our safety and handling practices

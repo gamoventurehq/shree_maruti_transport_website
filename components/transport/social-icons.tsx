@@ -18,20 +18,41 @@ export function SocialIcons() {
   return (
     <ul className="social-icons" aria-label="Social platforms and location">
       {[
-        ['LinkedIn', 'linkedin'],
-        ['Instagram', 'instagram'],
-        ['Facebook', 'facebook'],
-      ].map(([name, icon]) => (
-        <li className="social-icon" key={icon} title={name}>
+        { name: 'LinkedIn', icon: 'linkedin' },
+        { name: 'Instagram', icon: 'instagram', href: business.instagramUrl },
+        { name: 'Facebook', icon: 'facebook' },
+      ].map(({ name, icon, href }) => {
+        const logo = (
           <Image
             className="social-logo"
             src={`/social/${icon}.svg`}
             width={22}
             height={22}
-            alt={name}
+            alt={href ? '' : name}
           />
-        </li>
-      ))}
+        );
+
+        return (
+          <li key={icon}>
+            {href ? (
+              <a
+                className="social-icon"
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`${name} (opens in a new tab)`}
+                title={name}
+              >
+                {logo}
+              </a>
+            ) : (
+              <span className="social-icon" title={name}>
+                {logo}
+              </span>
+            )}
+          </li>
+        );
+      })}
       <li>
         <a
           className="social-icon"

@@ -140,11 +140,13 @@ Office location map, external Google Maps directions link, and the existing enqu
 
 ### Jay Ambey Road Line
 
+Use this description consistently: “Our transport business operates as both Jay Ambey Road Line and Shree Maruti Transport Service, with a shared team, owned tanker fleet and pan-India service network.” Keep supporting copy focused on the shared operations and services rather than repeatedly explaining the naming arrangement. Neither name should be presented as subordinate to the other.
+
 Provide `/jay-ambey-road-line`, linked from the header logo, About and the footer. Use “Jay Ambey Road Line” in all displayed text; preserve the existing URL. The owner confirms that Jay Ambey Road Line and Shree Maruti Transport Service are two names for the same business. Present both names equally. Do not describe Jay Ambey as operating under Shree Maruti, an associated company, or a subsidiary. Describe one business, one team and one fleet. Use the supplied red JARL logo on a white panel and the existing typography and colours. Show fleet specifications from the shared business data. Do not count the fleet twice. Keep enquiries on the existing Contact page.
 
 ## Components
 
-- **Header:** white, red-and-white SMTS mark and full name, a red slash, then the JARL logo linked to `/jay-ambey-road-line`. Hide the full name at narrow mobile widths so both marks and the menu fit. Preserve the active page underline, enquiry CTA and keyboard-operable mobile disclosure.
+- **Header:** white, red-and-white SMTS mark and full name, a red slash, then the JARL logo with “Jay Ambey Road Line” beside it, linked to `/jay-ambey-road-line`. Keep both names visible on mobile with compact logo sizes and typography. Use the mobile menu below 1300px so the two brand names and navigation do not overlap. Preserve the active page underline, enquiry CTA and keyboard-operable mobile disclosure.
 - **Photo hero:** original supplied fleet imagery shown through a CSS crop, text contrast overlay, no baked-in statistics from posters. Motion is optional and pausable.
 - **Page masthead:** breadcrumb, concise uppercase H1, short introduction, slim red rule.
 - **Primary button:** action red, white text, square corners, at least 48px tall, visible focus ring.
@@ -158,7 +160,7 @@ Provide `/jay-ambey-road-line`, linked from the header logo, About and the foote
 - **Gallery:** image controls with meaningful labels, simple selection, captions, no automatic carousel.
 - **Form:** visible labels, required-state validation, keyboard access, copy success/failure feedback. No simulated submission.
 - **Footer:** full business name, founding year, page navigation, office directions, and optional Gamoventure attribution governed by the existing setting.
-- **Social icons:** LinkedIn, Instagram, Facebook and Google Maps appear in the footer and Contact page. Social profiles remain non-interactive logos until URLs are supplied. Google Maps opens the confirmed office URL. Use monochrome marks, 44px icon containers and visible keyboard focus for the Maps link.
+- **Social icons:** LinkedIn, Instagram, Facebook and Google Maps appear in the footer and Contact page. Instagram opens the confirmed Shree Maruti Transport Service profile stored in `business.instagramUrl`. LinkedIn and Facebook remain non-interactive logos until URLs are supplied. Google Maps opens the confirmed office URL. Use monochrome marks, 44px icon containers and visible keyboard focus for links. External links open in a new tab.
 
 ## Images and asset handling
 
@@ -223,7 +225,9 @@ The location explorer initially highlights Mumbai, with the operating location w
 
 ## Client fleet photography and service journey
 
-Use the September client photographs for Home, About and the Fleet gallery, replacing the previous generated fleet scenes. Keep the actual cab colours, markings and tank geometry unchanged. Use contain sizing for portrait gallery photographs. Services includes a horizontal chemical plant collection → customer handover journey with the supplied line artwork, red brand accents, ordinary scrolling and reduced-motion support.
+Use the September client photographs for Home, About and the Fleet gallery, replacing the previous generated fleet scenes. Keep the actual cab colours, markings and tank geometry unchanged. Use cover sizing for gallery photographs so each image fills the frame without stretching or white gaps. Services includes a horizontal chemical plant collection → customer handover journey with the supplied line artwork, red brand accents, ordinary scrolling and reduced-motion support.
+
+The Fleet gallery automatically crossfades through five images without buttons or tabs. Crop the overview to roughly its lower two-thirds so the foreground staff and several rows of tankers remain visible, with a dark gradient and a white “Fleet” title. Keep the front photograph second, followed by the yard, rear and markings photographs. Pause on hover or keyboard focus; show a static stack when reduced motion is requested.
 
 ### Journey motion refinement
 

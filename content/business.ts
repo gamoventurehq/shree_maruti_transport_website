@@ -3,6 +3,8 @@ export const business = {
   founded: 2011,
   location: 'Mumbai, Bhiwandi, Maharashtra',
   mapsUrl: 'https://maps.app.goo.gl/3vC8XKiXLMS5d9A86',
+  instagramUrl:
+    'https://www.instagram.com/shreemarutitransportservice/?utm_source=ig_web_button_share_sheet',
   coordinates: { lat: 19.2516926, lon: 73.1062199 },
   fleetSize: '50+',
   payloadCapacities: [22, 25, 30, 35],

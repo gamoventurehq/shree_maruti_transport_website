@@ -47,6 +47,9 @@ export function Navigation() {
               height={jayAmbeyLogo.height}
               sizes="48px"
             />
+            <span className="brand-name">
+              JAY AMBEY<span>ROAD LINE</span>
+            </span>
           </Link>
         </div>
         <nav className="desktop-navigation" aria-label="Main navigation">

@@ -267,31 +267,27 @@ p {
   line-height: 1;
 }
 .header-associated-brand {
-  display: grid;
-  place-items: center;
-  width: 48px;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
   min-height: 48px;
   flex-shrink: 0;
 }
 .header-associated-brand img {
   display: block;
-  width: 100%;
+  width: 48px;
   height: auto;
+  flex-shrink: 0;
 }
 @media (max-width: 767px) {
   .header-brands {
     gap: 8px;
   }
-  .header-associated-brand {
+  .header-associated-brand img {
     width: 44px;
   }
   .site-header .menu-toggle {
     flex-shrink: 0;
-  }
-}
-@media (max-width: 380px) {
-  .header-brands .brand-name {
-    display: none;
   }
 }
 .brand-mark {
@@ -2884,23 +2880,19 @@ a.social-icon:focus-visible .social-logo {
     display: none;
   }
 }
-@media (min-width: 1050px) and (max-width: 1199px) {
+@media (min-width: 1050px) and (max-width: 1299px) {
   .desktop-navigation {
-    display: flex;
-    gap: 16px;
-  }
-  .desktop-navigation a {
-    font-size: 12px;
+    display: none;
   }
   .menu-toggle {
-    display: none;
+    display: grid;
   }
   .header-inner {
     width: 94%;
     gap: 18px;
   }
   .header-contact {
-    font-size: 12px;
+    margin-left: auto;
   }
 }
 @media (max-width: 767px) {
@@ -3689,4 +3681,52 @@ a.social-icon:focus-visible .social-logo {
 }
 .fleet-technology .technology-partners article {
   border-color: var(--line);
+}
+
+@media (max-width: 767px) {
+  .site-header .header-inner {
+    width: calc(100% - 24px);
+    gap: 8px;
+  }
+  .header-brands .brand,
+  .header-associated-brand {
+    gap: 7px;
+  }
+  .header-brands .brand-mark {
+    width: 44px;
+    height: 22px;
+  }
+  .header-associated-brand img {
+    width: 32px;
+  }
+  .header-brands .brand-name {
+    font-size: 11px;
+    white-space: nowrap;
+  }
+  .header-brands .brand-name > span {
+    font-size: 7px;
+    letter-spacing: 0.08em;
+  }
+  .header-brand-divider {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 380px) {
+  .header-brands {
+    gap: 6px;
+  }
+  .header-brands .brand-mark {
+    width: 36px;
+    height: 18px;
+  }
+  .header-associated-brand img {
+    width: 28px;
+  }
+  .header-brands .brand-name {
+    font-size: 10px;
+  }
+  .header-brands .brand-name > span {
+    font-size: 6.5px;
+  }
 }

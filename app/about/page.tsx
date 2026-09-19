@@ -210,17 +210,18 @@ export default function AboutPage() {
             />
           </div>
           <div className="editorial-copy">
-            <p className="eyebrow">ONE BUSINESS. TWO NAMES.</p>
+            <p className="eyebrow">OUR BUSINESS</p>
             <h2>Jay Ambey Road Line.</h2>
             <p className="lead">
-              Jay Ambey Road Line and Shree Maruti Transport Service are two
-              names for the same business, with the same team, tanker fleet and
-              services.
+              Our transport business operates as both Jay Ambey Road Line and
+              Shree Maruti Transport Service, with a shared team, owned tanker
+              fleet and pan-India service network.
             </p>
             <p>
               From chemical solvents to food-grade, pharmaceutical and other
-              liquid cargo, we serve customers across India from our Mumbai base
-              in Bhiwandi under both names.
+              liquid cargo, our services are available through both names. We
+              coordinate collection and delivery from our base in Mumbai,
+              Bhiwandi, Maharashtra.
             </p>
             <Link href="/jay-ambey-road-line" className="text-link">
               About Jay Ambey Road Line <ArrowUpRight size={18} />
