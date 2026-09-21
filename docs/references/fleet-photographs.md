@@ -16,7 +16,7 @@ The journey now uses one scoped GSAP timeline for travel, road fill and distance
 
 The four PNGs in `~/Downloads/shree_maruti_transport_images` are copied unchanged to `public/sections`. `header.png` is the homepage hero, `fleet.png` opens the fleet gallery, and `safety_and_regulations.png` illustrates the safety preparation section. The side-view image named `that_one_section_on_phone_page.png` is used for the homepage fleet feature. The hero headline is “Moving industry. Since 2011.”
 
-The fleet gallery retains `/sections/fleet.png` as its opening image. The second slide uses `/fleet/tanker-front-cleaned.png`, followed by the yard, rear and markings photographs at `/fleet/clear-tanker-*.jpg`. Photographs fill the frame with cover sizing.
+The fleet gallery retains `/sections/fleet.png` as its opening image. The second slide uses `/fleet/tanker-front-cleaned.png`, followed by the yard and rear photographs at `/fleet/clear-tanker-*.jpg`. Photographs fill the frame with cover sizing. The close-up markings photograph is omitted to avoid repeating a similar rear view.
 
 ## Approved front photograph edit
 

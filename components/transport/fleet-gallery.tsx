@@ -22,10 +22,6 @@ const views = [
     src: '/fleet/clear-tanker-rear.jpg',
     alt: 'Rear view of a tanker showing its ladder and reflective markings',
   },
-  {
-    src: '/fleet/clear-tanker-markings.jpg',
-    alt: 'Close view of tanker markings, rear lights and tank body',
-  },
 ];
 
 export function FleetGallery() {

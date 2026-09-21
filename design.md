@@ -232,7 +232,7 @@ The location explorer initially highlights Mumbai, with the operating location w
 
 Use the September client photographs for Home, About and the Fleet gallery, replacing the previous generated fleet scenes. Keep the actual cab colours, markings and tank geometry unchanged. Use cover sizing for gallery photographs so each image fills the frame without stretching or white gaps. Services includes a horizontal chemical plant collection → customer handover journey with the supplied line artwork, red brand accents, ordinary scrolling and reduced-motion support.
 
-The Fleet gallery automatically crossfades through five images without buttons or tabs. Crop the overview to roughly its lower two-thirds so the foreground staff and several rows of tankers remain visible, with a dark gradient and a white “Fleet” title. Keep the front photograph second, followed by the yard, rear and markings photographs. Pause on hover or keyboard focus; show a static stack when reduced motion is requested.
+The Fleet gallery automatically crossfades through four images without buttons or tabs. Crop the overview to roughly its lower two-thirds so the foreground staff and several rows of tankers remain visible, with a dark gradient and a white “Fleet” title. Keep the front photograph second, followed by the yard and rear photographs. Pause on hover or keyboard focus; show a static stack when reduced motion is requested.
 
 ### Journey motion refinement
 
