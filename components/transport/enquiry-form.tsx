@@ -2,7 +2,8 @@
 
 import { useRef, useState, type SubmitEvent } from 'react';
 import { ArrowUpRight, Check, Copy } from 'lucide-react';
-import { formatEnquiry } from '@/lib/enquiry';
+import { business } from '@/content/business';
+import { enquirySubject, formatEnquiry } from '@/lib/enquiry';
 
 export function EnquiryForm() {
   const [draft, setDraft] = useState('');
@@ -10,6 +11,9 @@ export function EnquiryForm() {
     'idle',
   );
   const outputRef = useRef<HTMLTextAreaElement>(null);
+  const emailHref = draft
+    ? `mailto:${business.email}?subject=${encodeURIComponent(enquirySubject)}&body=${encodeURIComponent(draft)}`
+    : '';
   function prepare(event: SubmitEvent<HTMLFormElement>) {
     event.preventDefault();
     const form = event.currentTarget;
@@ -127,8 +131,8 @@ export function EnquiryForm() {
         />
       </label>
       <p className="form-note">
-        This form prepares a draft to copy. It does not send or store your
-        enquiry.
+        Prepare your enquiry, then open it in your email app to send it to us.
+        You can also copy the details.
       </p>
       <button className="button button-primary" type="submit">
         Prepare enquiry <ArrowUpRight size={19} />
@@ -136,7 +140,7 @@ export function EnquiryForm() {
       {draft && (
         <div className="enquiry-result">
           <h3>Your enquiry draft is ready</h3>
-          <label htmlFor="enquiry-draft">Review and copy your details</label>
+          <label htmlFor="enquiry-draft">Review your details</label>
           <textarea
             id="enquiry-draft"
             ref={outputRef}
@@ -144,20 +148,29 @@ export function EnquiryForm() {
             value={draft}
             rows={10}
           />
-          <button
-            className="text-link copy-button"
-            type="button"
-            onClick={copy}
-          >
-            {copyState === 'copied' ? 'Copied' : 'Copy enquiry'}
-            {copyState === 'copied' ? <Check size={16} /> : <Copy size={16} />}
-          </button>
+          <div className="enquiry-actions">
+            <a className="button button-primary" href={emailHref}>
+              Open email app <ArrowUpRight size={19} />
+            </a>
+            <button
+              className="text-link copy-button"
+              type="button"
+              onClick={copy}
+            >
+              {copyState === 'copied' ? 'Copied' : 'Copy enquiry'}
+              {copyState === 'copied' ? (
+                <Check size={16} />
+              ) : (
+                <Copy size={16} />
+              )}
+            </button>
+          </div>
           <output aria-live="polite">
             {copyState === 'copied'
               ? 'Copied to your clipboard. This enquiry has not been sent.'
               : copyState === 'failed'
                 ? 'Automatic copy is unavailable. The draft is selected so you can copy it manually.'
-                : 'This draft stays on this page. No message has been sent.'}
+                : 'Your enquiry has not been sent yet. Send it from your email app.'}
           </output>
         </div>
       )}

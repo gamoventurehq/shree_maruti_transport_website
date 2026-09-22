@@ -1380,10 +1380,21 @@ p {
 .office-card .text-link {
   font-size: 13px;
 }
-.contact-information .contact-note {
-  font-size: 12px;
-  max-width: 340px;
-  margin-top: 25px;
+.contact-email {
+  border-top: 1px solid var(--line);
+  padding-top: 25px;
+  margin-top: 30px;
+}
+.contact-email > svg {
+  color: var(--red);
+  margin-bottom: 15px;
+}
+.contact-email h3 {
+  font-size: 30px;
+}
+.contact-email .text-link {
+  gap: 10px;
+  overflow-wrap: anywhere;
 }
 .form-panel {
   background: #fff;
@@ -1457,6 +1468,12 @@ p {
   font-size: 12px;
   margin-bottom: 18px;
 }
+.enquiry-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 14px 20px;
+}
 .copy-button {
   background: transparent;
   border: 0;
@@ -1528,13 +1545,15 @@ p {
   margin-bottom: 18px;
 }
 .footer-location > a {
-  display: inline-flex;
+  display: flex;
+  width: fit-content;
   gap: 15px;
   align-items: center;
   font-size: 13px;
   border-bottom: 1px solid #5e6367;
   padding-bottom: 6px;
   min-height: 44px;
+  overflow-wrap: anywhere;
 }
 .footer-bottom {
   padding-top: 22px;

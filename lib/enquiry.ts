@@ -7,9 +7,12 @@ export type Enquiry = {
   cargo: string;
 };
 
+export const enquirySubject =
+  'Transport enquiry | Shree Maruti Transport Service';
+
 export function formatEnquiry(enquiry: Enquiry): string {
   return [
-    'Transport enquiry | Shree Maruti Transport Service',
+    enquirySubject,
     '',
     `Name: ${enquiry.name.trim()}`,
     `Company: ${enquiry.company.trim() || 'Not provided'}`,

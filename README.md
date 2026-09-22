@@ -39,7 +39,7 @@ The office map uses the location from the supplied Google Maps link. The India c
 
 ### Still needed for launch
 
-- Official phone, WhatsApp, email, full postal address, and enquiry recipient.
+- Official phone, WhatsApp, and full postal address.
 - Client approval of page copy, including the drafted Vision and Mission statements and safety practices.
 - Vehicle-level configuration and availability, actual service routes, and original fleet photography.
 - Identification of the two withheld client logos listed in the asset manifest.

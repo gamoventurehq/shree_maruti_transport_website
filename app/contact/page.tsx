@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { ArrowUpRight, MapPin } from 'lucide-react';
+import { ArrowUpRight, Mail, MapPin } from 'lucide-react';
 import { PageIntro } from '@/components/transport/site';
 import { EnquiryForm } from '@/components/transport/enquiry-form';
 import { business } from '@/content/business';
@@ -33,8 +33,8 @@ export default function ContactPage() {
             </h2>
             <p>
               Share your product details, quantity, route, and preferred
-              dispatch date. You can prepare and copy a clear enquiry using the
-              form.
+              dispatch date. You can prepare an enquiry using the form and open
+              it in your email app.
             </p>
             <div className="office-card">
               <MapPin size={24} />
@@ -55,10 +55,14 @@ export default function ContactPage() {
                 <ArrowUpRight size={18} />
               </a>
             </div>
-            <p className="contact-note">
-              Direct phone and email details will be added once confirmed by the
-              team.
-            </p>
+            <div className="contact-email">
+              <Mail size={24} />
+              <h3>Email us</h3>
+              <a className="text-link" href={`mailto:${business.email}`}>
+                {business.email}
+                <ArrowUpRight size={18} />
+              </a>
+            </div>
             <SocialIcons />
           </div>
           <div className="form-panel">

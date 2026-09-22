@@ -136,7 +136,7 @@ Recognisable supplied customer marks with readable names. Keep client relationsh
 
 ### Contact
 
-Office location map, external Google Maps directions link, and the existing enquiry draft tool. Add direct phone/email links only when supplied or verified. Until a recipient exists, the form must say it creates a copyable draft and never claim that a message has been sent.
+Office location map, external Google Maps directions link, direct email link, and an enquiry draft that opens in the visitor's email app. The form must never claim that a message has been sent before the visitor sends it from their email app. Add a direct phone link when supplied or verified.
 
 ### Jay Ambey Road Line
 

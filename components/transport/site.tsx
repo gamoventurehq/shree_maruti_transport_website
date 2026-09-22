@@ -211,6 +211,7 @@ export function Footer() {
             <MapPin size={20} />
             <h2>{business.location}</h2>
             <p>Serving businesses across India.</p>
+            <a href={`mailto:${business.email}`}>{business.email}</a>
             <a
               href={business.mapsUrl}
               target="_blank"

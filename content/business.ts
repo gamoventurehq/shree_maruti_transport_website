@@ -2,6 +2,7 @@ export const business = {
   name: 'Shree Maruti Transport Service',
   founded: 2011,
   location: 'Mumbai, Bhiwandi, Maharashtra',
+  email: 'logistics@shreemarutitransportservice.in',
   mapsUrl: 'https://maps.app.goo.gl/3vC8XKiXLMS5d9A86',
   instagramUrl:
     'https://www.instagram.com/shreemarutitransportservice/?utm_source=ig_web_button_share_sheet',
