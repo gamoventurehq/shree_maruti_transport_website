@@ -3,7 +3,6 @@ import { ArrowUpRight, Mail, MapPin } from 'lucide-react';
 import { PageIntro } from '@/components/transport/site';
 import { EnquiryForm } from '@/components/transport/enquiry-form';
 import { business } from '@/content/business';
-import { getSmtpConfig } from '@/lib/mail-config';
 import {
   GoogleMapsIcon,
   SocialIcons,
@@ -16,8 +15,6 @@ export const metadata: Metadata = {
 };
 
 export default function ContactPage() {
-  const directSendEnabled = Boolean(getSmtpConfig());
-
   return (
     <>
       <PageIntro
@@ -36,10 +33,7 @@ export default function ContactPage() {
             </h2>
             <p>
               Share your product details, quantity, route, and preferred
-              dispatch date.{' '}
-              {directSendEnabled
-                ? 'Send your enquiry to our team using the form.'
-                : 'Prepare an enquiry using the form and open it in your email app.'}
+              dispatch date. Send your enquiry to our team using the form.
             </p>
             <div className="office-card">
               <MapPin size={24} />
@@ -73,7 +67,7 @@ export default function ContactPage() {
           <div className="form-panel">
             <h2>Your transport requirement</h2>
             <p className="form-intro">Fields marked * are required.</p>
-            <EnquiryForm directSendEnabled={directSendEnabled} />
+            <EnquiryForm />
           </div>
         </div>
       </section>

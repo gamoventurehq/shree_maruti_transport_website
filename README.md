@@ -21,7 +21,7 @@ npm run dev
 - Clients: supplied customer logos.
 - Contact: office map, directions, direct email link, and enquiry form.
 
-With SMTP configured, the form validates enquiries and sends them to `logistics@shreemarutitransportservice.in` through a server route. If delivery fails, it offers an email-app draft and copy option. Without SMTP configuration, the form uses that draft flow from the start. Clipboard failure selects the draft for manual copying. The mobile menu supports Escape. Hero motion can be paused. Client-logo banners pause on hover and have no visible playback controls. The Clients page also retains a static logo grid. Reduced-motion preferences are respected.
+The form validates enquiries and submits them to `logistics@shreemarutitransportservice.in` through a server route using the configured SMTP account. If delivery fails, it offers an email-app draft and copy option. Clipboard failure selects the draft for manual copying. The mobile menu supports Escape. Hero motion can be paused. Client-logo banners pause on hover and have no visible playback controls. The Clients page also retains a static logo grid. Reduced-motion preferences are respected.
 
 ## Brand and content
 
@@ -103,7 +103,7 @@ The Safety page includes a simplified nine-class dangerous-goods awareness guide
 
 ### Client meeting preview content
 
-Three detailed service routes are generated from `content/service-guides.ts`. Their transport briefs are authored meeting scenarios, not completed customer case studies. Proposed team roles and the operating-process board live in `components/transport/operations-preview.tsx`. Replace these samples with client-approved information before launch. At the user’s request, there are no visible draft labels. `business.isPreview` continues to disable indexing. Contact submissions use the confirmed email recipient when SMTP is configured.
+Three detailed service routes are generated from `content/service-guides.ts`. Their transport briefs are authored meeting scenarios, not completed customer case studies. Proposed team roles and the operating-process board live in `components/transport/operations-preview.tsx`. Replace these samples with client-approved information before launch. At the user’s request, there are no visible draft labels. `business.isPreview` continues to disable indexing. Contact submissions use the confirmed logistics email as the recipient.
 
 The fleet guide uses confirmed capacities and grades without inventing individual vehicle configurations. No sample contact numbers, testimonials, performance statistics or certification claims were added. Domain-dependent canonicals and production indexing should be configured after the domain is supplied.
 

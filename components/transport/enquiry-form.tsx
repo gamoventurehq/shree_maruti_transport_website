@@ -5,11 +5,7 @@ import { ArrowUpRight, Check, Copy } from 'lucide-react';
 import { business } from '@/content/business';
 import { enquirySubject, formatEnquiry } from '@/lib/enquiry';
 
-export function EnquiryForm({
-  directSendEnabled,
-}: {
-  directSendEnabled: boolean;
-}) {
+export function EnquiryForm() {
   const [draft, setDraft] = useState('');
   const [submissionState, setSubmissionState] = useState<
     'idle' | 'sending' | 'sent' | 'failed'
@@ -48,11 +44,6 @@ export function EnquiryForm({
     };
     const prepared = formatEnquiry(enquiry);
     setCopyState('idle');
-
-    if (!directSendEnabled) {
-      setDraft(prepared);
-      return;
-    }
 
     setSubmissionState('sending');
     try {
@@ -176,20 +167,14 @@ export function EnquiryForm({
         </label>
       </div>
       <p className="form-note">
-        {directSendEnabled
-          ? `Send your enquiry directly to ${business.email}.`
-          : 'Prepare your enquiry, then open it in your email app to send it to us. You can also copy the details.'}
+        Send your enquiry directly to {business.email}.
       </p>
       <button
         className="button button-primary"
         type="submit"
         disabled={submissionState === 'sending'}
       >
-        {submissionState === 'sending'
-          ? 'Sending…'
-          : directSendEnabled
-            ? 'Send enquiry'
-            : 'Prepare enquiry'}
+        {submissionState === 'sending' ? 'Sending…' : 'Send enquiry'}
         {submissionState !== 'sending' && <ArrowUpRight size={19} />}
       </button>
       {submissionState === 'sent' && (
@@ -203,13 +188,9 @@ export function EnquiryForm({
           below from your email app.
         </output>
       )}
-      {draft && (!directSendEnabled || submissionState === 'failed') && (
+      {draft && submissionState === 'failed' && (
         <div className="enquiry-result">
-          <h3>
-            {submissionState === 'failed'
-              ? 'Send by email instead'
-              : 'Your enquiry draft is ready'}
-          </h3>
+          <h3>Send by email instead</h3>
           <label htmlFor="enquiry-draft">Review your details</label>
           <textarea
             id="enquiry-draft"
