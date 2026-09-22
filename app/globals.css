@@ -1455,6 +1455,23 @@ p {
   line-height: 1.65;
   margin: 0 0 20px;
 }
+.enquiry-honeypot {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+.form-status {
+  display: block;
+  margin-top: 18px;
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--ink);
+}
+.form-status-error {
+  color: var(--red);
+}
 .enquiry-result {
   background: var(--canvas);
   padding: 22px;

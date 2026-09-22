@@ -19,9 +19,9 @@ npm run dev
 - Fleet: selectable gallery, payload and material specifications, tanker selection guidance, and fleet-management partners.
 - Safety & regulations: a dedicated staff safety kit and handling precautions, PPE, cargo handling, vehicle checks, transport documentation, Nicer Globe certification, and fleet technology.
 - Clients: supplied customer logos.
-- Contact: office map, directions, and enquiry draft form.
+- Contact: office map, directions, direct email link, and enquiry form.
 
-The form validates required fields and prepares a copyable draft. It does not send, store, or upload enquiries. Clipboard failure falls back to selecting the draft for manual copying. The mobile menu supports Escape. Hero motion can be paused. Client-logo banners pause on hover and have no visible playback controls. The Clients page also retains a static logo grid. Reduced-motion preferences are respected.
+With SMTP configured, the form validates enquiries and sends them to `logistics@shreemarutitransportservice.in` through a server route. If delivery fails, it offers an email-app draft and copy option. Without SMTP configuration, the form uses that draft flow from the start. Clipboard failure selects the draft for manual copying. The mobile menu supports Escape. Hero motion can be paused. Client-logo banners pause on hover and have no visible playback controls. The Clients page also retains a static logo grid. Reduced-motion preferences are respected.
 
 ## Brand and content
 
@@ -69,6 +69,18 @@ The application lives at the repository root. `vercel.json` selects Next.js, ins
 
 Use the repository root as Root Directory, the Next.js framework preset, and Node.js 22.x. The previous Cloudflare/Vinext scaffold was incompatible with this deployment setup and has been replaced.
 
+For direct enquiry delivery, add these environment variables to each Vercel project under **Settings → Environment Variables**. Select Production, then redeploy after saving them. Use the same names in a local `.env.local` for local testing; do not commit credentials.
+
+| Variable          | Value                                                                                                    |
+| ----------------- | -------------------------------------------------------------------------------------------------------- |
+| `SMTP_HOST`       | The mail provider's outgoing SMTP host.                                                                  |
+| `SMTP_PORT`       | `465` for implicit TLS or `587` for STARTTLS.                                                            |
+| `SMTP_USER`       | The SMTP login name.                                                                                     |
+| `SMTP_PASSWORD`   | The SMTP password or app password.                                                                       |
+| `SMTP_FROM_EMAIL` | A sender address the SMTP account is allowed to use, such as `logistics@shreemarutitransportservice.in`. |
+
+The recipient is fixed in `content/business.ts`. Visitor email addresses are used only as Reply-To. The server requires TLS, validates input, and uses a hidden field to filter basic bot submissions. Successful submission means the SMTP server accepted the message; final inbox delivery still depends on the mail provider.
+
 The source repository is [gamoventurehq/shree_maruti_transport_website](https://github.com/gamoventurehq/shree_maruti_transport_website).
 
 ## References
@@ -91,7 +103,7 @@ The Safety page includes a simplified nine-class dangerous-goods awareness guide
 
 ### Client meeting preview content
 
-Three detailed service routes are generated from `content/service-guides.ts`. Their transport briefs are authored meeting scenarios, not completed customer case studies. Proposed team roles and the operating-process board live in `components/transport/operations-preview.tsx`. Replace these samples with client-approved information before launch. At the user’s request, there are no visible draft labels. `business.isPreview` continues to disable indexing. Contact submission remains a local draft until real contact details and a delivery destination are supplied.
+Three detailed service routes are generated from `content/service-guides.ts`. Their transport briefs are authored meeting scenarios, not completed customer case studies. Proposed team roles and the operating-process board live in `components/transport/operations-preview.tsx`. Replace these samples with client-approved information before launch. At the user’s request, there are no visible draft labels. `business.isPreview` continues to disable indexing. Contact submissions use the confirmed email recipient when SMTP is configured.
 
 The fleet guide uses confirmed capacities and grades without inventing individual vehicle configurations. No sample contact numbers, testimonials, performance statistics or certification claims were added. Domain-dependent canonicals and production indexing should be configured after the domain is supplied.
 

@@ -136,7 +136,7 @@ Recognisable supplied customer marks with readable names. Keep client relationsh
 
 ### Contact
 
-Office location map, external Google Maps directions link, direct email link, and an enquiry draft that opens in the visitor's email app. The form must never claim that a message has been sent before the visitor sends it from their email app. Add a direct phone link when supplied or verified.
+Office location map, external Google Maps directions link, and a direct email link with a mail icon in the footer. When SMTP is configured, the enquiry form sends to the confirmed logistics address from the website. If SMTP is unavailable or delivery fails, offer an email-app draft and copy option. Only confirm submission after the server accepts it. Add a direct phone link when supplied or verified.
 
 ### Jay Ambey Road Line
 

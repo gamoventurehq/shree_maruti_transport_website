@@ -1,6 +1,6 @@
 import { strict as assert } from 'node:assert';
 import { test } from 'node:test';
-import { formatEnquiry } from '../lib/enquiry.ts';
+import { formatEnquiry, parseEnquiry } from '../lib/enquiry.ts';
 
 await test('creates a copyable enquiry preserving route, contact details, and multiline cargo requirements', () => {
   const result = formatEnquiry({
@@ -28,4 +28,36 @@ await test('handles an omitted optional company without inventing business detai
   });
   assert.match(result, /Company: Not provided/);
   assert.doesNotMatch(result, /sent|received|confirmed/i);
+});
+
+await test('validates and trims a submitted enquiry on the server', () => {
+  assert.deepEqual(
+    parseEnquiry({
+      name: '  Asha Shah  ',
+      company: '  Example Manufacturing  ',
+      email: 'asha@example.com',
+      pickup: '  Mumbai ',
+      delivery: ' Chennai  ',
+      cargo: '  Solvent, 25 MT  ',
+    }),
+    {
+      name: 'Asha Shah',
+      company: 'Example Manufacturing',
+      email: 'asha@example.com',
+      pickup: 'Mumbai',
+      delivery: 'Chennai',
+      cargo: 'Solvent, 25 MT',
+    },
+  );
+  assert.equal(
+    parseEnquiry({
+      name: 'Asha Shah',
+      company: '',
+      email: 'invalid\naddress@example.com',
+      pickup: 'Mumbai',
+      delivery: 'Chennai',
+      cargo: 'Solvent',
+    }),
+    null,
+  );
 });

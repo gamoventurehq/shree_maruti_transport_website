@@ -3,6 +3,7 @@ import { ArrowUpRight, Mail, MapPin } from 'lucide-react';
 import { PageIntro } from '@/components/transport/site';
 import { EnquiryForm } from '@/components/transport/enquiry-form';
 import { business } from '@/content/business';
+import { getSmtpConfig } from '@/lib/mail-config';
 import {
   GoogleMapsIcon,
   SocialIcons,
@@ -11,10 +12,12 @@ import {
 export const metadata: Metadata = {
   title: 'Contact us',
   description:
-    'Find the Shree Maruti Transport Service office in Mumbai, Bhiwandi, Maharashtra, and prepare your chemical solvent, food-grade, pharma or other liquid cargo enquiry.',
+    'Find the Shree Maruti Transport Service office in Mumbai, Bhiwandi, Maharashtra, and enquire about chemical solvent, food-grade, pharma or other liquid cargo transport.',
 };
 
 export default function ContactPage() {
+  const directSendEnabled = Boolean(getSmtpConfig());
+
   return (
     <>
       <PageIntro
@@ -33,8 +36,10 @@ export default function ContactPage() {
             </h2>
             <p>
               Share your product details, quantity, route, and preferred
-              dispatch date. You can prepare an enquiry using the form and open
-              it in your email app.
+              dispatch date.{' '}
+              {directSendEnabled
+                ? 'Send your enquiry to our team using the form.'
+                : 'Prepare an enquiry using the form and open it in your email app.'}
             </p>
             <div className="office-card">
               <MapPin size={24} />
@@ -68,7 +73,7 @@ export default function ContactPage() {
           <div className="form-panel">
             <h2>Your transport requirement</h2>
             <p className="form-intro">Fields marked * are required.</p>
-            <EnquiryForm />
+            <EnquiryForm directSendEnabled={directSendEnabled} />
           </div>
         </div>
       </section>

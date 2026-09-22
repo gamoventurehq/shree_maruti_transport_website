@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from '@/components/transport/page-link';
-import { ArrowRight, ArrowUpRight, MapPin } from 'lucide-react';
+import { ArrowRight, ArrowUpRight, Mail, MapPin } from 'lucide-react';
 import { brandLogo, clientLogos } from '@/content/assets';
 import { business } from '@/content/business';
 import { GoogleMapsIcon, SocialIcons } from './social-icons';
@@ -211,7 +211,10 @@ export function Footer() {
             <MapPin size={20} />
             <h2>{business.location}</h2>
             <p>Serving businesses across India.</p>
-            <a href={`mailto:${business.email}`}>{business.email}</a>
+            <a href={`mailto:${business.email}`}>
+              <Mail size={16} />
+              {business.email}
+            </a>
             <a
               href={business.mapsUrl}
               target="_blank"

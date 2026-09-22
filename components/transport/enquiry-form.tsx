@@ -5,8 +5,15 @@ import { ArrowUpRight, Check, Copy } from 'lucide-react';
 import { business } from '@/content/business';
 import { enquirySubject, formatEnquiry } from '@/lib/enquiry';
 
-export function EnquiryForm() {
+export function EnquiryForm({
+  directSendEnabled,
+}: {
+  directSendEnabled: boolean;
+}) {
   const [draft, setDraft] = useState('');
+  const [submissionState, setSubmissionState] = useState<
+    'idle' | 'sending' | 'sent' | 'failed'
+  >('idle');
   const [copyState, setCopyState] = useState<'idle' | 'copied' | 'failed'>(
     'idle',
   );
@@ -14,7 +21,7 @@ export function EnquiryForm() {
   const emailHref = draft
     ? `mailto:${business.email}?subject=${encodeURIComponent(enquirySubject)}&body=${encodeURIComponent(draft)}`
     : '';
-  function prepare(event: SubmitEvent<HTMLFormElement>) {
+  async function submit(event: SubmitEvent<HTMLFormElement>) {
     event.preventDefault();
     const form = event.currentTarget;
     const inputs = form.querySelectorAll<
@@ -31,17 +38,37 @@ export function EnquiryForm() {
       const entry = data.get(key);
       return typeof entry === 'string' ? entry : '';
     };
-    setDraft(
-      formatEnquiry({
-        name: value('name'),
-        company: value('company'),
-        email: value('email'),
-        pickup: value('pickup'),
-        delivery: value('delivery'),
-        cargo: value('cargo'),
-      }),
-    );
+    const enquiry = {
+      name: value('name'),
+      company: value('company'),
+      email: value('email'),
+      pickup: value('pickup'),
+      delivery: value('delivery'),
+      cargo: value('cargo'),
+    };
+    const prepared = formatEnquiry(enquiry);
     setCopyState('idle');
+
+    if (!directSendEnabled) {
+      setDraft(prepared);
+      return;
+    }
+
+    setSubmissionState('sending');
+    try {
+      const response = await fetch('/api/enquiry', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ ...enquiry, website: value('website') }),
+      });
+      if (!response.ok) throw new Error('Enquiry delivery failed');
+      form.reset();
+      setDraft('');
+      setSubmissionState('sent');
+    } catch {
+      setDraft(prepared);
+      setSubmissionState('failed');
+    }
   }
   async function copy() {
     try {
@@ -56,7 +83,7 @@ export function EnquiryForm() {
   return (
     <form
       className="enquiry-form"
-      onSubmit={prepare}
+      onSubmit={submit}
       onInput={(event) => {
         const target = event.target;
         if (
@@ -66,6 +93,7 @@ export function EnquiryForm() {
           target.setCustomValidity('');
         setDraft('');
         setCopyState('idle');
+        setSubmissionState('idle');
       }}
     >
       <div className="form-grid">
@@ -75,6 +103,7 @@ export function EnquiryForm() {
             name="name"
             autoComplete="name"
             placeholder="Full name"
+            disabled={submissionState === 'sending'}
             required
             maxLength={100}
           />
@@ -85,6 +114,7 @@ export function EnquiryForm() {
             name="company"
             autoComplete="organization"
             placeholder="Company name"
+            disabled={submissionState === 'sending'}
             maxLength={150}
           />
         </label>
@@ -96,6 +126,7 @@ export function EnquiryForm() {
           name="email"
           autoComplete="email"
           placeholder="you@company.com"
+          disabled={submissionState === 'sending'}
           required
           maxLength={254}
         />
@@ -106,6 +137,7 @@ export function EnquiryForm() {
           <input
             name="pickup"
             placeholder="City or town"
+            disabled={submissionState === 'sending'}
             required
             maxLength={150}
           />
@@ -115,6 +147,7 @@ export function EnquiryForm() {
           <input
             name="delivery"
             placeholder="City or town"
+            disabled={submissionState === 'sending'}
             required
             maxLength={150}
           />
@@ -126,20 +159,57 @@ export function EnquiryForm() {
           name="cargo"
           placeholder="Cargo, approximate weight, preferred date, and anything else we should know."
           rows={3}
+          disabled={submissionState === 'sending'}
           required
           maxLength={3000}
         />
       </label>
+      <div className="enquiry-honeypot" aria-hidden="true">
+        <label>
+          Website
+          <input
+            name="website"
+            autoComplete="off"
+            tabIndex={-1}
+            disabled={submissionState === 'sending'}
+          />
+        </label>
+      </div>
       <p className="form-note">
-        Prepare your enquiry, then open it in your email app to send it to us.
-        You can also copy the details.
+        {directSendEnabled
+          ? `Send your enquiry directly to ${business.email}.`
+          : 'Prepare your enquiry, then open it in your email app to send it to us. You can also copy the details.'}
       </p>
-      <button className="button button-primary" type="submit">
-        Prepare enquiry <ArrowUpRight size={19} />
+      <button
+        className="button button-primary"
+        type="submit"
+        disabled={submissionState === 'sending'}
+      >
+        {submissionState === 'sending'
+          ? 'Sending…'
+          : directSendEnabled
+            ? 'Send enquiry'
+            : 'Prepare enquiry'}
+        {submissionState !== 'sending' && <ArrowUpRight size={19} />}
       </button>
-      {draft && (
+      {submissionState === 'sent' && (
+        <output className="form-status">
+          Your enquiry was submitted to our team.
+        </output>
+      )}
+      {submissionState === 'failed' && (
+        <output className="form-status form-status-error" role="alert">
+          We couldn’t confirm that your enquiry was sent. You can send the draft
+          below from your email app.
+        </output>
+      )}
+      {draft && (!directSendEnabled || submissionState === 'failed') && (
         <div className="enquiry-result">
-          <h3>Your enquiry draft is ready</h3>
+          <h3>
+            {submissionState === 'failed'
+              ? 'Send by email instead'
+              : 'Your enquiry draft is ready'}
+          </h3>
           <label htmlFor="enquiry-draft">Review your details</label>
           <textarea
             id="enquiry-draft"
@@ -167,10 +237,10 @@ export function EnquiryForm() {
           </div>
           <output aria-live="polite">
             {copyState === 'copied'
-              ? 'Copied to your clipboard. This enquiry has not been sent.'
+              ? 'Copied to your clipboard.'
               : copyState === 'failed'
                 ? 'Automatic copy is unavailable. The draft is selected so you can copy it manually.'
-                : 'Your enquiry has not been sent yet. Send it from your email app.'}
+                : 'Send this draft from your email app.'}
           </output>
         </div>
       )}
